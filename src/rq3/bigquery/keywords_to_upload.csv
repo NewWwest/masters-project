@@ -1,0 +1,773 @@
+(?i)\badversarial input perturbations\b
+(?i)\balgorithm downgrade\b
+(?i)\bambiguous exception type\b
+(?i)\bantiforgerytoken\b
+(?i)\bantimalware\b
+(?i)\bantixsslibrary\b
+(?i)\bargument injection\b
+(?i)\bargument-injection\b
+(?i)\barithmetic overflow\b
+(?i)\barithmetic-overflow\b
+(?i)\bassumed-immutable\b
+(?i)\bassumed immutable\b
+(?i)\battack\b
+(?i)\battacks\b
+(?i)\bback door\b
+(?i)\bback-door\b
+(?i)\bbackdoor\b
+(?i)\bbad coding practices\b
+(?i)\bbad practices\b
+(?i)\bbehavioral inconsistency\b
+(?i)\bbehavioral problems\b
+(?i)\bbomb\b
+(?i)\bbroken access control\b
+(?i)\bbroken authentication\b
+(?i)\bbroken cryptography\b
+(?i)\bbuffer over read\b
+(?i)\bbuffer over-read\b
+(?i)\bbuffer overflow\b
+(?i)\bbuffer overread\b
+(?i)\bbuffer overrun\b
+(?i)\bbuffer under-read\b
+(?i)\bbuffer underwrite\b
+(?i)\bbuffer-overflow\b
+(?i)\bbuffer overflow\b
+(?i)\bbuffer-overrun\b
+(?i)\bbuffer overrun\b
+(?i)\bbusiness logic errors\b
+(?i)\bbypass\b
+(?i)\bcapec\b
+(?i)\bchannel errors\b
+(?i)\bcircular dependencies\b
+(?i)\bcisq\b
+(?i)\bcleanup errors\b
+(?i)\bcleartext storage\b
+(?i)\bclick jacking\b
+(?i)\bclick-jacking\b
+(?i)\bclickjacking\b
+(?i)\bclient-side enforcement of server-side security\b
+(?i)\bclient-side enforcement of serverside security\b
+(?i)\bclient side enforcement of server-side security\b
+(?i)\bclient side enforcement of server side security\b
+(?i)\bcode injection\b
+(?i)\bcode-injection\b
+(?i)\bcoding standard\b
+(?i)\bcoding-standard\b
+(?i)\bcommand injection\b
+(?i)\bcommand-injection\b
+(?i)\bcomparison errors\b
+(?i)\bconcurrency issues\b
+(?i)\bconfused deputy\b
+(?i)\bconfused-deputy\b
+(?i)\bcontainment errors\b
+(?i)\bconversion error\b
+(?i)\bcovert channel\b
+(?i)\bcovert storage channel\b
+(?i)\bcovert timing channel\b
+(?i)\bcritical data element declared public\b
+(?i)\bcrlf injection\b
+(?i)\bcrlf-injection\b
+(?i)\bcross frame scripting\b
+(?i)\bcross site scripting\b
+(?i)\bcross site tracing\b
+(?i)\bcross zone scripting\b
+(?i)\bcross-frame scripting\b
+(?i)\bcross-frame-scripting\b
+(?i)\bcross-site scripting\b
+(?i)\bcross-site tracing\b
+(?i)\bcross-site-scripting\b
+(?i)\bcross-site-tracing\b
+(?i)\bcross-zone scripting\b
+(?i)\bcross-zone-scripting\b
+(?i)\bcrossframe-scripting\b
+(?i)\bcrosssite scripting\b
+(?i)\bcrosssite-tracing\b
+(?i)\bcrosszone scripting\b
+(?i)\bcrosszone-scripting\b
+(?i)\bcryptographic issues\b
+(?i)\bcsrf\b
+(?i)\bcursor injection\b
+(?i)\bcve\b
+(?i)\bcvss\b
+(?i)\bcvss2\b
+(?i)\bcvss3\b
+(?i)\bcwe\b
+(?i)\bdangerous function\b
+(?i)\bdangerous method\b
+(?i)\bdangerous operations\b
+(?i)\bdangling database cursor\b
+(?i)\bdata exposure\b
+(?i)\bdata structure issues\b
+(?i)\bdata-leakage\b
+(?i)\bdata leakage\b
+(?i)\bdata leak\b
+(?i)\bdata-leak\b
+(?i)\bddos\b
+(?i)\bdead code\b
+(?i)\bdead lock\b
+(?i)\bdead-code\b
+(?i)\bdead-lock\b
+(?i)\bdeadcode\b
+(?i)\bdeadlock\b
+(?i)\bdeep nesting\b
+(?i)\bdefault-password\b
+(?i)\bdefault password\b
+(?i)\bdenial of service\b
+(?i)\bdenial-of-service\b
+(?i)\bdirectory traversal\b
+(?i)\bdirectory-traversal\b
+(?i)\bdos\b
+(?i)\bdot dot slash\b
+(?i)\bdot-dot-slash\b
+(?i)\bdouble checked locking\b
+(?i)\bdouble decoding\b
+(?i)\bdouble free\b
+(?i)\bdouble-checked locking\b
+(?i)\bdouble-free\b
+(?i)\bdoublechecked locking\b
+(?i)\bduplicate identifier\b
+(?i)\bduplicate validation\b
+(?i)\bdynamic variable evaluation\b
+(?i)\bearly validation\b
+(?i)\beaves-dropping\b
+(?i)\beaves dropping\b
+(?i)\beavesdropping\b
+(?i)\bel-injection\b
+(?i)\bel injection\b
+(?i)\belement injection\b
+(?i)\bempty code block\b
+(?i)\bempty code-block\b
+(?i)\bempty exception\b
+(?i)\bempty password\b
+(?i)\bempty synchronized block\b
+(?i)\bencoding error\b
+(?i)\besapi\b
+(?i)\beval injection\b
+(?i)\bexcessive complex\b
+(?i)\bexcessive data\b
+(?i)\bexcessive execution\b
+(?i)\bexcessive file access\b
+(?i)\bexcessive file or data access\b
+(?i)\bexcessive index\b
+(?i)\bexcessive iteration\b
+(?i)\bexcessive platform resource consumption\b
+(?i)\bexcessive reliance\b
+(?i)\bexcessive use\b
+(?i)\bexecution after redirect\b
+(?i)\bexploit\b
+(?i)\bexposed data\b
+(?i)\bexposure of data\b
+(?i)\bexposure of information\b
+(?i)\bexposure of personal information\b
+(?i)\bexposure of private information\b
+(?i)\bexposure of private personal information\b
+(?i)\bexpression issues\b
+(?i)\bexpression language injection\b
+(?i)\bexternal control of assumed immutable\b
+(?i)\bexternal control of configuration setting\b
+(?i)\bexternal control of critical\b
+(?i)\bexternal control of file name\b
+(?i)\bexternal control of filename\b
+(?i)\bexternal control of immutable\b
+(?i)\bexternal control of path\b
+(?i)\bexternal control of system or configuration setting\b
+(?i)\bexternal control of system setting\b
+(?i)\bexternally supplied file\b
+(?i)\bexternally-controlled format string\b
+(?i)\bexternally controlled format string\b
+(?i)\bexternally-supplied file\b
+(?i)\bfailing open\b
+(?i)\bfailure to handle incomplete element\b
+(?i)\bfailure to restrict url access\b
+(?i)\bfailure to sanitize\b
+(?i)\bfaulty buffer\b
+(?i)\bfaulty memory\b
+(?i)\bfaulty pointer\b
+(?i)\bfile issues\b
+(?i)\bflaws\b
+(?i)\bforced browsing\b
+(?i)\bforgery\b
+(?i)\bgeneric exception\b
+(?i)\bglitch\b
+(?i)\bhandler errors\b
+(?i)\bhard coded\b
+(?i)\bhard-coded\b
+(?i)\bhardcode\b
+(?i)\bhardcoded\b
+(?i)\bheap inspection\b
+(?i)\bheap-overflow\b
+(?i)\bheap overflow\b
+(?i)\bhidden functionality\b
+(?i)\bhijack\b
+(?i)\bhost-header-injection\b
+(?i)\bhost header-injection\b
+(?i)\bhost-header injection\b
+(?i)\bhost header injection\b
+(?i)\bhtml-sanitizing\b
+(?i)\bhtml sanitizing\b
+(?i)\bhtml sanitization\b
+(?i)\bhtml-sanitization\b
+(?i)\bhttp request smuggling\b
+(?i)\bhttp response splitting\b
+(?i)\bidentity impersonation\b
+(?i)\bimproper access control\b
+(?i)\bimproper address validation\b
+(?i)\bimproper authentication\b
+(?i)\bimproper authorization\b
+(?i)\bimproper certificate validation\b
+(?i)\bimproper check\b
+(?i)\bimproper cleanup\b
+(?i)\bimproper clearing of heap memory before\b
+(?i)\bimproper control\b
+(?i)\bimproper encoding\b
+(?i)\bimproper enforcement\b
+(?i)\bimproper error handling\b
+(?i)\bimproper error-handling\b
+(?i)\bimproper filtering\b
+(?i)\bimproper finite state machines\b
+(?i)\bimproper following\b
+(?i)\bimproper fsm\b
+(?i)\bimproper handling\b
+(?i)\bimproper initialization\b
+(?i)\bimproper isolation\b
+(?i)\bimproper limitation\b
+(?i)\bimproper link resolution\b
+(?i)\bimproper lock\b
+(?i)\bimproper locking\b
+(?i)\bimproper management\b
+(?i)\bimproper null termination\b
+(?i)\bimproper ownership\b
+(?i)\bimproper physical access control\b
+(?i)\bimproper physical access control\b
+(?i)\bimproper preservation\b
+(?i)\bimproper prevention\b
+(?i)\bimproper privilege management\b
+(?i)\bimproper protections\b
+(?i)\bimproper removal of sensitive\b
+(?i)\bimproper resolution\b
+(?i)\bimproper resource locking\b
+(?i)\bimproper resource shutdown\b
+(?i)\bimproper restriction\b
+(?i)\bimproper scrubbing\b
+(?i)\bimproper security checks\b
+(?i)\bimproper setting of bus controlling\b
+(?i)\bimproper synchronization\b
+(?i)\bimproper translation of security\b
+(?i)\bimproper update\b
+(?i)\bimproper use\b
+(?i)\bimproper validation\b
+(?i)\bimproper verification\b
+(?i)\bimproper write handling\b
+(?i)\bimproper zeroization\b
+(?i)\bimproperly controlled modification\b
+(?i)\bimproperly implemented access control\b
+(?i)\bimproperly implemented authentication\b
+(?i)\bimproperly implemented authorization\b
+(?i)\bimproperly implemented check\b
+(?i)\bimproperly implemented cleanup\b
+(?i)\bimproperly implemented control\b
+(?i)\bimproperly implemented encoding\b
+(?i)\bimproperly implemented enforcement\b
+(?i)\bimproperly implemented error handling\b
+(?i)\bimproperly implemented error-handling\b
+(?i)\bimproperly implemented filtering\b
+(?i)\bimproperly implemented following\b
+(?i)\bimproperly implemented handling\b
+(?i)\bimproperly implemented initialization\b
+(?i)\bimproperly implemented link resolution\b
+(?i)\bimproperly implemented locking\b
+(?i)\bimproperly implemented null termination\b
+(?i)\bimproperly implemented ownership\b
+(?i)\bimproperly implemented resolution\b
+(?i)\bimproperly implemented resource shutdown\b
+(?i)\bimproperly implemented restriction\b
+(?i)\bimproperly implemented security checks\b
+(?i)\bimproperly implemented synchronization\b
+(?i)\bimproperly implemented update\b
+(?i)\bimproperly implemented use\b
+(?i)\bimproperly implemented validation\b
+(?i)\bimproperly preserved integrity\b
+(?i)\binaccurate comments\b
+(?i)\binadequate encryption\b
+(?i)\binappropriate encoding\b
+(?i)\bincompatible types\b
+(?i)\bincomplete blacklist\b
+(?i)\bincomplete cleanup\b
+(?i)\bincomplete comparison\b
+(?i)\bincomplete data removal within hardware component\b
+(?i)\bincomplete documentation\b
+(?i)\bincomplete filtering\b
+(?i)\bincomplete identification\b
+(?i)\bincomplete model\b
+(?i)\bincomplete validate\b
+(?i)\binconsistent implementations\b
+(?i)\binconsistent interpretation\b
+(?i)\binconsistent naming\b
+(?i)\bincorrect access\b
+(?i)\bincorrect authorization\b
+(?i)\bincorrect behavior\b
+(?i)\bincorrect block delimitation\b
+(?i)\bincorrect buffer length\b
+(?i)\bincorrect byte ordering\b
+(?i)\bincorrect calculation\b
+(?i)\bincorrect check\b
+(?i)\bincorrect comparison\b
+(?i)\bincorrect control flow\b
+(?i)\bincorrect control flow\b
+(?i)\bincorrect conversion\b
+(?i)\bincorrect default permissions\b
+(?i)\bincorrect execution-assigned permissions\b
+(?i)\bincorrect execution assigned permissions\b
+(?i)\bincorrect group\b
+(?i)\bincorrect implementation\b
+(?i)\bincorrect initialization\b
+(?i)\bincorrect input\b
+(?i)\bincorrect length\b
+(?i)\bincorrect operator\b
+(?i)\bincorrect order\b
+(?i)\bincorrect ownership assignment\b
+(?i)\bincorrect permission assignment\b
+(?i)\bincorrect permissions\b
+(?i)\bincorrect pointer scaling\b
+(?i)\bincorrect privilege\b
+(?i)\bincorrect provision\b
+(?i)\bincorrect regular expression\b
+(?i)\bincorrect resource transfer\b
+(?i)\bincorrect scope\b
+(?i)\bincorrect security tokens\b
+(?i)\bincorrect synchronization\b
+(?i)\bincorrect type\b
+(?i)\bincorrect usage\b
+(?i)\bincorrect use\b
+(?i)\bincorrect user management\b
+(?i)\bincorrectly resolved name\b
+(?i)\bincorrectly-resolved name\b
+(?i)\binefficient regular expression complexity\b
+(?i)\binfinite loop\b
+(?i)\binfinite recursion\b
+(?i)\binfinite-loop\b
+(?i)\binfinite-recursion\b
+(?i)\binfiniteloop\b
+(?i)\binfoleak\b
+(?i)\binformation exposure\b
+(?i)\binformation leakage\b
+(?i)\binformation loss\b
+(?i)\binput validation\b
+(?i)\binput-validation\b
+(?i)\binsecure authentication\b
+(?i)\binsecure automated optimizations\b
+(?i)\binsecure communications\b
+(?i)\binsecure configuration\b
+(?i)\binsecure cryptographic\b
+(?i)\binsecure default\b
+(?i)\binsecure deserialization\b
+(?i)\binsecure direct object reference\b
+(?i)\binsecure inherited permissions\b
+(?i)\binsecure interaction\b
+(?i)\binsecure operation on mount point\b
+(?i)\binsecure operation on windows junction\b
+(?i)\binsecure permissions\b
+(?i)\binsecure preserved inherited permissions\b
+(?i)\binsecure preserved permissions\b
+(?i)\binsecure security identifier\b
+(?i)\binsecure security identifiers\b
+(?i)\binsecure storage\b
+(?i)\binsecure temporary file\b
+(?i)\binsufficient access control\b
+(?i)\binsufficient adherence to expected conventions\b
+(?i)\binsufficient control\b
+(?i)\binsufficient data removal within hardware component\b
+(?i)\binsufficient documentation\b
+(?i)\binsufficient encapsulation\b
+(?i)\binsufficient entropy\b
+(?i)\binsufficient granularity of access control\b
+(?i)\binsufficient granularity of address regions protected\b
+(?i)\binsufficient granularity of protected address regions\b
+(?i)\binsufficient isolation\b
+(?i)\binsufficient logging\b
+(?i)\binsufficient permissions\b
+(?i)\binsufficient precision or accuracy of a real number\b
+(?i)\binsufficient privileges\b
+(?i)\binsufficient resource pool\b
+(?i)\binsufficient session expiration\b
+(?i)\binsufficient session-id length\b
+(?i)\binsufficient type distinction\b
+(?i)\binsufficient verification\b
+(?i)\binsufficient warnings\b
+(?i)\binsufficiently protected credentials\b
+(?i)\binsufficiently random\b
+(?i)\binteger overflow\b
+(?i)\binteger-overflow\b
+(?i)\binterpretation conflict\b
+(?i)\binvalid pointer\b
+(?i)\birrelevant code\b
+(?i)\bkey exchange\b
+(?i)\black of administrator control over security\b
+(?i)\blacking security checks\b
+(?i)\bldap injection\b
+(?i)\bldap-injection\b
+(?i)\bleak\b
+(?i)\bleast privilege violation\b
+(?i)\bleftover debug code\b
+(?i)\bless secure algorithm\b
+(?i)\bless trusted source\b
+(?i)\blocking problems\b
+(?i)\blogic error\b
+(?i)\blogic-error\b
+(?i)\bmalicious code\b
+(?i)\bmalicious file\b
+(?i)\bmalicious script\b
+(?i)\bmalicious-code\b
+(?i)\bmalicious-file\b
+(?i)\bmalware\b
+(?i)\bman in the middle\b
+(?i)\bman-in-the-middle\b
+(?i)\bmanagement errors\b
+(?i)\bmemory overflow\b
+(?i)\bmemory-leaks\b
+(?i)\bmemory leaks\b
+(?i)\bmemory leak\b
+(?i)\bmisconfiguration\b
+(?i)\bmismatched memory management routines\b
+(?i)\bmisrepresentation\b
+(?i)\bmissing authentication\b
+(?i)\bmissing authorization\b
+(?i)\bmissing check\b
+(?i)\bmissing critical step\b
+(?i)\bmissing cryptographic\b
+(?i)\bmissing custom error page\b
+(?i)\bmissing default case\b
+(?i)\bmissing documentation\b
+(?i)\bmissing encryption\b
+(?i)\bmissing function level access control\b
+(?i)\bmissing handler\b
+(?i)\bmissing initialization\b
+(?i)\bmissing lock\b
+(?i)\bmissing password field masking\b
+(?i)\bmissing reference\b
+(?i)\bmissing release\b
+(?i)\bmissing report\b
+(?i)\bmissing security checks\b
+(?i)\bmissing security identifier\b
+(?i)\bmissing security identifiers\b
+(?i)\bmissing serialization\b
+(?i)\bmissing support\b
+(?i)\bmissing synchronization\b
+(?i)\bmissing validation\b
+(?i)\bmissing xml validation\b
+(?i)\bmitm\b
+(?i)\bmodification of  data\b
+(?i)\bmodification of assumed immutable data\b
+(?i)\bmultiple locks\b
+(?i)\bmultiple unlocks\b
+(?i)\bneutralization\b
+(?i)\bnonserializable object stored\b
+(?i)\bnon serializable object stored\b
+(?i)\bnon-serializable object stored\b
+(?i)\bnosql-injection\b
+(?i)\bnosql injection\b
+(?i)\bnull byte injection\b
+(?i)\bnull pointer dereference\b
+(?i)\bnull-byte injection\b
+(?i)\bnull-byte-injection\b
+(?i)\bnull-pointer dereference\b
+(?i)\bnumeric errors\b
+(?i)\bnvd\b
+(?i)\bobject model violation\b
+(?i)\bobject-injection\b
+(?i)\bone-way hash without a salt\b
+(?i)\bopen redirect\b
+(?i)\bopen web application security project\b
+(?i)\bopen-redirect\b
+(?i)\borigin validation error\b
+(?i)\bout of bounds\b
+(?i)\bout of range pointer\b
+(?i)\bout-of-bounds\b
+(?i)\bout-of-range pointer\b
+(?i)\boutofbounds\b
+(?i)\bover-flow\b
+(?i)\boverflow\b
+(?i)\boverflowerror\b
+(?i)\bowasp\b
+(?i)\bpartial string comparison\b
+(?i)\bpassword hash with insufficient computational effort\b
+(?i)\bpath equivalence\b
+(?i)\bpath errors\b
+(?i)\bpath manipulation\b
+(?i)\bpath traversal\b
+(?i)\bpath-equivalence\b
+(?i)\bpath-errors\b
+(?i)\bpath-injection\b
+(?i)\bpath injection\b
+(?i)\bpath-manipulation\b
+(?i)\bpath-traversal\b
+(?i)\bpen test\b
+(?i)\bpen-test\b
+(?i)\bpenetration test\b
+(?i)\bpenetration-test\b
+(?i)\bpentest\b
+(?i)\bpermission issues\b
+(?i)\bpermissive regular expression\b
+(?i)\bpermissive whitelist\b
+(?i)\bplaintext password\b
+(?i)\bplatform dependent third party\b
+(?i)\bpointer issues\b
+(?i)\bpointer value outside of expected range\b
+(?i)\bpoison\b
+(?i)\bporous defenses\b
+(?i)\bpredictability problems\b
+(?i)\bpredictable initialization vector\b
+(?i)\bpredictable iv\b
+(?i)\bpredictable salt\b
+(?i)\bpremature release\b
+(?i)\bprivacy violation\b
+(?i)\bprivilege elevation\b
+(?i)\bprivilege escalation\b
+(?i)\bprivilege-elevation\b
+(?i)\bprivilege-escalation\b
+(?i)\bprocessing errors\b
+(?i)\bprotection\b
+(?i)\bprototype pollution\b
+(?i)\brace condition\b
+(?i)\brace-condition\b
+(?i)\bransomware\b
+(?i)\bredos\b
+(?i)\bredundant code\b
+(?i)\breliance on ip address for authentication\b
+(?i)\breliance on uncontrolled\b
+(?i)\bremote file inclusion\b
+(?i)\brepresentation errors\b
+(?i)\bresponse discrepancy\b
+(?i)\brestrictive regular expression\b
+(?i)\breusing a nonce\b
+(?i)\breversible one-way hash\b
+(?i)\brisky cryptographic algorithm\b
+(?i)\brsa algorithm without oaep\b
+(?i)\bsanitization\b
+(?i)\bsecure coding\b
+(?i)\bsecure-coding\b
+(?i)\bsecurity critical\b
+(?i)\bsecurity relevant\b
+(?i)\bsecurity sensitive\b
+(?i)\bsecurity settings\b
+(?i)\bsecurity through obscurity\b
+(?i)\bsecurity-through-obscurity\b
+(?i)\bsecurity-critical\b
+(?i)\bsecurity-relevant\b
+(?i)\bsecurity-sensitive\b
+(?i)\bseg fault\b
+(?i)\bseg-fault\b
+(?i)\bsegfault\b
+(?i)\bsegmentation fault\b
+(?i)\bsegmentation-fault\b
+(?i)\bself generated error message\b
+(?i)\bsensitive cookie\b
+(?i)\bsensitive data\b
+(?i)\bsensitive hardware controls\b
+(?i)\bsensitive implications\b
+(?i)\bsensitive information\b
+(?i)\bsensitive non volatile information\b
+(?i)\bsensitive non-volatile information\b
+(?i)\bsensitive nonvolatile information\b
+(?i)\bsensitive operations\b
+(?i)\bsensitive query strings\b
+(?i)\bsensitive system information\b
+(?i)\bsensitive trace data\b
+(?i)\bsession fixation\b
+(?i)\bsession-hijacking\b
+(?i)\bsession hijacking\b
+(?i)\bshatter\b
+(?i)\bsignal errors\b
+(?i)\bsingle factor authentication\b
+(?i)\bsingle-factor authentication\b
+(?i)\bspoof\b
+(?i)\bspoofing\b
+(?i)\bspyware\b
+(?i)\bsql injection\b
+(?i)\bsql-injection\b
+(?i)\bsqlmap\b
+(?i)\bssrf\b
+(?i)\bstack smash\b
+(?i)\bstack-smash\b
+(?i)\bstackunderflow\b
+(?i)\bstring errors\b
+(?i)\bsuspicious comment\b
+(?i)\btainted input\b
+(?i)\btap jacking\b
+(?i)\btap-jacking\b
+(?i)\btapjacking\b
+(?i)\btime of check\b
+(?i)\btime of use\b
+(?i)\btime-of-check\b
+(?i)\btime-of-use\b
+(?i)\btiming discrepancy\b
+(?i)\btoctou\b
+(?i)\btrap door\b
+(?i)\btrap-door\b
+(?i)\btrapdoor\b
+(?i)\btrojan\b
+(?i)\btrust boundary violation\b
+(?i)\btrust of system event data\b
+(?i)\btype confusion\b
+(?i)\btype error\b
+(?i)\bunauthorized control\b
+(?i)\buncaught exception\b
+(?i)\bunchecked error\b
+(?i)\bunchecked input\b
+(?i)\bunchecked return value\b
+(?i)\bunconditional control flow\b
+(?i)\buncontrolled format string\b
+(?i)\buncontrolled recursion\b
+(?i)\buncontrolled resource consumption\b
+(?i)\buncontrolled search path element\b
+(?i)\bundefined behavior\b
+(?i)\bundefined behaviour\b
+(?i)\bunderflow\b
+(?i)\bunexpected entry points\b
+(?i)\bunexpected sign extension\b
+(?i)\bunexpected status code\b
+(?i)\buninitialized pointer\b
+(?i)\buninitialized resource\b
+(?i)\bunnecessary complexity\b
+(?i)\bunnecessary privileges\b
+(?i)\bunprotected storage\b
+(?i)\bunquoted search path\b
+(?i)\bunreachable exit\b
+(?i)\bunrestricted authentication\b
+(?i)\bunrestricted ip address\b
+(?i)\bunrestricted upload\b
+(?i)\bunsafe jni\b
+(?i)\bunsafe reflection\b
+(?i)\bunsafe value\b
+(?i)\bunspecified behavior\b
+(?i)\bunspecified behaviour\b
+(?i)\bunsynchronized access\b
+(?i)\buntrusted caller\b
+(?i)\buntrusted control sphere\b
+(?i)\buntrusted data\b
+(?i)\buntrusted execution\b
+(?i)\buntrusted method\b
+(?i)\buntrusted site\b
+(?i)\buntrusted source\b
+(?i)\bunvalidated input\b
+(?i)\bunvalidated redirects\b
+(?i)\buse-after-free\b
+(?i)\buser interface errors\b
+(?i)\bvalidation problems\b
+(?i)\bvirus\b
+(?i)\bvulnerabilities\b
+(?i)\bvulnerability\b
+(?i)\bweak access permissions\b
+(?i)\bweak cryptography\b
+(?i)\bweak encoding\b
+(?i)\bweak hash\b
+(?i)\bweak initialization vector\b
+(?i)\bweak iv\b
+(?i)\bweak password\b
+(?i)\bweak pseudo random number\b
+(?i)\bweak pseudo-random number\b
+(?i)\bweak pseudorandom number\b
+(?i)\bweakness\b
+(?i)\bweb problems\b
+(?i)\bwithout integrity checking\b
+(?i)\bwithout limits\b
+(?i)\bwithout throttling\b
+(?i)\bwithout validation\b
+(?i)\bworm\b
+(?i)\bwrap around error\b
+(?i)\bwrap-around error\b
+(?i)\bwraparound error\b
+(?i)\bwrong handler\b
+(?i)\bwrong status code\b
+(?i)\bxml entity expansion\b
+(?i)\bxml external entity\b
+(?i)\bxml injection\b
+(?i)\bxml-injection\b
+(?i)\bxpath injection\b
+(?i)\bxquery injection\b
+(?i)\bxss\b
+(?i)\bxxe\b
+(?i)\bzap\b
+(?i)\btsyscall\b
+(?i)\bjndi\b
+(?i)\bxattrs\b
+(?i)\bimproper\b
+(?i)\bunzzip\b
+(?i)\brecaptcha\b
+(?i)\bcryptopp\b
+(?i)\bsanitized\b
+(?i)\btmpdir\b
+(?i)\bconfidential\b
+(?i)\btestdir\b
+(?i)\bcorrupt\b
+(?i)\bsecrets\b
+(?i)\bsuspicious\b
+(?i)\binvaliddata\b
+(?i)\bhtmlspecialchars\b
+(?i)\bforwarded\b
+(?i)\badvisory\b
+(?i)\bsandbox\b
+(?i)\bpkthdr\b
+(?i)\bremovexattr\b
+(?i)\bxattr\b
+(?i)\bsyncfs\b
+(?i)\btzval\b
+(?i)\bexploit\b
+(?i)\bcrash\b
+(?i)\btcpedit\b
+(?i)\btrequest\b
+(?i)\bzzip\b
+(?i)\btopts\b
+(?i)\burlencode\b
+(?i)\brelinquish\b
+(?i)\bsetxattr\b
+(?i)\brcsid\b
+(?i)\bpolite\b
+(?i)\bdescsz\b
+(?i)\bsecurely\b
+(?i)\bauthz\b
+(?i)\bautoload\b
+(?i)\bentrance\b
+(?i)\bcsfr\b
+(?i)\bbindable\b
+(?i)\bmalicious\b
+(?i)\battacks\b
+(?i)\btrusted\b
+(?i)\bcorrupted\b
+(?i)\bescapeshellarg\b
+(?i)\bevil\b
+(?i)\bcsrf\b
+(?i)\bblacklisted\b
+(?i)\breferer\b
+(?i)\bpolluted\b
+(?i)\battacker\b
+(?i)\bpurify\b
+(?i)\bdompurify\b
+(?i)\bjail\b
+(?i)\bforbid\b
+(?i)\bauthkey\b
+(?i)\bbackhand\b
+(?i)\bexthdr\b
+(?i)\bauthentic\b
+(?i)\bphar\b
+(?i)\btcheck2\b
+(?i)\bnetloc\b
+(?i)\bhtmlchars\b
+(?i)\bwomans\b
+(?i)\bnonvalidating\b
+(?i)\bguinea\b
+(?i)\bpsalm\b
+(?i)\bgraduation\b
+(?i)\btzgat\b
+(?i)\bstco\b
+(?i)\bideograph\b
+(?i)\bowasp\b
+(?i)\binsecure\b
+(?i)\btsrmls\b
+(?i)\brevolving\b
+(?i)\bdestrying\b
+(?i)\buntrusted\b
+(?i)\btraversal\b
+(?i)\bpotable\b
+(?i)\bcrashing\b
+(?i)\boverflowing\b

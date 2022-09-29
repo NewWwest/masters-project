@@ -1,0 +1,3 @@
+google-cloud-storage
+pydriller==1.15.1
+regex
