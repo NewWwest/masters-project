@@ -1,84 +1,132 @@
-from pydriller import Modification,ModificationType,Commit
-from os import path
-from src.linked_commit_investigation import constants_and_configs
+from pydriller import Commit
+from Levenshtein import distance as levenshtein_distance
 
-from src.linked_commit_investigation.AbstractMiner import AbstractMiner
+import src.mining.CodeFeaturesMiners.constants_and_configs as constants_and_configs
+
+from src.mining.CodeFeaturesMiners.AbstractMiner import AbstractMiner
+
 
 class CommitLevelFeatureMiner(AbstractMiner):
     def __init__(self, feature_classes) -> None:
         super().__init__(feature_classes)
 
 
-    def mine(self, commit: Commit, history_before, history_after):
+    def mine(self, repo_full_name, commit: Commit, history, index, contributors=None):
         self.features = {}
-        self._mine_labels(commit)
+        self._mine_labels(commit, repo_full_name)
         if 'basic' in self.feature_classes:
-            self._mine_basic(commit)
+            self._mine_basic(commit, contributors)
         if 'code_analysis' in self.feature_classes:
             self._mine_code_analysis(commit)
         if 'bag_of_words' in self.feature_classes:
             self._mine_bag_of_words(commit)
-        if 'history' in self.feature_classes:
-            self._mine_history_based(commit, history_before, history_after)
+        if 'history' in self.feature_classes and history != None and index != None:
+            self._mine_history_based(history, index)
         return self.features
 
 
-    def _mine_labels(self, commit: Commit):
+    def _mine_labels(self, commit: Commit, repo_full_name):
         self._add_feature('label_sha', commit.hash)
         self._add_feature('label_commit_date', commit.committer_date)
+        self._add_feature('label_repo_full_name', repo_full_name)
 
 
-    def _mine_basic(self, commit: Commit):
-        author_to_commiter_date_diff = (commit.committer_date - commit.author_date).total_seconds()//3600
+    def _mine_basic(self, commit: Commit, contributors):
+        author_to_commiter_date_diff = (commit.committer_date - commit.author_date).total_seconds()/3600
+        author = commit.author.email.lower()
+        commiter = commit.committer.email.lower()
+
         self._add_feature('author_to_commiter_date_diff', author_to_commiter_date_diff)
-        same_author = commit.author.email.lower() == commit.committer.email.lower()
-        self._add_feature('same_author_as_commiter', same_author)
-        committed_by_bot = 'bot' in commit.committer.email.lower()
-        self._add_feature('committed_by_bot', committed_by_bot)
-        authored_by_bot = 'bot' in commit.author.email.lower()
-        self._add_feature('authored_by_bot', authored_by_bot)
+        self._add_feature('same_author_as_commiter', author == commiter)
+        self._add_feature('committed_by_bot', 'bot' in commiter)
+        self._add_feature('authored_by_bot', 'bot' in author)
 
-        self._add_feature('changed_files', len(commit.modifications))
+        author_in_top_100 = False
+        email_part = author.split('@')[0]
+        if contributors and len(email_part) > 0:
+            for c in contributors:
+                distance = levenshtein_distance(c['login'].lower(), email_part, score_cutoff=10)
+                if distance/len(email_part) < 0.33:
+                    author_in_top_100 = True
+                    break
+
+        self._add_feature('author_in_top_100', author_in_top_100)
+                
             
-        
     def _mine_code_analysis(self, commit: Commit):
         self._add_feature('dmm_unit_complexity', commit.dmm_unit_complexity)
         self._add_feature('dmm_unit_interfacing', commit.dmm_unit_interfacing)
         self._add_feature('dmm_unit_size', commit.dmm_unit_size)
 
 
-    def _mine_bag_of_words(self,commit: Commit):
+    def _mine_bag_of_words(self, commit: Commit):
         message = commit.msg.lower()
         message_escaped = self._escape_separators(message)
         title_escaped = self._escape_separators(message.split('\n')[0])
 
-        message_contains_cwe_title = any([True for x in constants_and_configs.cwe_titles if x in message_escaped])
-        self._add_feature('message_contains_cwe_title', message_contains_cwe_title)
-        title_contains_cwe_title = any([True for x in constants_and_configs.cwe_titles if x in title_escaped])
-        self._add_feature('title_contains_cwe_title', title_contains_cwe_title)
+        for k in constants_and_configs.better_security_keywords:
+            keyword_in_title = k in title_escaped
+            keyword_in_message = k in message_escaped
 
-        message_contains_security_keyword = any([True for x in constants_and_configs.security_keywords if x in message_escaped])
-        self._add_feature('message_contains_security_keyword', message_contains_security_keyword)
-        title_contains_security_keyword =  any([True for x in constants_and_configs.security_keywords if x in title_escaped])
-        self._add_feature('title_contains_security_keyword', title_contains_security_keyword)
+            self._add_feature(f'{k}_in_title', keyword_in_title)
+            self._add_feature(f'{k}_in_message', keyword_in_message)
 
 
-    def _mine_history_based(self, commit, history_before, history_after):
-        three_days_in_seconds = 3600*24*3
-        commits_in_last_3_days = [x for x in history_before if (commit.author_date - x['author_date']).total_seconds() < three_days_in_seconds]
-        self._add_feature('commits_in_last_3_days', len(commits_in_last_3_days))
-        self._add_feature('merges_in_last_3_days', len([1 for x in commits_in_last_3_days if x['merge']]))
+    def _mine_history_based(self, history, index):
+        commits_prev_7_days = []
+        commits_next_7_days = []
+        commits_next_30_days = []
+        first_merge_after = None
+        offset_of_prev_merge = -50
+        offset_of_next_merge = 50
 
-        commits_in_following_3_days = [x for x in history_after if (x['author_date']-commit.author_date).total_seconds() < three_days_in_seconds]
-        self._add_feature('commits_in_following_3_days', len(commits_in_following_3_days))
-        self._add_feature('merges_in_following_3_days', len([1 for x in commits_in_following_3_days if x['merge']]))
-        
-        prev_commit = history_before[0] if len(history_before) > 0 else None
-        next_commit = history_after[0] if len(history_after) > 0 else None
+        for offset in range(-50, 50):
+            i = index + offset
+            if i < 0:
+                continue
+            if i >= len(history): 
+                continue
+            if not history[i]:
+                continue
 
-        followed_by_merge = next_commit['merge'] if next_commit != None else False
-        time_to_prev_commit = (commit.author_date - prev_commit['author_date']).total_seconds()/3600 if prev_commit != None else float('nan')
-        time_to_next_commit = (next_commit['author_date'] - commit.author_date).total_seconds()/3600 if next_commit != None else float('nan')
-        self._add_feature('followed_by_merge', followed_by_merge)
+            delay_in_hours = (history[index].author_date - history[i].author_date).total_seconds() / 3600
+            if 0 < delay_in_hours and delay_in_hours < 7*24:
+                commits_next_7_days.append(history[i])
+            if 0 < delay_in_hours and delay_in_hours < 30*24:
+                commits_next_30_days.append(history[i])
+            if -7*24 < delay_in_hours and delay_in_hours < 0:
+                commits_prev_7_days.append(history[i])
+
+            if offset > 0 and first_merge_after == None and history[i].merge:
+                first_merge_after = history[i].author_date
+            if offset > 0 and offset_of_next_merge > offset and history[i].merge:
+                offset_of_next_merge = offset
+
+            if offset < 0 and history[i].merge:
+                offset_of_prev_merge = offset
+
+        if index - 1 < 0:
+            time_to_prev_commit = 0
+        else: 
+            time_to_prev_commit = (history[index].author_date - history[index - 1].author_date).total_seconds() / 3600
+
+        if index + 1 >= len(history):
+            time_to_next_commit = 0
+        else: 
+            time_to_next_commit = (history[index].author_date - history[index + 1].author_date).total_seconds() / 3600
+
+        self._add_feature('commits_prev_7_days', len(commits_prev_7_days))
+        self._add_feature('commits_next_7_days', len(commits_next_7_days))
+        self._add_feature('commits_next_30_days', len(commits_next_30_days))
+
+        if first_merge_after != None:
+            delay_in_hours = (history[index].author_date - first_merge_after).total_seconds() / 3600
+            self._add_feature('time_to_next_merge', delay_in_hours)
+        else:
+            self._add_feature('time_to_next_merge', float('nan'))
+
+        self._add_feature('commits_to_next_merge', offset_of_next_merge - index)
+        self._add_feature('commits_since_last_merge', index - offset_of_prev_merge)
+
         self._add_feature('time_to_prev_commit', time_to_prev_commit)
         self._add_feature('time_to_next_commit', time_to_next_commit)

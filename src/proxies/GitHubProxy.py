@@ -155,3 +155,7 @@ class GithubProxy:
 
         return result
 
+    def get_top_contributors(self, repo_owner, repo_name):
+        api_url = f'{github_api}/repos/{repo_owner}/{repo_name}/contributors?per_page=100'
+        resp = self.do_get(api_url)
+        return resp

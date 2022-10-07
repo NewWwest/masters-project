@@ -3,7 +3,7 @@ sys.path.insert(0, r'D:\Projects\aaa')
 
 import pandas as pd
 
-input_file = r'src\rq3\bq_results_analysis\issues_witf_sec_keywords.csv'
+input_file = r'issues_witf_sec_keywords.csv'
 
 df = pd.read_csv(input_file)
 result = []

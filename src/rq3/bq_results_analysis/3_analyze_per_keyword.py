@@ -1,11 +1,12 @@
+import json
 import sys
 sys.path.insert(0, r'D:\Projects\aaa')
 
 import pandas as pd
 import random
 
-input_file = r'src\rq3\bq_results_analysis\results_from_bq_search.csv'
-keywords_file = r'src\rq3\keywords.csv'
+input_file = r'results_from_bq_search.csv'
+keywords_file = r'src\rq3\extracting_keywords\keywords.csv'
 
 
 by_keyword = {}
@@ -35,6 +36,8 @@ print(len(not_found_keywords), keywords.shape[0], len(not_found_keywords)/keywor
 # finding 2:
 # smaple most and least popular:
 most_popular = {k: v for k, v in sorted(by_keyword.items(), key=lambda item: -len(item[1]))}
+with open('temp.json', 'w') as f:
+    json.dump(most_popular, f, indent=2)
 
 data_new = []
 i = 0

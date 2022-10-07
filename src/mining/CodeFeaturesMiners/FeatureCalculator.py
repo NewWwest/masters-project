@@ -1,17 +1,20 @@
 import pandas as pd
 
-from src.rq4 import constants_and_configs 
+import src.mining.CodeFeaturesMiners.constants_and_configs as constants_and_configs
 
-features_cache_location = '.'
+features_cache_location = 'results/checkpoints3'
+
 class FeatureCalculator:
     def __init__(self) -> None:
         pass
 
-    def process_repo(self, repo_full_name):
+    def process_repo(self, commits_df, files_df, repo_full_name):
         segments = repo_full_name.split('/')
-        commits_df = pd.read_csv(f'{features_cache_location}/filtered-commit-level-{segments[0]}-{segments[1]}.csv')
-        files_df = pd.read_csv(f'{features_cache_location}/filtered-file-level-{segments[0]}-{segments[1]}.csv')
 
+        if commits_df.shape[0] == 0 or files_df.shape[0] == 0:
+            features_df = pd.DataFrame([])
+            features_df.to_csv(f'{features_cache_location}/features-{segments[0]}-{segments[1]}.csv', index=False)
+            return
         
         files = files_df.groupby('label_sha')
         features = []
@@ -22,40 +25,45 @@ class FeatureCalculator:
 
         features_df = pd.DataFrame(features)
         features_df.to_csv(f'{features_cache_location}/features-{segments[0]}-{segments[1]}.csv', index=False)
+        return features_df
 
 
 
     def select_features_for_commit(self, commit_level, file_level):
         new_features = {}
         for f in features_to_copy_from_commit:
-            new_features[f]=commit_level[f]
-
-        # self.encode_extension(file_level, new_features)
+            if f in commit_level:
+                new_features[f] = commit_level[f]
+            else:
+                new_features[f] = float('nan')
 
         for f in features_to_agregate_as_flags:
             if file_level.shape[0] == 0:
                 new_features[f] = float('nan')
             else:
-                ff = file_level[file_level[f]==1]
-                new_features[f] = ff.shape[0]/file_level.shape[0]
+                if f in file_level:
+                    ff = file_level[file_level[f]==1]
+                    new_features[f] = ff.shape[0]/file_level.shape[0]
+                else:
+                    new_features[f] = float('nan')
 
         for f in features_to_agregate_as_avg_max_values:
             if file_level.shape[0] == 0:
                 new_features[f'{f}_avg'] = float('nan')
                 new_features[f'{f}_max'] = float('nan')
             else:
-                new_features[f'{f}_avg'] = file_level[f].mean()
-                new_features[f'{f}_max'] = file_level[f].max()
+                if f in file_level:
+                    new_features[f'{f}_avg'] = file_level[f].mean()
+                    new_features[f'{f}_max'] = file_level[f].max()
+                else:
+                    new_features[f'{f}_avg'] = float('nan')
+                    new_features[f'{f}_max'] = float('nan')
+
+
+        new_features['changed_files'] = len(file_level)
 
         return new_features
 
-
-    def encode_extension(self, files, feature_store):
-        extensions = set(files['extension'])
-        for ecosystem in constants_and_configs.code_extensions:
-            has_eco = any([True for x in constants_and_configs.code_extensions[ecosystem] if x in extensions])
-            feature_store[f'has_{ecosystem}'] = 1 if has_eco else 0
-        
 
 
 features_to_copy_from_commit = [
@@ -66,31 +74,98 @@ features_to_copy_from_commit = [
     'same_author_as_commiter',
     'committed_by_bot',
     'authored_by_bot',
-    'changed_files',
-    'is_merge',
+    'author_in_top_100',
     'dmm_unit_complexity',
     'dmm_unit_interfacing',
     'dmm_unit_size',
-    'message_contains_cwe_title',
-    'title_contains_cwe_title',
-    'message_contains_security_keyword',
-    'title_contains_security_keyword',
+
+    'secur_in_title',
+    'secur_in_message',
+    'vulnerab_in_title',
+    'exploit_in_title',
+    'vulnerab_in_message',
+    'exploit_in_message',
+    'certificat_in_title',
+    'certificat_in_message',
+    'authent_in_title',
+    'authent_in_message',
+    'leak_in_title',
+    'leak_in_message',
+    'sensit_in_title',
+    'sensit_in_message',
+    'crash_in_title',
+    'crash_in_message',
+    'attack_in_title',
+    'attack_in_message',
+    'deadlock_in_title',
+    'deadlock_in_message',
+    'segfault_in_title',
+    'segfault_in_message',
+    'malicious_in_title',
+    'malicious_in_message',
+    'corrupt_in_title',
+    'corrupt_in_message',
+
+    'commits_prev_7_days',
+    'commits_next_7_days',
+    'commits_next_30_days',
+    'time_to_next_merge',
+    'commits_to_next_merge',
+    'commits_since_last_merge',
+    'time_to_prev_commit',
+    'time_to_next_commit'
 ]
 
+
+
+
+
 features_to_agregate_as_flags = [
-    'is_code',
+    'has_npm_code',
+    'has_npm_like_code',
+    'has_mvn_code',
+    'has_mvn_like_code',
+    'has_pypi_code',
+    'has_pypi_like_code',
+
     'is_add',
-    'is_copy',
     'is_rename',
     'is_delete',
     'is_modify',
+
     'test_in_filename',
     'test_in_path',
-    'has_methods_with_security_keywords',
-    'change_contains_cwe_title',
-    'file_contains_cwe_title',
-    'change_contains_security_keyword',
-    'file_contains_security_keyword',
+
+    'is_file_recently_added',
+    'is_file_recently_removed',
+
+    'secur_in_file_content',
+    'vulnerab_in_file_content',
+    'exploit_in_file_content', 
+    'certificat_in_file_content', 
+    'authent_in_file_content',
+    'leak_in_file_content',
+    'sensit_in_file_content',
+    'crash_in_file_content',
+    'attack_in_file_content',
+    'deadlock_in_file_content',
+    'segfault_in_file_content',
+    'malicious_in_file_content',
+    'corrupt_in_file_content',
+
+    'secur_in_patch',
+    'vulnerab_in_patch',
+    'exploit_in_patch', 
+    'certificat_in_patch', 
+    'authent_in_patch',
+    'leak_in_patch',
+    'sensit_in_patch',
+    'crash_in_patch',
+    'attack_in_patch',
+    'deadlock_in_patch',
+    'segfault_in_patch',
+    'malicious_in_patch',
+    'corrupt_in_patch'
 ]
 
 features_to_agregate_as_avg_max_values = [
@@ -102,26 +177,38 @@ features_to_agregate_as_avg_max_values = [
     'modified_lines_count',
     'modified_lines_ratio',
     'file_size',
+
     'changed_methods_count',
     'total_methods_count',
     'file_complexity',
     'file_nloc',
     'file_token_count',
     'file_changed_method_count',
-    'max_method_fan_in',
-    'max_method_fan_out',
-    'max_method_general_fan_out',
     'max_method_token_count',
     'max_method_complexity',
     'max_method_nloc',
     'max_method_parameter_count',
-    'avg_method_fan_in',
-    'avg_method_fan_out',
-    'avg_method_general_fan_out',
     'avg_method_token_count',
     'avg_method_complexity',
     'avg_method_nloc',
     'avg_method_parameter_count',
+
+    'methods_with_secur_count',
+    'methods_with_vulnerab_count',
+    'methods_with_exploit_count',
+    'methods_with_certificat_count',
+    'methods_with_authent_count',
+    'methods_with_leak_count',
+    'methods_with_sensit_count',
+    'methods_with_crash_count',
+    'methods_with_attack_count',
+    'methods_with_deadlock_count',
+    'methods_with_segfault_count',
+    'methods_with_malicious_count',
+    'methods_with_corrupt_count',
+
+    'changes_to_file_in_prev_50_commits',
+    'changes_to_file_in_next_50_commits',
 ]
 
 

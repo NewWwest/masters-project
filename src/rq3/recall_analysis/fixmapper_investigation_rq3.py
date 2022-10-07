@@ -204,5 +204,6 @@ if __name__ == '__main__':
     main('npm')
     main('pypi')
     main('maven')
+    main()
     print('ok')
 

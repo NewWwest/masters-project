@@ -1,5 +1,5 @@
 import sys
-sys.path.insert(0, r'D:\Projects\2022')
+sys.path.insert(0, r'D:\Projects\aaa')
 
 import json
 import pandas as pd
@@ -9,7 +9,7 @@ import src.utils.utils as utils
 import src.utils.constants as constants
 from src.mining.IssuesMiners.extract_commits_from_issue import extract_commits_from_issue
 
-mapper_results_directory = 'results/security_related_commits_vuln'
+mapper_results_directory = 'results/checkpoints_fixMapper'
 result_file = 'results/security_related_commits_in_vuln.csv'
 
 
@@ -19,7 +19,7 @@ def make_csv_object(report_id, repo_owner, repo_name, commit_sha):
     res['repo_owner'] = repo_owner
     res['repo_name']  = repo_name
     res['commit_sha'] = commit_sha
-    return 
+    return res
     
 
 def main():
