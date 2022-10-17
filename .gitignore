@@ -4,6 +4,9 @@ results/**/
 .pickle
 binaries/
 secrets.py
+.joblib
+.DS_STORE
+.jar
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
