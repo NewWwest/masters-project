@@ -1,7 +1,7 @@
 import json
 import pandas as pd
 
-from src.rq5.datasets.CsvDataset import CsvDataset
+from src.rq5.datasets.supporting.CsvDataset import CsvDataset
 
 def save_dataset(dataset, filename):
     data = []

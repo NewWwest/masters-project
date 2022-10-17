@@ -1,46 +1,41 @@
 from abc import abstractmethod
-from typing import Iterable
 from pydriller import RepositoryMining, Commit
-from datetime import datetime
+import pandas as pd
 import json
 
-start_year = 2010
-checkpoint_frequency = 250
-
 class BaseMiner:
-    def __init__(self, checkpoints_directory):
+    def __init__(self, checkpoints_directory, sample_encodder):
         self.checkpoints_directory = checkpoints_directory
-
-    @abstractmethod
-    def mine_repo(self, owner: str, repo: str, repo_path: str, fix_commits: Iterable):
-        pass
-
-    @abstractmethod
-    def _should_mine_commit(self, commit):
-        pass
+        self.sample_encodder = sample_encodder
 
 
     @abstractmethod
-    def _mine_commit(self, commit: Commit):
+    def _mine_commit(self, owner, repo, commit: Commit, label_security_related):
         pass
 
+    def mine_commit2(self, owner, repo, commit: Commit, label_security_related):
+        try:
+            commit_data = self._mine_commit(owner, repo, commit, label_security_related)
+            if commit_data != None and len(commit_data) > 0:
+                flag = 'positive' if label_security_related else 'background'
+                sha = commit.hash
+                with open(f'{self.checkpoints_directory}/{flag}-samples-{owner}-{repo}-{sha}.json', 'w') as f:
+                    json.dump(commit_data, f)
+                
+                commit_data_encodded = []
+                for sample in commit_data:
+                    tokens = self.sample_encodder.process_sample(sample)
+                    res1 = {
+                        'commit_id': sample['commit_id'],
+                        'file_name': sample['file_name'],
+                        'is_security_related': sample['is_security_related'],
+                        'commit_sample': tokens
+                    }
+                    commit_data_encodded.append(res1)
 
-    def _iterate_commits(self, owner: str, repo: str, repo_path: str):
-        data = {}
-        for commit in RepositoryMining(repo_path, since=datetime(start_year, 1, 1)).traverse_commits():
-            if self._should_mine_commit(commit):
-                commit_data = self._mine_commit(owner, repo, commit)
-                if commit_data != None and len(commit_data) > 0:
-                    data[commit.hash] = commit_data
+                with open(f'{self.checkpoints_directory}/{flag}-encodings-{owner}-{repo}-{sha}.json', 'w') as f:
+                    json.dump(commit_data_encodded, f)
 
-                if len(data) >= checkpoint_frequency:
-                    self.save_to_checkpoint(data, owner, repo, commit.hash)
-                    data = {}
-
-        self.save_to_checkpoint(data, owner, repo, 'final')
-
-
-    def save_to_checkpoint(self, data, owner, repo, hash):
-        with open(f'{self.checkpoints_directory}/{owner}-{repo}-{hash}.json', 'w')  as f:
-            json.dump(data, f)
-
+        except Exception as e:
+            print('Processing commit failed', owner, repo, commit.hash)
+            print(e)

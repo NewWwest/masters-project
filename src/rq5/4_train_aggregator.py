@@ -1,7 +1,6 @@
 import sys
 sys.path.insert(0, r'D:\Projects\aaa')
 
-from transformers import AutoModel
 from transformers import get_linear_schedule_with_warmup
 import torch.nn as nn
 import torch.utils.data as data
@@ -13,10 +12,10 @@ import numpy as np
 import json
 import random
 
-from src.rq5.datasets.RawCommitDataset import RawCommitDataset
-from src.rq5.datasets.CsvDataset import CsvDataset
-from src.rq5.datasets.CommitOverSampledDataset import CommitOverSampledDataset
-from src.rq5.datasets.UnderSampledDataset import UnderSampledDataset
+from src.rq5.datasets.CommitLevelRawDataset import CommitLevelRawDataset
+from src.rq5.datasets.supporting.CsvDataset import CsvDataset
+from src.rq5.datasets.sampling.OverSampledDataset import OverSampledDataset
+from src.rq5.datasets.sampling.UnderSampledDataset import UnderSampledDataset
 
 from src.rq5.dl_utils import save_dataset, read_dataset
 from src.rq5.models.ConvAggregator import ConvAggregator as WorkingModel
@@ -24,19 +23,25 @@ from src.rq5.models.ConvAggregator import ConvAggregator as WorkingModel
 # Model config
 batch_size_ = 1
 num_epochs_ = 10
-fraction_of_data = 0.3
+fraction_of_data = 1
 train_percentage_size = 0.8
+class_ratio = 2
+learning_rate = 1e-5
+
 save_model_in_each_epoch = True
 test_model_in_each_epoch = True
-model_name = 'lstm_test2x'
+model_name = 'new_added_code_mined_test'
 work_dir = f'src/rq5/binaries/{model_name}'
 
 # Data config - Set to None if you want to use cached datasets
-raw_input_path = 'results/embedded_rolling_window_miner_results_train - Copy'
+raw_input_path = 'results/new_mined_code_added_code' #tokenized_java_only_added_code_miner_results_eval
 # raw_input_path = None
 
-eval_input_path = 'results/embedded_rolling_window_miner_results_eval - Copy'
-# eval_input_path = None
+# eval_input_path = 'results/tokenized_java_only_added_code_miner_results_eval'
+eval_input_path = None
+
+# jsut for 'just_eval':
+model_to_eval = 'epoch_1'
 
 
 device = torch.device("cuda") if torch.cuda.is_available() else torch.device("cpu")
@@ -46,7 +51,7 @@ torch.manual_seed(42)
 
 def train_model(model, optimizer, data_loader, loss_module, scheduler, test_loader = None):
     torch.cuda.empty_cache()
-    model.train() # Set model to train mode
+    model.train()
     model.to(device)
 
     accumulated_loss = 0
@@ -62,13 +67,18 @@ def train_model(model, optimizer, data_loader, loss_module, scheduler, test_load
                 # Step 0: Diagnostics :x
                 positive_samples += len([1 for x in data_labels if x[0] == 1])
                 all_samples += len(data_labels)
+
+                #TODO different commit mode and sample mode
+                data_inputs = torch.stack(data_inputs)
                 
-                # Step 1: Mode data to device
+                # Step 1: Mode data to device 
                 data_inputs = data_inputs.to(device)
-                data_labels = data_labels.to(device)
+                data_labels = data_labels.to(device) 
 
                 # Step 2: Calculate model output
                 preds = model(data_inputs)
+                
+                #TODO different commit mode and sample mode
                 # preds = preds.squeeze(dim=0)
 
                 # Step 3: Calculate loss
@@ -92,7 +102,6 @@ def train_model(model, optimizer, data_loader, loss_module, scheduler, test_load
 
         if test_loader != None:
             eval_model(model, test_loader)
-            model.train()
 
 
     print(f'Model saw positive samples {positive_samples} times and background samples {all_samples-positive_samples}')
@@ -101,7 +110,7 @@ def train_model(model, optimizer, data_loader, loss_module, scheduler, test_load
 
 def eval_model(model, data_loader):
     torch.cuda.empty_cache()
-    model.eval() # Set model to eval mode
+    model.eval()
     model.to(device)
 
     all_labels = []
@@ -109,10 +118,15 @@ def eval_model(model, data_loader):
     data_size = len(data_loader)
     with tqdm.tqdm(total=data_size) as pbar:
         for data_inputs, data_labels in data_loader:
+
+            #TODO different commit mode and sample mode
+            data_inputs = torch.stack(data_inputs)
+
             data_inputs = data_inputs.to(device)
             data_labels = data_labels.to(device)
             preds = model(data_inputs)
-            preds = preds.squeeze(dim=0)
+            #TODO different commit mode and sample mode
+            # preds = preds.squeeze(dim=0)
 
             labels_in_memory = data_labels.cpu().detach().numpy()
             if len(labels_in_memory.shape) == 1:
@@ -130,7 +144,8 @@ def eval_model(model, data_loader):
 
             pbar.update()
 
-    predictions_arr = [1 if x[0]>x[1] else 0 for x in all_predictions]
+    #TODO different commit mode and sample mode
+    predictions_arr = [1 if x[0,0]>x[0,1] else 0 for x in all_predictions]
     targets_arr = [1 if x[0]>x[1] else 0 for x in all_labels]
     P = len([1 for x in range(len(predictions_arr)) if predictions_arr[x]==1])
     TP = len([1 for x in range(len(predictions_arr)) if predictions_arr[x]==1 and targets_arr[x]==1])
@@ -150,26 +165,28 @@ def eval_model(model, data_loader):
 
 def load_data(input_path):
     # Load Data
-
-    dataset = RawCommitDataset(input_path)
+    dataset = CommitLevelRawDataset()
+    dataset.load(input_path)
 
     # Data limit for testing
-    dataset_sampled_size = int(len(dataset)*fraction_of_data)
-    dataset, rejected_data = torch.utils.data.random_split(dataset, [dataset_sampled_size, len(dataset)-dataset_sampled_size])
-    
+    if fraction_of_data < 1:
+        dataset, rejected_data = dataset.split_data(fraction_of_data)
+
     # Train/Test split & rebalancing
-    train_dataset_size = int(len(dataset) * train_percentage_size)
-    train_dataset, test_dataset = torch.utils.data.random_split(dataset , [train_dataset_size, len(dataset)-train_dataset_size])
-    train_dataset = CommitOverSampledDataset(train_dataset, 2)
+    train_dataset, test_dataset = dataset.split_data(train_percentage_size)
 
-    # Save the data
-    save_dataset(train_dataset, f'{work_dir}/train_dataset_{model_name}.csv')
-    save_dataset(test_dataset, f'{work_dir}/test_dataset_{model_name}.csv')
+     #TODO different commit mode and sample mode
+    # train_dataset = OverSampledDataset(train_dataset, class_ratio)
 
-    return train_dataset,test_dataset
+     #TODO different commit mode and sample mode
+    # # Save the data
+    # save_dataset(train_dataset, f'{work_dir}/train_dataset_{model_name}.csv')
+    # save_dataset(test_dataset, f'{work_dir}/test_dataset_{model_name}.csv')
+
+    return train_dataset, test_dataset
 
 
-def main():
+def finetune_and_eval():
     # Load data
     if raw_input_path != None:
         train_dataset, test_dataset = load_data(raw_input_path)
@@ -178,18 +195,17 @@ def main():
         test_dataset = read_dataset(f'{work_dir}/test_dataset_{model_name}.csv')
     
     # Define model
-    # learning_rate = 0.5
-    learning_rate = 2e-5
-    print('Learning rate:', learning_rate)
     model = WorkingModel()
     loss_module = nn.CrossEntropyLoss()
     optimizer = torch.optim.AdamW(model.parameters(), lr=learning_rate, eps=1e-8)
-    scheduler = get_linear_schedule_with_warmup(optimizer=optimizer, num_warmup_steps=int(len(train_dataset)*0.25), num_training_steps=len(train_dataset)*num_epochs_)
+    scheduler = get_linear_schedule_with_warmup(optimizer=optimizer, 
+        num_warmup_steps=int(len(train_dataset)*0.25), 
+        num_training_steps=len(train_dataset)*num_epochs_)
 
     # Prep the loaders
-    train_data_loader = data.DataLoader(train_dataset, batch_size=batch_size_, shuffle=True)
+    train_data_loader = data.DataLoader(train_dataset, batch_size=batch_size_, drop_last=True, shuffle=True)
     if test_model_in_each_epoch:
-        test_data_loader = data.DataLoader(test_dataset, batch_size=batch_size_, shuffle=True)
+        test_data_loader = data.DataLoader(test_dataset, batch_size=batch_size_, drop_last=True, shuffle=True)
     else:
         test_data_loader = None
 
@@ -198,27 +214,31 @@ def main():
     torch.save(model.state_dict(), f'{work_dir}/model_{model_name}_final.pickle')
 
     # Test the model on test subset
-    test_data_loader = data.DataLoader(test_dataset, batch_size=batch_size_)
+    test_data_loader = data.DataLoader(test_dataset, drop_last=True, batch_size=batch_size_)
     eval_model(model, test_data_loader)
 
     # Test the model on eval subset
     if eval_input_path != None:
-        eval_dataset = RawCommitDataset(eval_input_path)
-        eval_data_loader = data.DataLoader(eval_dataset, batch_size=batch_size_)
+        eval_dataset = CommitLevelRawDataset()
+        eval_dataset.load(eval_input_path)
+        eval_data_loader = data.DataLoader(eval_dataset, drop_last=True, batch_size=batch_size_)
         eval_model(model, eval_data_loader)
 
 
-def main2():
+def just_eval():
     model = WorkingModel()
-    model.load_state_dict(torch.load(f'{work_dir}/model_{model_name}_epoch_5.pickle'))
-    if eval_input_path != None:
-        eval_dataset = RawCommitDataset(eval_input_path)
-        eval_data_loader = data.DataLoader(eval_dataset, batch_size=batch_size_)
-        eval_model(model, eval_data_loader)
+    model.load_state_dict(torch.load(f'{work_dir}/model_{model_name}_{model_to_eval}.pickle'))
+    eval_dataset = CommitLevelRawDataset()
+    eval_dataset.load(eval_input_path)
+    eval_data_loader = data.DataLoader(eval_dataset, drop_last=True, batch_size=batch_size_)
+    eval_model(model, eval_data_loader)
+
+
 
 if __name__ == '__main__':
     start_time = time.time()
-    main()
+    finetune_and_eval()
+    # just_eval()
     print("--- %s seconds ---" % (time.time() - start_time))
 
 

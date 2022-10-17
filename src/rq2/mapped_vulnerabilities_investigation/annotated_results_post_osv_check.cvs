@@ -1,0 +1,400 @@
+issue_url,issue_title,manual,cve_id
+https://api.github.com/repos/AFNetworking/AFNetworking/issues/2856,Removed Certificate Chain Validation,ok,nan
+https://api.github.com/repos/AFNetworking/AFNetworking/issues/2733,Implemented Public Key Hash Pinning,ok,nan
+https://api.github.com/repos/Alamofire/Alamofire/issues/537,Allow NSURLCredential persistence to be specified,ok,nan
+https://api.github.com/repos/Automattic/wp-calypso/issues/61766,Ensure we refetch account recovery data after reauthorizing,ok,nan
+https://api.github.com/repos/Automattic/wp-calypso/issues/36809,2fa: The SMS fallback option is shown even when a given WP.com account doesn't use SMS as second factor,ok,nan
+https://api.github.com/repos/Automattic/wp-calypso/issues/26882,Qatar Phone Number not validating for 2FA,ok,nan
+https://api.github.com/repos/Automattic/wp-calypso/issues/23346,Security: Verify phone number given when selecting 2FA by app.,ok,nan
+https://api.github.com/repos/Automattic/wp-calypso/issues/22572,Security: 2FA switching phones is cumbersome,ok,nan
+https://api.github.com/repos/CachetHQ/Cachet/issues/411,Protect edit user routes,ok,nan
+https://api.github.com/repos/CleverRaven/Cataclysm-DDA/issues/58682,Infrared vision does not obey FoV restrictions,ok,nan
+https://api.github.com/repos/CleverRaven/Cataclysm-DDA/issues/50953,Generic Guns mod breaks some recipes,ok,nan
+https://api.github.com/repos/CleverRaven/Cataclysm-DDA/issues/50730,Character creation recipes stay if skill in increased to max then decreased,ok,nan
+https://api.github.com/repos/CleverRaven/Cataclysm-DDA/issues/47569,Infinite Bartering,ok,nan
+https://api.github.com/repos/Graylog2/graylog2-server/issues/8988,Fix path traversal in swagger resource. (3.3),ok,nan
+https://api.github.com/repos/JuliaLang/julia/issues/42415,stegr! call segfault,ok,nan
+https://api.github.com/repos/JuliaLang/julia/issues/28435,Private package add emits SecretBuffer exposure warning,ok,nan
+https://api.github.com/repos/OrchardCMS/OrchardCore/issues/2177,Security sensitive permissions,ok,nan
+https://api.github.com/repos/OrchardCMS/OrchardCore/issues/1966,the key ring of DataProtection is potentially shared between tenants,ok,nan
+https://api.github.com/repos/PrivateBin/PrivateBin/issues/91,Additional headers for XSS mitigation,ok,nan
+https://api.github.com/repos/PrivateBin/PrivateBin/issues/27,Switch to AES GCM,ok,nan
+https://api.github.com/repos/SerenityOS/serenity/issues/4876,LibCore: EventLoop::start_rpc_server TOCTOU race condition may lead to arbitrary chmod/unlink,ok,nan
+https://api.github.com/repos/SignalR/SignalR/issues/1413,Add CSRF protection for SignalR requests,ok,nan
+https://api.github.com/repos/StackStorm/st2/issues/5183,Added web security headers for nginx configuration,ok,nan
+https://api.github.com/repos/TrinityCore/TrinityCore/issues/21044,Core/Movements: Speed exploit,ok,nan
+https://api.github.com/repos/TrinityCore/TrinityCore/issues/16347,[3.3.5][6.x] Core/Spell: Val'kyr Target Search,ok,nan
+https://api.github.com/repos/allinurl/goaccess/issues/1867,XSS on real-time HTML report,ok,nan
+https://api.github.com/repos/andOTP/andOTP/issues/378,AuthenticationActivity is missing secure flag and can be screencaptured,ok,nan
+https://api.github.com/repos/ansible/ansible/issues/67937,[stable-2.8] win_unzip - normalize and compare paths to prevent path traversal (#67799),ok, CVE-2020-1737 
+https://api.github.com/repos/ansible/ansible/issues/67801,fetch - normalize and validate paths,ok, CVE-2020-1735 
+https://api.github.com/repos/ansible/ansible/issues/67798,ansible-vault edit race condition,ok, CVE-2020-1740 
+https://api.github.com/repos/apache/druid/issues/10874,Filter unauthorized views in InformationSchema,ok,nan
+https://api.github.com/repos/apache/openwhisk/issues/3603,"Java root processes from kafka, controller and invoker",ok,nan
+https://api.github.com/repos/argoproj/argo-cd/issues/9738,Disallow all out-of-bounds symlinks in manifest repositories,ok, CVE-2022-31036 | CVE-2022-31036
+https://api.github.com/repos/argoproj/argo-cd/issues/6712,feat: enable specifying root ca for oidc (#6712),ok,nan
+https://api.github.com/repos/argoproj/argo-cd/issues/6209,Limited support for Diffie-Hellman and secure key exchange,ok,nan
+https://api.github.com/repos/argoproj/argo-cd/issues/3632,fix: oidc should set samesite cookie,ok,nan
+https://api.github.com/repos/argoproj/argo-workflows/issues/7797,Replace use of `kubectl` with pure Go in the resource template code,ok,nan
+https://api.github.com/repos/bettercap/bettercap/issues/12,randomize certificate generation names,ok,nan
+https://api.github.com/repos/bigchaindb/bigchaindb/issues/1937,Fixes #1930,ok,nan
+https://api.github.com/repos/bitnami-labs/sealed-secrets/issues/814,Include cosign public key,ok,nan
+https://api.github.com/repos/brave/browser-laptop/issues/14772,disable non-chrome-extension origins from navigating to chrome-extension,ok,nan
+https://api.github.com/repos/brave/browser-laptop/issues/12742,page security state for passive mixed content is incorrect,ok,nan
+https://api.github.com/repos/chocolatey/choco/issues/446,Allow hashing files for checksums with FIPS compliant algorithms,ok,nan
+https://api.github.com/repos/coder/code-server/issues/4355,Cross Site Scripting（XSS）vulnerability in code-server,ok, CVE-2021-42648 
+https://api.github.com/repos/crossplane/crossplane/issues/958,Cluster scoped stacks should be able to install cluster scoped CRDs,ok,nan
+https://api.github.com/repos/crystal-lang/crystal/issues/12076,Fix check for null byte in `File#tempfile` args,ok,nan
+https://api.github.com/repos/crystal-lang/crystal/issues/11847,Fix character mappings for Windows path conversions,ok,nan
+https://api.github.com/repos/distribution/distribution/issues/3466,[release/2.7] github.com/golang-jwt/jwt v3.2.2,ok,nan
+https://api.github.com/repos/distribution/distribution/issues/341,Make the use of resumable digest optional,ok,nan
+https://api.github.com/repos/dompdf/dompdf/issues/2450,use JSON for font metrics cache instead of PHP,ok,GHSA-x752-qjv4-c4hc
+https://api.github.com/repos/dompdf/dompdf/issues/2161,Data Execution Vulnerability,ok,GHSA-x752-qjv4-c4hc
+https://api.github.com/repos/dropwizard/dropwizard/issues/2748,Don't use X-Forwarded-* headers by default,ok,nan
+https://api.github.com/repos/expo/expo/issues/5003,SecureStore.setItemAsync causing error on Android API level 22,ok,nan
+https://api.github.com/repos/freedomofpress/securedrop/issues/3399,Use python-cryptography in SecureDrop,ok,nan
+https://api.github.com/repos/golang/go/issues/53621,net/http/httputil: NewSingleHostReverseProxy - omit X-Forwarded-For not working [1.18 backport],ok, CVE-2022-32148 
+https://api.github.com/repos/golang/go/issues/53415,io/fs: stack exhaustion in Glob,ok, CVE-2022-30630 
+https://api.github.com/repos/golang/go/issues/50058,net/http: limit growth of header canonicalization cache,ok, CVE-2021-44716 
+https://api.github.com/repos/gopasspw/gopass/issues/425,Gopass sync should give more metadata for importing keys,ok,nan
+https://api.github.com/repos/gravitational/teleport/issues/10741,Leaf cluster CA sanitizing,ok,nan
+https://api.github.com/repos/hapijs/hapi/issues/3466,Non-handling of accept-encoding header when the value does not conform to the specification,ok, CVE-2017-16013 
+https://api.github.com/repos/hapijs/hapi/issues/2988,Handle invalid date exceptions,ok, CVE-2015-9241 
+https://api.github.com/repos/kedacore/keda/issues/2165,MySQL Scaler: Secrets openly shown in metric name,ok,nan
+https://api.github.com/repos/keepassxreboot/keepassxc/issues/5941,About window blocks database lock,ok,nan
+https://api.github.com/repos/keepassxreboot/keepassxc/issues/3673,Check include malloc.h and malloc_usable_size(3),ok,nan
+https://api.github.com/repos/keepassxreboot/keepassxc/issues/1659,Raise error if challenge-response failed during KDBX4 key transformation,ok,nan
+https://api.github.com/repos/keepassxreboot/keepassxc/issues/958,Clear database open dialog before and after merging a database,ok,nan
+https://api.github.com/repos/keepassxreboot/keepassxc/issues/235,Prompt the user before executing a command in a cmd:// URL,ok,nan
+https://api.github.com/repos/keeweb/keeweb/issues/1350,[Feature request] Clear master key field after auto lock period,ok,nan
+https://api.github.com/repos/labstack/echo/issues/1647,jwt-go Access Restriction Bypass Vuln,ok,nan
+https://api.github.com/repos/mastodon/mastodon/issues/8372,Improve federated ID validation,ok,nan
+https://api.github.com/repos/metabase/metabase/issues/20357,"Setting a filter to ""Locked"" in Embedding is not possible",ok,nan
+https://api.github.com/repos/mozilla-mobile/firefox-ios/issues/8324,FXIOS-1701 ⁃ 😎 1670127,ok,nan
+https://api.github.com/repos/neo4j/neo4j/issues/10709,Allow null realm in ShiroAuthToken,ok,nan
+https://api.github.com/repos/neo4j/neo4j/issues/10528,Clear in-memory password in HazelcastSslContextFactory,ok,nan
+https://api.github.com/repos/neo4j/neo4j/issues/10525,[tls] disable client-initiated renegotiation,ok,nan
+https://api.github.com/repos/neo4j/neo4j/issues/8920,Added user-defined function whitelisting.,ok,nan
+https://api.github.com/repos/neo4j/neo4j/issues/8717,Added a validator for dbms.security.auth_provider(s),ok,nan
+https://api.github.com/repos/neo4j/neo4j/issues/8432,Tests to verify conns closed after unrecoverable security failures,ok,nan
+https://api.github.com/repos/nodejs/node/issues/21346,deps: float 949ff366 from openssl (ECDSA blinding) (8.x backport),ok, CVE-2018-0732 
+https://api.github.com/repos/nodejs/node/issues/11968,"src, buffer: add --pending-deprecation flag",ok,nan
+https://api.github.com/repos/openpgpjs/openpgpjs/issues/672,Adds Brainpool Curves + tests + docs,ok,nan
+https://api.github.com/repos/opensearch-project/OpenSearch/issues/816,Fix resource leak issues suggested by Amazon CodeGuru,ok,nan
+https://api.github.com/repos/outline/outline/issues/3738,Disable webhooks on users suspension,ok,nan
+https://api.github.com/repos/owncloud/core/issues/24991,do not generate device token if 2FA is enable for user,ok,nan
+https://api.github.com/repos/paramiko/paramiko/issues/714,Don't pass IV to pycrypto when using MODE_CTR,ok,nan
+https://api.github.com/repos/pingcap/tidb/issues/15430,*: use https protocol between tidb-pd tidb-tidb when cluster-ssl configured (#15342) (#15419),ok,GHSA-4whx-7p29-mq22
+https://api.github.com/repos/portainer/portainer/issues/3226,Non-admin users can do anything an admin user can via the API,ok, CVE-2019-16872 | CVE-2019-16874 | CVE-2019-16877
+https://api.github.com/repos/portainer/portainer/issues/2167,feat(security): update secured headers and sanitize team name,ok, CVE-2018-16316 
+https://api.github.com/repos/project-chip/connectedhomeip/issues/4554,Refactor out gLineBuffer  in MessageDef,ok,nan
+https://api.github.com/repos/pyroscope-io/pyroscope/issues/299,Replaced no longer maintained jwt-go with golang-jwt/jwt,ok,nan
+https://api.github.com/repos/rest-client/rest-client/issues/369,CVE-2015-1820: rest-client passes values from Set-Cookie headers to arbitrary redirection target,ok,CVE-2015-1820
+https://api.github.com/repos/rook/rook/issues/4571,Insecure PRNG used to generate dashboard password,ok,nan
+https://api.github.com/repos/ruffle-rs/ruffle/issues/3444,"Javascript scheme checking needs more sanitizing, could cause XSS",ok,nan
+https://api.github.com/repos/rundeck/rundeck/issues/7569,"RUN-706: Add feature flag to disable ""Job File Option"" uploads",ok,nan
+https://api.github.com/repos/searx/searx/issues/715,HTTP headers,ok,nan
+https://api.github.com/repos/sinatra/sinatra/issues/310,Sinatra or sinatra-contrib has to do path traversal prevention,ok,nan
+https://api.github.com/repos/splitbrain/dokuwiki/issues/2081,CVE-2017-12980 Stored XSS in xhtml.php with RSS/Atom feed,ok, CVE-2017-12980 
+https://api.github.com/repos/symfony/symfony/issues/47069,[Security] Allow redirect after login to absolute URLs,ok,nan
+https://api.github.com/repos/symfony/symfony/issues/46109,[Security] Don't allow empty username or empty password,ok,nan
+https://api.github.com/repos/symfony/symfony/issues/45844,[Security] Add Bearer Authenticator,ok,nan
+https://api.github.com/repos/symfony/symfony/issues/45385,[Security] Add debug info about auth entry point,ok,nan
+https://api.github.com/repos/symfony/symfony/issues/46438,[SecurityBundle] Remove dead `class_exists` checks,ok,nan
+https://api.github.com/repos/symfony/symfony/issues/41024,[PasswordHasher] EncoderFactory broken if a custom hasher is configured,ok,nan
+https://api.github.com/repos/symfony/symfony/issues/39982,[SecurityBundle] Fix referencing aliases from RegisterEntryPointsPass,ok,nan
+https://api.github.com/repos/symfony/symfony/issues/37254,"security-bundle 5.1.1 does not work with ""enable_authenticator_manager: true"" ",ok,nan
+https://api.github.com/repos/symfony/symfony/issues/36661,[SecurityBundle] Fixed entry point service ID resolving and multiple guard entry points,ok,nan
+https://api.github.com/repos/thoughtbot/administrate/issues/1494,Render all records allowed by the authorization scope,ok,nan
+https://api.github.com/repos/tridactyl/tridactyl/issues/1713,Websites can feed Tridactyl fake key events,ok, CVE-2019-1020004 
+https://api.github.com/repos/uutils/coreutils/issues/1730,od: remove potential unsoundness and an allocation in PartialReader,ok,nan
+https://api.github.com/repos/verdaccio/verdaccio/issues/2800,feat: add rate limit to user api endpoints,ok,nan
+https://api.github.com/repos/verdaccio/verdaccio/issues/1373,feat: prevent secrets from leaking to source control,ok,nan
+https://api.github.com/repos/vitejs/vite/issues/8498,Unrestricted directory traversal with `@fs` (Bypass),ok,nan
+https://api.github.com/repos/vitejs/vite/issues/2850,fix: prevent serving unrestricted files (fix #2820),ok,nan
+https://api.github.com/repos/web-platform-tests/wpt/issues/33213,[SPC] Add payeeName option,ok,nan
+https://api.github.com/repos/web-platform-tests/wpt/issues/31687,[SPC] Fixup links and one more test,ok,nan
+https://api.github.com/repos/wesnoth/wesnoth/issues/2603,Upgrade and improve Blowfish password hashing (bcrypt),ok,nan
+https://api.github.com/repos/angular/angular/issues/40837,fix(core): support sanitizing uncontained `<tr>` and `<td>` elements,ok,nan
+https://api.github.com/repos/angular/angular/issues/40836,fix(core): support sanitizing uncontained `<tr>` and `<td>` elements,ok,nan
+https://api.github.com/repos/angular/angular/issues/40107,fix(core): ensure sanitizer works if DOMParser return null body,ok,nan
+https://api.github.com/repos/angular/angular/issues/32392,fix(zone.js): a path traversal attack in test,ok,nan
+https://api.github.com/repos/angular/angular/issues/22077,LTS-only - fix(core): use appropriate inert document strategy for Firefox & Safari ,ok,nan
+https://api.github.com/repos/angular/angular/issues/18100,New HTTP package has no XSRF support,ok,nan
+https://api.github.com/repos/angular/angular/issues/17019,fix(core): use appropriate inert document strategy for Firefox & Safari,ok,nan
+https://api.github.com/repos/angular/angular/issues/11264,fix(DomRegistry): add missing elements,ok,nan
+https://api.github.com/repos/aws-amplify/amplify-js/issues/7106,"Auth.currentSession () don'ts work in SSR, when token expires",ok,nan
+https://api.github.com/repos/aws-amplify/amplify-js/issues/4490,Fixes #1368 - Unable to verify secret hash for client,ok,nan
+https://api.github.com/repos/eslint/eslint/issues/13051,Fix: Backport removal of mkdirp to 6.x (fixes #13050),ok,nan
+https://api.github.com/repos/expo/expo/issues/11272,SecureStore variables not accessible after ejecting,ok,nan
+https://api.github.com/repos/expo/expo/issues/9669,[secure-store] Created isAvailableAsync method,ok,nan
+https://api.github.com/repos/expo/expo/issues/7179,expo-app-auth docs shouldn't use Async Storage,ok,nan
+https://api.github.com/repos/expo/expo/issues/5561,[SecureStore] Changing passcode does not remove SecureStore entries or prevent from setting entries,ok,nan
+https://api.github.com/repos/expo/expo/issues/5003,SecureStore.setItemAsync causing error on Android API level 22,ok,nan
+https://api.github.com/repos/expo/expo/issues/3963,Add size limit check to SecureStore ,ok,nan
+https://api.github.com/repos/expo/expo/issues/2556,SecureStore fails storing strings longer than 4072 characters on some Android devices,ok,nan
+https://api.github.com/repos/expo/expo/issues/1765,SecureStore does not support large strings,ok,nan
+https://api.github.com/repos/hapijs/hapi/issues/4352,Change XSS header default to '0',ok,nan
+https://api.github.com/repos/hapijs/hapi/issues/3775,Add support for Referrer-Policy header,ok,nan
+https://api.github.com/repos/hapijs/hapi/issues/3538,Add support for Referrer-Policy security header,ok,nan
+https://api.github.com/repos/hapijs/hapi/issues/3466,Non-handling of accept-encoding header when the value does not conform to the specification,ok, CVE-2017-16013 
+https://api.github.com/repos/hapijs/hapi/issues/2990,Fix cors config cascade. Closes #2980,ok, CVE-2015-9243 
+https://api.github.com/repos/hapijs/hapi/issues/2988,Handle invalid date exceptions,ok, CVE-2015-9241 
+https://api.github.com/repos/hapijs/hapi/issues/2987,Catch invalid date exceptions,ok, CVE-2015-9241 
+https://api.github.com/repos/hapijs/hapi/issues/2980,Route level CORS config overrides connection level defaults,ok, CVE-2015-9243 
+https://api.github.com/repos/hapijs/hapi/issues/2867,Skip extensions for notFound and badRequest,ok,nan
+https://api.github.com/repos/hapijs/hapi/issues/2858,Add 'Accept' to default header per #2855,ok,nan
+https://api.github.com/repos/hapijs/hapi/issues/2840,CORS route-specific override can conflict with connection defaults,ok, CVE-2015-9236 
+https://api.github.com/repos/hapijs/hapi/issues/2776,Add preload flag to HSTS header and fix casing for includeSubDomains.,ok,nan
+https://api.github.com/repos/hapijs/hapi/issues/2773,Detects and rejects malformed response headers,ok,nan
+https://api.github.com/repos/hapijs/hapi/issues/2757,Require allowInternals option on server.inject() to call isInternal routes,ok,nan
+https://api.github.com/repos/hapijs/hapi/issues/2491,CORS pre-fetch not respecting per-route config,ok, CVE-2015-9236 
+https://api.github.com/repos/hapijs/hapi/issues/2370,Add xss protection to validation response,ok,nan
+https://api.github.com/repos/hapijs/hapi/issues/1915,Issue/1911,ok,nan
+https://api.github.com/repos/hapijs/hapi/issues/1913,Change proxy localStatePassThrough setting default to false,ok,nan
+https://api.github.com/repos/hapijs/hapi/issues/1911,Exclude configured cookies from proxy passthrough,ok,nan
+https://api.github.com/repos/hapijs/hapi/issues/1813,Add cookie exclusion list in proxy config,ok,nan
+https://api.github.com/repos/hapijs/hapi/issues/1810,set X-Content-Type-Options to nosnif for jsonp responses,ok,nan
+https://api.github.com/repos/hapijs/hapi/issues/1766,prepend jsonp callbacks with a comment to prevent the rosetta-flash vulnerability,ok,nan
+https://api.github.com/repos/hapijs/hapi/issues/1461,Security headers,ok,nan
+https://api.github.com/repos/hapijs/hapi/issues/1387,EMFILE error when hapi serves static files over period of time in hapi 2.1.2,ok,nan
+https://api.github.com/repos/highlightjs/highlight.js/issues/3281,Trusted Types compatibility,ok,nan
+https://api.github.com/repos/janl/mustache.js/issues/388,Backtick is added to entityMap,ok, CVE-2015-8862 
+https://api.github.com/repos/ljharb/qs/issues/201,fix: follow allowPrototypes during merge,ok, CVE-2017-1000048 
+https://api.github.com/repos/ljharb/qs/issues/200,prototype override protection bypass problem still exists.,ok, CVE-2017-1000048 
+https://api.github.com/repos/ljharb/qs/issues/73,Property 'hasOwnProperty' of object #<Object> is not a function,ok,nan
+https://api.github.com/repos/mochajs/mocha/issues/4200,Drop mkdirp and replace it with fs.mkdirSync,ok,nan
+https://api.github.com/repos/mochajs/mocha/issues/4199,Replace vulnerable mkdirp with fs.mkdir,ok,nan
+https://api.github.com/repos/mochajs/mocha/issues/3686,fix regex in utils.stackTraceFilter to prevent ReDoS #3416,ok,nan
+https://api.github.com/repos/mui/material-ui/issues/31062,[website] Minor security improvements,ok,nan
+https://api.github.com/repos/mui/material-ui/issues/23015,Security Fix for Prototype Pollution - huntr.dev,ok,nan
+https://api.github.com/repos/mysqljs/mysql/issues/816,SSL does not verify remote certificate,ok,nan
+https://api.github.com/repos/raszi/node-tmp/issues/218,name option must always be relative to the tmp directory and must never be absolute,ok,nan
+https://api.github.com/repos/raszi/node-tmp/issues/207,dir option must always be relative to the standard tmp directory,ok,nan
+https://api.github.com/repos/raszi/node-tmp/issues/156,SECURITY: options.template allows arbitrary paths to be injected into tmp,ok,nan
+https://api.github.com/repos/shelljs/shelljs/issues/1058,Trying to get in touch regarding a security issue,ok, CVE-2022-0144 
+https://api.github.com/repos/shelljs/shelljs/issues/945,0.8.3 high severity vuln,ok,nan
+https://api.github.com/repos/shelljs/shelljs/issues/866,feat: add shell.cmd to replace exec,ok,nan
+https://api.github.com/repos/shelljs/shelljs/issues/842,High severity vulnerability in shelljs 0.8.1,ok,nan
+https://api.github.com/repos/shelljs/shelljs/issues/810,Snyk vulnerability DB reporting command injection vulnerability in ShellJS,ok,nan
+https://api.github.com/repos/shelljs/shelljs/issues/790,Use execFileSync to launch child process,ok,nan
+https://api.github.com/repos/shelljs/shelljs/issues/786,refactor(exec): move child process to source file,ok,nan
+https://api.github.com/repos/shelljs/shelljs/issues/782,Harden shell.exec by writing the child process in a source file,ok,nan
+https://api.github.com/repos/shelljs/shelljs/issues/766,"Snyk ""high severity"" issue",ok,nan
+https://api.github.com/repos/shelljs/shelljs/issues/765,"Snyk ""high security",ok,nan
+https://api.github.com/repos/shelljs/shelljs/issues/365,fix(exec): properly handles paths with spaces and quotes,ok,nan
+https://api.github.com/repos/shelljs/shelljs/issues/358,feat(set): add -f option to disable globbing,ok,nan
+https://api.github.com/repos/shelljs/shelljs/issues/344,Add -f option to set(),ok,nan
+https://api.github.com/repos/shelljs/shelljs/issues/103,Allow multiple string arguments for exec(),ok,nan
+https://api.github.com/repos/storybookjs/storybook/issues/18497,Core: Replace `cpy` with `fs-extra` copy/copyFile,ok,nan
+https://api.github.com/repos/storybookjs/storybook/issues/18468,[dependencies] Remove dependency to trim newlines,ok,nan
+https://api.github.com/repos/storybookjs/storybook/issues/18277,Security: Update x-default-browser and fix issue with package.,ok,nan
+https://api.github.com/repos/storybookjs/storybook/issues/18157,security: update x-default-browser,ok,nan
+https://api.github.com/repos/storybookjs/storybook/issues/16415,Core: Add `core.channelOptions` to main.js config,ok,nan
+https://api.github.com/repos/storybookjs/storybook/issues/15399,remove glob-base dependency,ok,nan
+https://api.github.com/repos/storybookjs/storybook/issues/15174,glob-parent Security Vulnerability,ok,nan
+https://api.github.com/repos/storybookjs/storybook/issues/7100,cli: replaced merge-dirs dependency by fs-extra,ok,nan
+https://api.github.com/repos/storybookjs/storybook/issues/5693,[Snyk] Fix for 1 vulnerable dependencies,ok,nan
+https://api.github.com/repos/Azure/azure-sdk-for-python/issues/13316,"""Warning: Discriminator source is absent or null, use base class ResourceDetails."" when serializing SecurityAssessment object",ok,nan
+https://api.github.com/repos/aiogram/aiogram/issues/673,Fix: get the left-most ip when there is multiple,ok,nan
+https://api.github.com/repos/ansible/ansible/issues/73243,[bp-2.9] bitbucket_pipeline_variable: Hide secured values in console log,ok, CVE-2021-20180 
+https://api.github.com/repos/ansible/ansible/issues/73242,[bp-2.8] bitbucket_pipeline_variable: Hide secured values in console log,ok, CVE-2021-20180 
+https://api.github.com/repos/ansible/ansible/issues/73189,[bp-2.8] snmp_facts: Hide user sensitive information in console,ok, CVE-2021-20178 
+https://api.github.com/repos/ansible/ansible/issues/73188,[bp-2.9] snmp_facts: Hide user sensitive information in console,ok, CVE-2021-20178 
+https://api.github.com/repos/ansible/ansible/issues/71535,[2.9] kubectl: redacted token and password from console log,ok, CVE-2020-1753 
+https://api.github.com/repos/ansible/ansible/issues/71233,"[stable-2.8] Revert ""Change default file permissions so they are not world readable (#70221) (#70827)""",ok, CVE-2020-1736 
+https://api.github.com/repos/ansible/ansible/issues/71232,"[stable-2.9] Revert ""Change default file permissions so they are not world readable (#70221) (#70825)""",ok, CVE-2020-1736 
+https://api.github.com/repos/ansible/ansible/issues/71231,"Revert ""Change default file permissions so they are not world readable (#70221)""",ok, CVE-2020-1736 
+https://api.github.com/repos/ansible/ansible/issues/70827,[stable-2.8] Change default file permissions so they are not world readable (#70221),ok, CVE-2020-1736 
+https://api.github.com/repos/ansible/ansible/issues/70825,[stable-2.9] Change default file permissions so they are not world readable (#70221),ok, CVE-2020-1736 
+https://api.github.com/repos/ansible/ansible/issues/70824,[stable-2.10] Change default file permissions so they are not world readable (#70221),ok, CVE-2020-1736 
+https://api.github.com/repos/ansible/ansible/issues/70822,[2.8] Sanitize URI module keys with no_log values (#70762),ok,GHSA-3m93-m4q6-mc6v
+https://api.github.com/repos/ansible/ansible/issues/70221,Change default file permissions so they are not world readable,ok, CVE-2020-1736 
+https://api.github.com/repos/ansible/ansible/issues/67938,[stable-2.7] win_unzip - normalize and compare paths to prevent path traversal (#67799),ok, CVE-2020-1737 
+https://api.github.com/repos/ansible/ansible/issues/67937,[stable-2.8] win_unzip - normalize and compare paths to prevent path traversal (#67799),ok, CVE-2020-1737 
+https://api.github.com/repos/ansible/ansible/issues/67935,[stable-2.9] win_unzip  - normalize and compare paths to prevent path traversal (#67799),ok, CVE-2020-1737 
+https://api.github.com/repos/ansible/ansible/issues/67866,CVE-2020-1746 - Remove the params module option from ldap_attr and ldap_etnry,ok, CVE-2020-1746 
+https://api.github.com/repos/ansible/ansible/issues/67808,Add whitelisting for package and service module,ok, CVE-2020-1738 
+https://api.github.com/repos/ansible/ansible/issues/67801,fetch - normalize and validate paths,ok, CVE-2020-1735 
+https://api.github.com/repos/ansible/ansible/issues/67800,ansible-vault - create temp file with strict permissions,ok, CVE-2020-1740 
+https://api.github.com/repos/ansible/ansible/issues/67799,win_unzip  - normalize and compare paths to prevent path traversal,ok, CVE-2020-1737 
+https://api.github.com/repos/ansible/ansible/issues/67798,ansible-vault edit race condition,ok, CVE-2020-1740 
+https://api.github.com/repos/ansible/ansible/issues/67797,Command used in subversion module is problematic,ok, CVE-2020-1739 
+https://api.github.com/repos/ansible/ansible/issues/67796,package and service modules allow arbitrary modules to be executed ,ok, CVE-2020-1738 
+https://api.github.com/repos/ansible/ansible/issues/67795,win_unzip path traversal with specially crafted archive,ok, CVE-2020-1737 
+https://api.github.com/repos/ansible/ansible/issues/67794,The default permissions used by atomic_move can create files that are world readable ,ok, CVE-2020-1736 
+https://api.github.com/repos/ansible/ansible/issues/67793,fetch module path traversal,ok, CVE-2020-1735 
+https://api.github.com/repos/ansible/ansible/issues/67791,Insecure creation of temporary directory for become_user,ok, CVE-2020-1733 
+https://api.github.com/repos/apache/airflow/issues/6995,[AIRFLOW-6353] security - ui - add click jacking defence,ok,nan
+https://api.github.com/repos/apache/airflow/issues/6625,[AIRFLOW-6027] Disable API access by default,ok,nan
+https://api.github.com/repos/apache/airflow/issues/6282,[AIRFLOW-5614] Enable Fernet by default,ok,nan
+https://api.github.com/repos/aws/aws-cdk/issues/18048,fix: ResponseURL is logged by S3Deployment,ok,nan
+https://api.github.com/repos/aws/aws-cdk/issues/4938,fix(ec2): Allow ingress to VPC interface endpoints,ok,nan
+https://api.github.com/repos/aws/aws-cdk/issues/3560,Also redact AWS_SECURITY_TOKEN,ok,nan
+https://api.github.com/repos/aws/aws-cdk/issues/3355,Security Group Outbound All traffic replaced with Security group of deployed ASG,ok,nan
+https://api.github.com/repos/aws/aws-cdk/issues/1931,cdk doctor potentially exposes secrets,ok,nan
+https://api.github.com/repos/aws/aws-cdk/issues/1795,Cleanse output of `cdk doctor` from known/probable credentials,ok,nan
+https://api.github.com/repos/aws/aws-cdk/issues/1299,"RFC: missing security-impacting changes from cdk diff ""scrutiny report""",ok,nan
+https://api.github.com/repos/aws/aws-cdk/issues/1204,aws-ecs: downscope permissions required by instance draining hook,ok,nan
+https://api.github.com/repos/aws/aws-cdk/issues/978,toolkit: surface potentially risky changes and enforce confirmation,ok,nan
+https://api.github.com/repos/aws/aws-cdk/issues/957,IAM policy optimizer is too eager may cause a security issue,ok,nan
+https://api.github.com/repos/aws/aws-cdk/issues/555,InvokePermission not automatically added to Lambda when triggered via Cloudwatch Rule,ok,nan
+https://api.github.com/repos/graphql-python/graphene-django/issues/498,Always use HTTPS for CDN files,ok,nan
+https://api.github.com/repos/ipython/ipython/issues/7486,Protect modal body from untrusted HTML,ok,nan
+https://api.github.com/repos/ipython/ipython/issues/7044,IPython testsuite is insecure,ok,nan
+https://api.github.com/repos/ipython/ipython/issues/7016,Use Content Security Policies instead of X-Frame-Options,ok,nan
+https://api.github.com/repos/ipython/ipython/issues/6862,"X-Frame-Options is deprecated, use CSP instead",ok,nan
+https://api.github.com/repos/joestump/python-oauth2/issues/163,Only add bodyhash when there is actually a body,ok,nan
+https://api.github.com/repos/joestump/python-oauth2/issues/138,Specification improvement and bug fix to sign_request,ok,nan
+https://api.github.com/repos/mozilla/bleach/issues/323,Convert invisible characters to ? in Characters tokens,ok,nan
+https://api.github.com/repos/mozilla/bleach/issues/298,Should bleach sanitize certain python escape characters?,ok,nan
+https://api.github.com/repos/onnx/onnx/issues/4377,Use fully qualified pathname when loading DLL to prevent security vulnerability,ok,nan
+https://api.github.com/repos/pallets/werkzeug/issues/2350,routing match includes newline,ok,nan
+https://api.github.com/repos/pallets/werkzeug/issues/2349,"`safe_join` keeps `directory=""""` as relative path",ok,nan
+https://api.github.com/repos/paramiko/paramiko/issues/1283,[CVE-2018-1000805] Server-side auth vulnerability,ok, CVE-2018-1000805 
+https://api.github.com/repos/paramiko/paramiko/issues/1175,Server implementation does not check for auth before serving later requests,ok, CVE-2018-7750 
+https://api.github.com/repos/paramiko/paramiko/issues/917,Add arcfour cipher support,ok,nan
+https://api.github.com/repos/paramiko/paramiko/issues/717,Add support for new-ish 'Match' config directive,ok,nan
+https://api.github.com/repos/paramiko/paramiko/issues/714,Don't pass IV to pycrypto when using MODE_CTR,ok,nan
+https://api.github.com/repos/pavdmyt/yaspin/issues/171,Transitive dependency (termcolor) does not have wheel,ok,nan
+https://api.github.com/repos/pyca/cryptography/issues/3211,HKDF key-length inconsistency,ok, CVE-2016-9243 
+https://api.github.com/repos/pyca/cryptography/issues/2367,We ship statically linked wheels for OS X as well,ok,nan
+https://api.github.com/repos/pyca/cryptography/issues/2131,bump to 0.9.3,ok,nan
+https://api.github.com/repos/pyca/cryptography/issues/7260,Hash pin actions-rs/ actions,ok,nan
+https://api.github.com/repos/pyca/cryptography/issues/4065,Why not use `EC_POINT_clear_free` and `BN_clear_free`?,ok,nan
+https://api.github.com/repos/pyca/cryptography/issues/2859,More clearly document the perils of SHA-1,ok,nan
+https://api.github.com/repos/pyca/cryptography/issues/2477,ffi.callback() causes SELinux execmem violation,ok,nan
+https://api.github.com/repos/pyca/cryptography/issues/2455,Error cleanly if the public and private keys to an ECDH key exchange …,ok,nan
+https://api.github.com/repos/pyca/cryptography/issues/2370,convert the rest of the openssl backend to using openssl_assert,ok,nan
+https://api.github.com/repos/pyca/cryptography/issues/2368,start converting asserts to a function call,ok,nan
+https://api.github.com/repos/pyca/cryptography/issues/2360,SubjectKeyIdentifier equality now uses constant-time digest comparison.,ok,nan
+https://api.github.com/repos/pyca/cryptography/issues/2190,Random number generation docs should mention ints,ok,nan
+https://api.github.com/repos/pyca/cryptography/issues/2073,Replace C implementation of OS Random engine with Python one that just calls os.urandom,ok,GHSA-rhm9-p9w5-fwm7 +
+https://api.github.com/repos/pyca/cryptography/issues/2035,improve osrandom engine,ok,nan
+https://api.github.com/repos/pyca/cryptography/issues/2021,ASLR and NX support on windows,ok,nan
+https://api.github.com/repos/pyca/cryptography/issues/2007,osrandom_engine should validate the fd's st_dev and st_ino,ok,nan
+https://api.github.com/repos/pyca/cryptography/issues/1843,Work around pyasn1's willingness to return endOfOctets in DER parsing,ok,nan
+https://api.github.com/repos/pyca/cryptography/issues/1838,decode_rfc6979_signature fails with some input,ok,nan
+https://api.github.com/repos/pyca/cryptography/issues/1561,"Anywhere we tell someone to randomly generate something, link the RNG docs. Fixes #1559",ok,nan
+https://api.github.com/repos/pyca/cryptography/issues/1560,"Fixed #1555 and fixed #1556 -- moved the RSA padding docs into the primary RSA doc, and tell people that PKCS1v15 isn't great",ok,nan
+https://api.github.com/repos/pyca/cryptography/issues/1559,Link to the RNG docs whenever we tell people things should be random,ok,nan
+https://api.github.com/repos/pyca/cryptography/issues/1556,PKCS1v15 docs should note that it's a bad choice for new protocols,ok,nan
+https://api.github.com/repos/pyca/cryptography/issues/1416,EC key loading fails with AssertionError on bad key,ok,nan
+https://api.github.com/repos/pyca/cryptography/issues/1201,Fixes #1200 -- disallow GCM truncation by default,ok,nan
+https://api.github.com/repos/pyca/cryptography/issues/1200,Make it harder to allow truncation on a GCM tag,ok,nan
+https://api.github.com/repos/pyca/cryptography/issues/1199,Our GCM API exposes un-authenticated plaintext,ok,nan
+https://api.github.com/repos/requests-cache/requests-cache/issues/574,Ignore and redact some common authentication headers and parameters by default,ok,nan
+https://api.github.com/repos/requests-cache/requests-cache/issues/410,Redact ingored_parameters from CachedResponse.url,ok,nan
+https://api.github.com/repos/requests-cache/requests-cache/issues/409,`ignored_parameters` leaks private information via serialized responses,ok,nan
+https://api.github.com/repos/requests-cache/requests-cache/issues/388,Ignore and redact some common authentication headers and parameters by default ,ok,nan
+https://api.github.com/repos/requests-cache/requests-cache/issues/273,"Add option to not store sensitive request info (API keys, etc.) in cached PreparedRequest objects",ok,nan
+https://api.github.com/repos/requests-cache/requests-cache/issues/203,Update 'Security' docs and add a warning when using plain pickle with some backends,ok,nan
+https://api.github.com/repos/requests-cache/requests-cache/issues/196,Add optional integration with itsdangerous for safer serialization,ok,nan
+https://api.github.com/repos/requests-cache/requests-cache/issues/105,Use itsdangerous for safer serialization,ok,nan
+https://api.github.com/repos/scrapy/scrapy/issues/3794,[MRG+1] Fix form methods in FormRequest.from_response (#3777),ok,nan
+https://api.github.com/repos/scrapy/scrapy/issues/3777,Whitelist form methods in FormRequest.from_response,ok,nan
+https://api.github.com/repos/scrapy/scrapy/issues/2491,TLS connection fails through HTTPS proxy after CONNECT tunnel is established,ok,nan
+https://api.github.com/repos/scrapy/scrapy/issues/2372,S3FilesStore enable SSL ( #2085 ),ok,nan
+https://api.github.com/repos/scrapy/scrapy/issues/2311,SSL error,ok,nan
+https://api.github.com/repos/scrapy/scrapy/issues/2142,Scrapy uses `file://` URL as referer,ok,nan
+https://api.github.com/repos/scrapy/scrapy/issues/2083,S3FilesStore should not disable SSL,ok,nan
+https://api.github.com/repos/scrapy/scrapy/issues/1778,Public default ACL policy for storing on S3 with ImagesPipeline and FilesPipeline,ok,nan
+https://api.github.com/repos/Azure/azure-sdk-for-java/issues/23473,Azure Keyvault JCA gets access token remotely every time it visits key vault.,ok,nan
+https://api.github.com/repos/AzureAD/azure-activedirectory-library-for-java/issues/92,XXE vulnerability in WSTrustResponse.java ,ok,nan
+https://api.github.com/repos/ESAPI/esapi-java-legacy/issues/614,Potentlial XXE Injection vulnerability in loading XML version of ESAPI properties file,ok,nan
+https://api.github.com/repos/Graylog2/graylog2-server/issues/10944,Allowed TLS Cipher Suites too tight,ok,nan
+https://api.github.com/repos/Graylog2/graylog2-server/issues/10578,Change RequestFilter ordering,ok,nan
+https://api.github.com/repos/Graylog2/graylog2-server/issues/10577,Session does not timeout with open idle browser window,ok,nan
+https://api.github.com/repos/Graylog2/graylog2-server/issues/10391,CSV File adapter: Use AllowedAuxiliaryPathChecker in File path UI validation,ok,nan
+https://api.github.com/repos/Graylog2/graylog2-server/issues/9459,Verify session against http auth header,ok,nan
+https://api.github.com/repos/Graylog2/graylog2-server/issues/8988,Fix path traversal in swagger resource. (3.3),ok,nan
+https://api.github.com/repos/Graylog2/graylog2-server/issues/8986,Path traversal vulnerability in documentation resource,ok,nan
+https://api.github.com/repos/Graylog2/graylog2-server/issues/8977,Fix path traversal in swagger resource.,ok,nan
+https://api.github.com/repos/Graylog2/graylog2-server/issues/8624,Enable hostname validation for SSL/TLS-backed LDAP connections.,ok, CVE-2020-15813 
+https://api.github.com/repos/Graylog2/graylog2-server/issues/6853,Implement URL white list service,ok,nan
+https://api.github.com/repos/Graylog2/graylog2-server/issues/5762,netty tcnative runs code from /tmp directory,ok,nan
+https://api.github.com/repos/Graylog2/graylog2-server/issues/5607,Drop `users:list` permission from sidecar role,ok,nan
+https://api.github.com/repos/Graylog2/graylog2-server/issues/5408,Password Leak through System/Inputs,ok,nan
+https://api.github.com/repos/Graylog2/graylog2-server/issues/4868,Requires user to be authenticated to retrieve plugin list.,ok,nan
+https://api.github.com/repos/Graylog2/graylog2-server/issues/4867,Check for permission before terminating input.,ok,nan
+https://api.github.com/repos/Graylog2/graylog2-server/issues/4863,Add @RequiresAuthentication to SystemPluginResource,ok,nan
+https://api.github.com/repos/Graylog2/graylog2-server/issues/4861,Check for RestPermissions.LOOKUP_TABLES_READ,ok,nan
+https://api.github.com/repos/TheCoder4eu/BootsFaces-OSP/issues/1133,XSS vulnerability in DateTimePicker Component due to lack of xml escaping,ok,nan
+https://api.github.com/repos/apache/drill/issues/2558,DRILL-8232: Add support for user credentials to VaultCredentialsProvider,ok,nan
+https://api.github.com/repos/apache/drill/issues/2475,DRILL-8121: Add UserSession to StoragePlugins,ok,nan
+https://api.github.com/repos/apache/drill/issues/2445,DRILL-8121: Add UserSession to StoragePlugins,ok,nan
+https://api.github.com/repos/apache/drill/issues/2333,DRILL-8009: DrillConnectionImpl#isValid() doesn't correspond JDBC API,ok,nan
+https://api.github.com/repos/apereo/cas/issues/5001,MFA Inwebo connector support,ok,nan
+https://api.github.com/repos/dropwizard/dropwizard/issues/3532,Dropwizard reporting incorrectly enabled HTTPS protocols,ok,nan
+https://api.github.com/repos/dropwizard/dropwizard/issues/3208,Disable message interpolation in ConstraintViolations by default,ok, CVE-2020-11002 
+https://api.github.com/repos/dropwizard/dropwizard/issues/3153,Security issue,ok, CVE-2020-5245 
+https://api.github.com/repos/dropwizard/dropwizard/issues/2748,Don't use X-Forwarded-* headers by default,ok,nan
+https://api.github.com/repos/dropwizard/dropwizard/issues/1224,Support configuration in yml of client TLS properties,ok,nan
+https://api.github.com/repos/dropwizard/dropwizard/issues/953,Possible reflective cross site scripting in the io.dropwizard.validation.ConstraintViolations,ok,nan
+https://api.github.com/repos/dropwizard/dropwizard/issues/947,CachingAuthenticator caches Optional.absent(),ok,nan
+https://api.github.com/repos/dropwizard/dropwizard/issues/892,Potential XSS vulnerability in AbstractParam,ok,nan
+https://api.github.com/repos/dropwizard/metrics/issues/2657,Generate SBOM using CycloneDX Maven plugin,ok,nan
+https://api.github.com/repos/eclipse/jetty.project/issues/7935,Review HTTP/2 error handling (CVE-2022-2048),ok, CVE-2022-2048 
+https://api.github.com/repos/eclipse/jetty.project/issues/3555,DefaultHandler Reveals Base Resource Path of each Context,ok, CVE-2019-10247 
+https://api.github.com/repos/eclipse/jetty.project/issues/2818,Issue #2817 - Client SSL Defaults,ok,nan
+https://api.github.com/repos/eclipse/jetty.project/issues/1556,Remove a timing channel in Password matching,ok, CVE-2017-9735 
+https://api.github.com/repos/eclipse/jetty.project/issues/725,Provide a private way to report security issues,ok,nan
+https://api.github.com/repos/eclipse/jetty.project/issues/556,Improve Resource.getAlias() checks on Windows,ok, CVE-2016-4800 
+https://api.github.com/repos/gocd/gocd/issues/8895,Prevent gson serialization from serializing cipher-related instances,ok,nan
+https://api.github.com/repos/gocd/gocd/issues/8877,Authorize agents remoting by UUID,ok,nan
+https://api.github.com/repos/hazelcast/hazelcast/issues/20728,[HZ-907] Protect MulticastDiscoveryStrategy against Java deserialization attacks,ok,GHSA-99wh-973f-779p
+https://api.github.com/repos/hazelcast/hazelcast/issues/20407,Add helper method to XmlUtil to enable XXE protection in the SAXParserFactory,ok, CVE-2022-0265 
+https://api.github.com/repos/ktorio/ktor/issues/2121,KTOR-895 Fix overwriting the default Jetty cipher exclusion list,ok, CVE-2021-25763 
+https://api.github.com/repos/mybatis/mybatis-3/issues/1308,Prevent known vulnerable classes from being deserialized.,ok,nan
+https://api.github.com/repos/neo4j/neo4j/issues/11630,Add admin annotation for procedures,ok,nan
+https://api.github.com/repos/neo4j/neo4j/issues/11621,More tests for property level security,ok,nan
+https://api.github.com/repos/neo4j/neo4j/issues/11401,Obsfucate the LDAP system password in toString and debug.log,ok,nan
+https://api.github.com/repos/neo4j/neo4j/issues/11381,Fix security setting description formatting,ok,nan
+https://api.github.com/repos/neo4j/neo4j/issues/11277,"Revert ""Add a system property to allow an override of tls protocol default""",ok,nan
+https://api.github.com/repos/neo4j/neo4j/issues/11140,3.4 tls work,ok,nan
+https://api.github.com/repos/neo4j/neo4j/issues/11090,Fix ssl protocol config for ssl context,ok,nan
+https://api.github.com/repos/neo4j/neo4j/issues/10709,Allow null realm in ShiroAuthToken,ok,nan
+https://api.github.com/repos/neo4j/neo4j/issues/10684,Do not reconnect LDAP context after TLS negotiation,ok,nan
+https://api.github.com/repos/neo4j/neo4j/issues/10536,[tls] make version 1.2 the only default,ok,nan
+https://api.github.com/repos/neo4j/neo4j/issues/10527,[tls] make version 1.2 the only default,ok,nan
+https://api.github.com/repos/neo4j/neo4j/issues/9936,Add setting to toggle ttl for cache,ok,nan
+https://api.github.com/repos/neo4j/neo4j/issues/9865,dbms.killQueries now shows if it failed to kill a query,ok,nan
+https://api.github.com/repos/neo4j/neo4j/issues/9681,Legacy SSL policy must have client_auth set to NONE,ok,nan
+https://api.github.com/repos/neo4j/neo4j/issues/9302,User with expired credentials can only call procedure to change password and show current user,ok,nan
+https://api.github.com/repos/neo4j/neo4j/issues/9294,List correct roles for dbms procedures,ok,nan
+https://api.github.com/repos/neo4j/neo4j/issues/9287,Make max auth max failed attempts configurable,ok,nan
+https://api.github.com/repos/neo4j/neo4j/issues/9243,Better error message when connection refused,ok,nan
+https://api.github.com/repos/neo4j/neo4j/issues/9201,Fixed empty  dbms.security.procedures.roles setting resulting in crash,ok,nan
+https://api.github.com/repos/neo4j/neo4j/issues/9092,Change SecurityLog to not use AsyncLogger,ok,nan
+https://api.github.com/repos/neo4j/neo4j/issues/9089,Unflake EmbeddedBuiltInProceduresInteractionTest.shouldTerminateQueriesEvenIfUsingPeriodicCommit,ok,nan
+https://api.github.com/repos/neo4j/neo4j/issues/9060,Added new role `Editor`,ok,nan
+https://api.github.com/repos/neo4j/neo4j/issues/9058,Revert exposing Token creation permission,ok,nan
+https://api.github.com/repos/neo4j/neo4j/issues/9015,Improved query logging,ok,nan
+https://api.github.com/repos/neo4j/neo4j/issues/9001,Made ReadOperations safe to inject into procedures.,ok,nan
+https://api.github.com/repos/neo4j/neo4j/issues/8920,Added user-defined function whitelisting.,ok,nan
+https://api.github.com/repos/neo4j/neo4j/issues/8915,Added functions sandboxing,ok,nan
+https://api.github.com/repos/neo4j/neo4j/issues/8913,More specific catching,ok,nan
+https://api.github.com/repos/neo4j/neo4j/issues/8858,Fixed failure during init resulting in no admin,ok,nan
+https://api.github.com/repos/neo4j/neo4j/issues/8753,Added configuration to grant full access to procedures,ok,nan
+https://api.github.com/repos/neo4j/neo4j/issues/8697,Native user management procedures produce warnings,ok,nan
+https://api.github.com/repos/neo4j/neo4j/issues/8669,"Usernames may now contain all ASCII characters between `!` and `~` except `:` and `,`",ok,nan
+https://api.github.com/repos/neo4j/neo4j/issues/8658,Annotate internal settings,ok,nan
+https://api.github.com/repos/neo4j/neo4j/issues/8652,"Allow all ASCII characters between '!' and '~' except ':' and ',' for usernames",ok,nan
+https://api.github.com/repos/neo4j/neo4j/issues/8595,Fix erroneous LDAP authorization cache expiry in multi-provider setup,ok,GHSA-h5f5-rj4r-42f6
+https://api.github.com/repos/neo4j/neo4j/issues/8574,Augment showCurrentUser and LDAP bugfix,ok,nan
+https://api.github.com/repos/neo4j/neo4j/issues/8508,Moved auth plugin api to separate module,ok,nan
+https://api.github.com/repos/neo4j/neo4j/issues/8292,More sanity checks on auth config,ok,nan
+https://api.github.com/repos/neo4j/neo4j/issues/8282,set-initial-password does nothing if real users exist,ok,nan
+https://api.github.com/repos/netty/netty/issues/3754,Validate cookie name and value characters,ok, CVE-2015-2156 
+https://api.github.com/repos/netty/netty/issues/3752,Validate cookie name and value characters,ok, CVE-2015-2156 
+https://api.github.com/repos/netty/netty/issues/3748,Validate cookie name and value characters,ok, CVE-2015-2156 
+https://api.github.com/repos/netty/netty/issues/3131,Disable SSL 3.0 (POODLE),ok,nan
+https://api.github.com/repos/netty/netty/issues/2807,Investigate options for splitting frames with padding in HTTP/2,ok,nan
+https://api.github.com/repos/netty/netty/issues/141,hashdos security vulnerability in QueryStringDecoder and possibly other components,ok,nan
+https://api.github.com/repos/rundeck/rundeck/issues/6995,Vendor and update legacy third-party javascript asset dependencies,ok,nan
+https://api.github.com/repos/spring-cloud/spring-cloud-netflix/issues/3969,Fix request verification,ok,nan
+https://api.github.com/repos/testcontainers/testcontainers-java/issues/1913,Reduce logs in EnvironmentAndSystemPropertyClientProviderStrate…,ok,nan
+https://api.github.com/repos/testcontainers/testcontainers-java/issues/1912,Dockerhub credentials logged on startup,ok,nan
+https://api.github.com/repos/wildfly/wildfly/issues/11051,[WFLY-10080] - [GSS](7.1.z) Need to handle a http post method on pic…,ok,nan
+https://api.github.com/repos/wildfly/wildfly/issues/10790,WFLY-9731 The fix for WFLY-4625 breaks PolicyContext(javax.security.auth.subject.container) in CXF web service with STS,ok,nan
+https://api.github.com/repos/wildfly/wildfly/issues/10723,ExecutionContext has been deprecated and Immutable removed,ok,nan

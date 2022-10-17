@@ -12,32 +12,37 @@ import numpy as np
 import json
 import random
 
-from src.rq5.datasets.RawDataset import RawDataset
-from src.rq5.datasets.CsvDataset import CsvDataset
-from src.rq5.datasets.OverSampledDataset import OverSampledDataset
-from src.rq5.datasets.UnderSampledDataset import UnderSampledDataset
+from src.rq5.datasets.SampleLevelRawDataset import SampleLevelRawDataset
+from src.rq5.datasets.supporting.CsvDataset import CsvDataset
+from src.rq5.datasets.sampling.OverSampledDataset import OverSampledDataset
+from src.rq5.datasets.sampling.UnderSampledDataset import UnderSampledDataset
 
 from src.rq5.dl_utils import save_dataset, read_dataset
 from src.rq5.models.BertAndLinear import BertAndLinear as WorkingModel
 
 # Model config
-batch_size_ = 6
+base_model = 'microsoft/graphcodebert-base'
+batch_size_ = 4
 num_epochs_ = 10
-fraction_of_data = 0.03
-train_percentage_size = 0.9
+fraction_of_data = 1
+train_percentage_size = 0.8
 class_ratio = 2
+learning_rate = 1e-5
 
 save_model_in_each_epoch = True
 test_model_in_each_epoch = True
-model_name = 'rolling_window_npm_cre_0'
+model_name = 'new_added_code_mined_test'
 work_dir = f'src/rq5/binaries/{model_name}'
 
 # Data config - Set to None if you want to use cached datasets
-raw_input_path = 'results/tokenized_rolling_window_miner_results_train'
+raw_input_path = 'results/new_mined_code_added_code' #tokenized_java_only_added_code_miner_results_eval
 # raw_input_path = None
 
-eval_input_path = 'results/tokenized_rolling_window_miner_results_eval'
-# eval_input_path = None
+# eval_input_path = 'results/tokenized_java_only_added_code_miner_results_eval'
+eval_input_path = None
+
+# jsut for 'just_eval':
+model_to_eval = 'epoch_1'
 
 
 device = torch.device("cuda") if torch.cuda.is_available() else torch.device("cpu")
@@ -47,7 +52,7 @@ torch.manual_seed(42)
 
 def train_model(model, optimizer, data_loader, loss_module, scheduler, test_loader = None):
     torch.cuda.empty_cache()
-    model.train() # Set model to train mode
+    model.train()
     model.to(device)
 
     accumulated_loss = 0
@@ -101,7 +106,7 @@ def train_model(model, optimizer, data_loader, loss_module, scheduler, test_load
 
 def eval_model(model, data_loader):
     torch.cuda.empty_cache()
-    model.eval() # Set model to eval mode
+    model.eval()
     model.to(device)
 
     all_labels = []
@@ -150,25 +155,25 @@ def eval_model(model, data_loader):
 
 def load_data(input_path):
     # Load Data
-    dataset = RawDataset(input_path)
+    dataset = SampleLevelRawDataset()
+    dataset.load(input_path)
 
     # Data limit for testing
-    dataset_sampled_size = int(len(dataset)*fraction_of_data)
-    dataset, rejected_data = torch.utils.data.random_split(dataset, [dataset_sampled_size, len(dataset)-dataset_sampled_size])
-    
+    if fraction_of_data < 1:
+        dataset, rejected_data = dataset.split_data(fraction_of_data)
+
     # Train/Test split & rebalancing
-    train_dataset_size = int(len(dataset) * train_percentage_size)
-    train_dataset, test_dataset = torch.utils.data.random_split(dataset , [train_dataset_size, len(dataset)-train_dataset_size])
+    train_dataset, test_dataset = dataset.split_data(train_percentage_size)
     train_dataset = OverSampledDataset(train_dataset, class_ratio)
 
     # Save the data
     save_dataset(train_dataset, f'{work_dir}/train_dataset_{model_name}.csv')
     save_dataset(test_dataset, f'{work_dir}/test_dataset_{model_name}.csv')
 
-    return train_dataset,test_dataset
+    return train_dataset, test_dataset
 
 
-def main():
+def finetune_and_eval():
     # Load data
     if raw_input_path != None:
         train_dataset, test_dataset = load_data(raw_input_path)
@@ -177,9 +182,7 @@ def main():
         test_dataset = read_dataset(f'{work_dir}/test_dataset_{model_name}.csv')
     
     # Define model
-    learning_rate = 2e-5
-    print('Learning rate:', learning_rate)
-    model = WorkingModel()
+    model = WorkingModel(base_model)
     loss_module = nn.CrossEntropyLoss()
     optimizer = torch.optim.AdamW(model.parameters(), lr=learning_rate, eps=1e-8)
     scheduler = get_linear_schedule_with_warmup(optimizer=optimizer, 
@@ -187,9 +190,9 @@ def main():
         num_training_steps=len(train_dataset)*num_epochs_)
 
     # Prep the loaders
-    train_data_loader = data.DataLoader(train_dataset, batch_size=batch_size_, shuffle=True)
+    train_data_loader = data.DataLoader(train_dataset, batch_size=batch_size_, drop_last=True, shuffle=True)
     if test_model_in_each_epoch:
-        test_data_loader = data.DataLoader(test_dataset, batch_size=batch_size_, shuffle=True)
+        test_data_loader = data.DataLoader(test_dataset, batch_size=batch_size_, drop_last=True, shuffle=True)
     else:
         test_data_loader = None
 
@@ -198,26 +201,31 @@ def main():
     torch.save(model.state_dict(), f'{work_dir}/model_{model_name}_final.pickle')
 
     # Test the model on test subset
-    test_data_loader = data.DataLoader(test_dataset, batch_size=batch_size_)
+    test_data_loader = data.DataLoader(test_dataset, drop_last=True, batch_size=batch_size_)
     eval_model(model, test_data_loader)
 
     # Test the model on eval subset
     if eval_input_path != None:
-        eval_dataset = RawDataset(eval_input_path)
-        eval_data_loader = data.DataLoader(eval_dataset, batch_size=batch_size_)
+        eval_dataset = SampleLevelRawDataset()
+        eval_dataset.load(eval_input_path)
+        eval_data_loader = data.DataLoader(eval_dataset, drop_last=True, batch_size=batch_size_)
         eval_model(model, eval_data_loader)
 
-def main2():
-    # just eval
-    model = WorkingModel()
-    model.load_state_dict(torch.load(f'{work_dir}/model_{model_name}_epoch_5.pickle'))
-    eval_dataset = RawDataset(eval_input_path)
-    eval_data_loader = data.DataLoader(eval_dataset, batch_size=batch_size_)
+
+def just_eval():
+    model = WorkingModel(base_model)
+    model.load_state_dict(torch.load(f'{work_dir}/model_{model_name}_{model_to_eval}.pickle'))
+    eval_dataset = SampleLevelRawDataset()
+    eval_dataset.load(eval_input_path)
+    eval_data_loader = data.DataLoader(eval_dataset, drop_last=True, batch_size=batch_size_)
     eval_model(model, eval_data_loader)
+
+
 
 if __name__ == '__main__':
     start_time = time.time()
-    main2()
+    finetune_and_eval()
+    # just_eval()
     print("--- %s seconds ---" % (time.time() - start_time))
 
 

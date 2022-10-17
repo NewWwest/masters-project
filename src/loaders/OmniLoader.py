@@ -73,6 +73,26 @@ class OmniLoader:
 
         return reports
 
+        
+    def title_of_report(self, report_id):
+        if report_id in self._nvdLoader.reports:
+            #TODO: this line was never used
+            return self._nvdLoader.reports[report_id]['cve']['description']['description_data'][0]['value']
+        if report_id in self._osvLoader.reports:
+            if 'summary' in self._osvLoader.reports[report_id]:
+                return self._osvLoader.reports[report_id]['summary']
+            elif 'details' in self._osvLoader.reports[report_id]:
+                return self._osvLoader.reports[report_id]['details']
+            else:
+                return report_id
+        if report_id in self._ghsaLoader.reports:
+            if 'summary' in self._ghsaLoader.reports[report_id]:
+                return self._ghsaLoader.reports[report_id]['summary']
+            elif 'details' in self._ghsaLoader.reports[report_id]:
+                return self._ghsaLoader.reports[report_id]['details']
+            else:
+                return report_id
+
 
     def references_from_report_list(self, report_list:Iterable[DualReport]):
         references = []
