@@ -30,7 +30,7 @@ public class Server {
                 String query = uri.getQuery();
                 Map<String, String> paramsx = splitQuery(query);
                 String file_new = paramsx.get("file_new");
-                String file_old = paramsx.get("file_new");
+                String file_old = paramsx.get("file_old");
                 String out_ast = paramsx.get("out_ast");
                 String out_action = paramsx.get("out_action");
                 GumTreeDiffParserProxy.ProcessFiles(file_new, file_old, out_ast, out_action);
