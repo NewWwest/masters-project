@@ -34,7 +34,7 @@ model_name = 'new_added_code_mined_test'
 work_dir = f'src/rq5/binaries/{model_name}'
 
 # Data config - Set to None if you want to use cached datasets
-raw_input_path = 'results/new_mined_code_added_code' #tokenized_java_only_added_code_miner_results_eval
+raw_input_path = 'results/new_mined_code_added_code'
 # raw_input_path = None
 
 # eval_input_path = 'results/tokenized_java_only_added_code_miner_results_eval'
@@ -61,6 +61,7 @@ def train_model(model, optimizer, data_loader, loss_module, scheduler, test_load
     for epoch in range(num_epochs_):
         print(f'Epoch {epoch}/{num_epochs_}')
         accumulated_loss = 0
+        model.train()
 
         with tqdm.tqdm(total=len(data_loader)) as pbar:
             for data_inputs, data_labels in data_loader:

@@ -21,7 +21,6 @@ class ConvAggregator(nn.Module):
     def forward(self, x):
         x_2 = torch.zeros([1, 1, self.max_vector_size, 768])
         x_2 = x_2.to(x[0].get_device())
-        # x = torch.stack(x)
         xx = x.movedim(0,-2)
         _, _, h, w = xx.shape
         if h > self.max_vector_size:
