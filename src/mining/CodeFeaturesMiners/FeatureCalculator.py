@@ -183,7 +183,6 @@ features_to_agregate_as_avg_max_values = [
     'file_complexity',
     'file_nloc',
     'file_token_count',
-    'file_changed_method_count',
     'max_method_token_count',
     'max_method_complexity',
     'max_method_nloc',

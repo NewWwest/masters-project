@@ -125,8 +125,8 @@ class CommitLevelFeatureMiner(AbstractMiner):
         else:
             self._add_feature('time_to_next_merge', float('nan'))
 
-        self._add_feature('commits_to_next_merge', offset_of_next_merge - index)
-        self._add_feature('commits_since_last_merge', index - offset_of_prev_merge)
+        self._add_feature('commits_to_next_merge', offset_of_next_merge)
+        self._add_feature('commits_since_last_merge', -offset_of_prev_merge)
 
         self._add_feature('time_to_prev_commit', time_to_prev_commit)
         self._add_feature('time_to_next_commit', time_to_next_commit)

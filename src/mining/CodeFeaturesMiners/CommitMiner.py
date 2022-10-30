@@ -25,8 +25,6 @@ LIMIT = None
 RATIO = 50
 
 features_cache_location = 'results\checkpoints1'
-all_repos_path = '/d/Projects/data/repos'
-premined_checkpoint = r'D:\Projects\2022\results\premined'
 
 class CommitMiner:
     def __init__(self, path_to_repository_store, log_fnc):
@@ -92,6 +90,7 @@ class CommitMiner:
             pre_mined_commits.append(commit)
         return pre_mined_commits
 
+
     def _save_mine_commit(self, index, commits:typing.List[Commit], repo_full_name, contributors):
         try:
             self.mine_commit(index, commits, repo_full_name, contributors)
@@ -111,5 +110,3 @@ class CommitMiner:
             self.file_result[repo_full_name].append(file_level_features)
 
         self.total_commits += 1
-
-

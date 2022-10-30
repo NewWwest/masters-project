@@ -98,8 +98,6 @@ class FileLevelFeatureMiner(AbstractMiner):
         self._add_feature('file_nloc', file_nloc)
         file_token_count = changeFile.token_count if changeFile.token_count != None else 0
         self._add_feature('file_token_count', file_token_count)
-        file_changed_method_count = len(changeFile.changed_methods)
-        self._add_feature('file_changed_method_count', file_changed_method_count)
 
         max_method_token_count = 0
         avg_method_token_count = 0
@@ -134,7 +132,7 @@ class FileLevelFeatureMiner(AbstractMiner):
         self._add_feature('max_method_nloc', max_method_nloc)
         self._add_feature('max_method_parameter_count', max_method_parameter_count)
 
-        save_file_changed_method_count = file_changed_method_count if file_changed_method_count > 0 else 1
+        save_file_changed_method_count = changed_methods_count if changed_methods_count > 0 else 1
         self._add_feature('avg_method_token_count', avg_method_token_count/save_file_changed_method_count)
         self._add_feature('avg_method_complexity', avg_method_complexity/save_file_changed_method_count)
         self._add_feature('avg_method_nloc', avg_method_nloc/save_file_changed_method_count)
@@ -212,3 +210,4 @@ class FileLevelFeatureMiner(AbstractMiner):
 
         self._add_feature('changes_to_file_in_next_50_commits', changes_to_file_in_next_50_commits)
         self._add_feature('is_file_recently_removed', is_file_recently_removed)
+        
