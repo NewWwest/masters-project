@@ -2,20 +2,13 @@ import sys
 sys.path.insert(0, r'D:\Projects\aaa')
 
 from src.rq4.CommitProvider import CommitProvider
-
-import pandas as pd
 import json
 import time
-import requests
-from datetime import datetime
-from urllib.parse import urlparse
-from urllib.parse import parse_qs
 
 from src.proxies.GitHubProxy import GithubProxy
 
 security_commits_file = 'results/security_related_commits_in_vuln.csv'
 
-'https://api.github.com/repositories/106310/commits?per_page=1&since=2013-06-30T22%3A39%3A06.156547&page=906'
 def main():
     result = {}
     commitProvider = CommitProvider(security_commits_file)
