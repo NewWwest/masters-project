@@ -18,36 +18,36 @@ from src.rq5.datasets.sampling.OverSampledDataset import OverSampledDataset
 from src.rq5.datasets.sampling.UnderSampledDataset import UnderSampledDataset
 
 from src.rq5.dl_utils import save_dataset, read_dataset
-from src.rq5.models.ConvAggregator import ConvAggregator as WorkingModel
+from src.rq5.models.LstmAggregator import LstmAggregator as WorkingModel
+from src.rq5.datasets.load import load_commit_level
 
 # Model config
 batch_size_ = 1
 num_epochs_ = 10
 fraction_of_data = 1
-train_percentage_size = 0.8
+train_percentage_size = 0.9
 class_ratio = 2
-learning_rate = 1e-5
-
+learning_rate = 0.00005
 save_model_in_each_epoch = True
-test_model_in_each_epoch = True
-model_name = 'new_added_code_mined_test'
+eval_model_in_each_epoch = True
+model_name = 'new_agg_test5'
 work_dir = f'src/rq5/binaries/{model_name}'
 
 # Data config - Set to None if you want to use cached datasets
-raw_input_path = 'results/new_mined_code_added_code'
+raw_input_path = r'results/dl/java/RollingWindowMiner_embedded1'
 # raw_input_path = None
 
-# eval_input_path = 'results/tokenized_java_only_added_code_miner_results_eval'
-eval_input_path = None
 
 # jsut for 'just_eval':
-model_to_eval = 'epoch_1'
+eval_input_path = None
+model_to_eval = 'final'
 
 
 device = torch.device("cuda") if torch.cuda.is_available() else torch.device("cpu")
-random.seed(42)
-np.random.seed(42)
-torch.manual_seed(42)
+seed = 42
+random.seed(seed)
+np.random.seed(seed)
+torch.manual_seed(seed)
 
 def train_model(model, optimizer, data_loader, loss_module, scheduler, test_loader = None):
     torch.cuda.empty_cache()
@@ -166,34 +166,33 @@ def eval_model(model, data_loader):
 
 def load_data(input_path):
     # Load Data
-    dataset = CommitLevelRawDataset()
-    dataset.load(input_path)
+    dataset, test_dataset = load_commit_level(input_path)
 
     # Data limit for testing
     if fraction_of_data < 1:
         dataset, rejected_data = dataset.split_data(fraction_of_data)
 
     # Train/Test split & rebalancing
-    train_dataset, test_dataset = dataset.split_data(train_percentage_size)
+    train_dataset, eval_dataset = dataset.split_data(train_percentage_size)
 
-     #TODO different commit mode and sample mode
-    # train_dataset = OverSampledDataset(train_dataset, class_ratio)
+    train_dataset = UnderSampledDataset(train_dataset, class_ratio)
 
-     #TODO different commit mode and sample mode
     # # Save the data
-    # save_dataset(train_dataset, f'{work_dir}/train_dataset_{model_name}.csv')
-    # save_dataset(test_dataset, f'{work_dir}/test_dataset_{model_name}.csv')
+    # save_dataset(train_dataset, f'{work_dir}/train_commit_dataset_{model_name}.csv')
+    # save_dataset(eval_dataset, f'{work_dir}/eval_commit_dataset_{model_name}.csv')
+    # save_dataset(test_dataset, f'{work_dir}/test_commit_dataset_{model_name}.csv')
 
-    return train_dataset, test_dataset
+    return train_dataset, test_dataset, eval_dataset
 
 
 def finetune_and_eval():
     # Load data
     if raw_input_path != None:
-        train_dataset, test_dataset = load_data(raw_input_path)
+        train_dataset, test_dataset, eval_dataset = load_data(raw_input_path)
     else:
-        train_dataset = read_dataset(f'{work_dir}/train_dataset_{model_name}.csv')
-        test_dataset = read_dataset(f'{work_dir}/test_dataset_{model_name}.csv')
+        train_dataset = read_dataset(f'{work_dir}/train_commit_dataset_{model_name}.csv')
+        eval_dataset = read_dataset(f'{work_dir}/eval_commit_dataset_{model_name}.csv')
+        test_dataset = read_dataset(f'{work_dir}/test_commit_dataset_{model_name}.csv')
     
     # Define model
     model = WorkingModel()
@@ -205,25 +204,23 @@ def finetune_and_eval():
 
     # Prep the loaders
     train_data_loader = data.DataLoader(train_dataset, batch_size=batch_size_, drop_last=True, shuffle=True)
-    if test_model_in_each_epoch:
-        test_data_loader = data.DataLoader(test_dataset, batch_size=batch_size_, drop_last=True, shuffle=True)
+    if eval_model_in_each_epoch:
+        #todo
+        eval_data_loader = data.DataLoader(eval_dataset, batch_size=batch_size_, drop_last=True, shuffle=True)
     else:
-        test_data_loader = None
+        eval_data_loader = None
 
     # Train the model
-    train_model(model, optimizer, train_data_loader, loss_module, scheduler, test_loader=test_data_loader)
+    train_model(model, optimizer, train_data_loader, loss_module, scheduler, test_loader=eval_data_loader)
     torch.save(model.state_dict(), f'{work_dir}/model_{model_name}_final.pickle')
 
     # Test the model on test subset
-    test_data_loader = data.DataLoader(test_dataset, drop_last=True, batch_size=batch_size_)
-    eval_model(model, test_data_loader)
+    eval_data_loader = data.DataLoader(eval_dataset, drop_last=True, batch_size=batch_size_)
+    eval_model(model, eval_data_loader)
 
     # Test the model on eval subset
-    if eval_input_path != None:
-        eval_dataset = CommitLevelRawDataset()
-        eval_dataset.load(eval_input_path)
-        eval_data_loader = data.DataLoader(eval_dataset, drop_last=True, batch_size=batch_size_)
-        eval_model(model, eval_data_loader)
+    test_data_loader = data.DataLoader(test_dataset, drop_last=True, batch_size=batch_size_)
+    eval_model(model, test_data_loader)
 
 
 def just_eval():

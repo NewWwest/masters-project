@@ -1,0 +1,1188 @@
+Some weights of the model checkpoint at microsoft/graphcodebert-base were not used when initializing RobertaModel: ['lm_head.dense.weight', 'lm_head.layer_norm.weight', 'lm_head.bias', 'lm_head.layer_norm.bias', 'lm_head.dense.bias', 'lm_head.decoder.bias', 'lm_head.decoder.weight']
+- This IS expected if you are initializing RobertaModel from the checkpoint of a model trained on another task or with another architecture (e.g. initializing a BertForSequenceClassification model from a BertForPreTraining model).
+- This IS NOT expected if you are initializing RobertaModel from the checkpoint of a model that you expect to be exactly identical (initializing a BertForSequenceClassification model from a BertForSequenceClassification model).
+Some weights of RobertaModel were not initialized from the model checkpoint at microsoft/graphcodebert-base and are newly initialized: ['roberta.pooler.dense.weight', 'roberta.pooler.dense.bias']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+Epoch 0/3
+100%|██████████| 1250/1250 [07:47<00:00,  2.68it/s]
+Loss in this epoch: 834.5740791857243
+100%|██████████| 500/500 [00:57<00:00,  8.70it/s]
+Precission: 33/885 0.03728813559322034
+Recall 33/40 0.825
+P:885, TP:33, FP:852, FN:7, TN:1108, N:1115
+Epoch 1/3
+100%|██████████| 1250/1250 [07:15<00:00,  2.87it/s]
+Loss in this epoch: 297.36948271654546
+100%|██████████| 500/500 [00:49<00:00, 10.10it/s]
+Precission: 13/51 0.2549019607843137
+Recall 13/40 0.325
+P:51, TP:13, FP:38, FN:27, TN:1922, N:1949
+Epoch 2/3
+100%|██████████| 1250/1250 [06:43<00:00,  3.10it/s]
+Loss in this epoch: 56.193640563986264
+100%|██████████| 500/500 [00:49<00:00, 10.10it/s]
+Precission: 16/63 0.25396825396825395
+Recall 16/40 0.4
+P:63, TP:16, FP:47, FN:24, TN:1913, N:1937
+Model saw positive samples 7500 times and background samples 7500
+Ratio 1:1.0
+100%|██████████| 8919/8919 [14:42<00:00, 10.10it/s]
+Precission: 385/2157 0.17848864163189615
+Recall 385/1267 0.30386740331491713
+P:2157, TP:385, FP:1772, FN:882, TN:32637, N:33519
+
+XXX
+learning_rate 2e-06
+oversampling_ratio 1
+class_ratio 1
+precision 0.17848864163189615
+recall 0.30386740331491713
+XXX
+
+Some weights of the model checkpoint at microsoft/graphcodebert-base were not used when initializing RobertaModel: ['lm_head.dense.weight', 'lm_head.layer_norm.weight', 'lm_head.bias', 'lm_head.layer_norm.bias', 'lm_head.dense.bias', 'lm_head.decoder.bias', 'lm_head.decoder.weight']
+- This IS expected if you are initializing RobertaModel from the checkpoint of a model trained on another task or with another architecture (e.g. initializing a BertForSequenceClassification model from a BertForPreTraining model).
+- This IS NOT expected if you are initializing RobertaModel from the checkpoint of a model that you expect to be exactly identical (initializing a BertForSequenceClassification model from a BertForSequenceClassification model).
+Some weights of RobertaModel were not initialized from the model checkpoint at microsoft/graphcodebert-base and are newly initialized: ['roberta.pooler.dense.weight', 'roberta.pooler.dense.bias']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+Epoch 0/3
+100%|██████████| 1250/1250 [06:58<00:00,  2.99it/s]
+Loss in this epoch: 797.6526148170233
+100%|██████████| 500/500 [00:49<00:00, 10.10it/s]
+Precission: 3/136 0.022058823529411766
+Recall 3/40 0.075
+P:136, TP:3, FP:133, FN:37, TN:1827, N:1864
+Epoch 1/3
+100%|██████████| 1250/1250 [06:43<00:00,  3.10it/s]
+Loss in this epoch: 281.135711459443
+100%|██████████| 500/500 [00:49<00:00, 10.10it/s]
+Precission: 5/16 0.3125
+Recall 5/40 0.125
+P:16, TP:5, FP:11, FN:35, TN:1949, N:1984
+Epoch 2/3
+100%|██████████| 1250/1250 [06:43<00:00,  3.10it/s]
+Loss in this epoch: 52.3525689104863
+100%|██████████| 500/500 [00:49<00:00, 10.10it/s]
+Precission: 7/33 0.21212121212121213
+Recall 7/40 0.175
+P:33, TP:7, FP:26, FN:33, TN:1934, N:1967
+Model saw positive samples 4998 times and background samples 10002
+Ratio 1:2.0012004801920766
+100%|██████████| 8919/8919 [14:42<00:00, 10.10it/s]
+Precission: 464/1750 0.2651428571428571
+Recall 464/1267 0.36621941594317287
+P:1750, TP:464, FP:1286, FN:803, TN:33123, N:33926
+
+XXX
+learning_rate 2e-06
+oversampling_ratio 1
+class_ratio 2
+precision 0.2651428571428571
+recall 0.36621941594317287
+XXX
+
+Some weights of the model checkpoint at microsoft/graphcodebert-base were not used when initializing RobertaModel: ['lm_head.dense.weight', 'lm_head.layer_norm.weight', 'lm_head.bias', 'lm_head.layer_norm.bias', 'lm_head.dense.bias', 'lm_head.decoder.bias', 'lm_head.decoder.weight']
+- This IS expected if you are initializing RobertaModel from the checkpoint of a model trained on another task or with another architecture (e.g. initializing a BertForSequenceClassification model from a BertForPreTraining model).
+- This IS NOT expected if you are initializing RobertaModel from the checkpoint of a model that you expect to be exactly identical (initializing a BertForSequenceClassification model from a BertForSequenceClassification model).
+Some weights of RobertaModel were not initialized from the model checkpoint at microsoft/graphcodebert-base and are newly initialized: ['roberta.pooler.dense.weight', 'roberta.pooler.dense.bias']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+Epoch 0/3
+100%|██████████| 1250/1250 [06:58<00:00,  2.99it/s]
+Loss in this epoch: 649.8499447703362
+100%|██████████| 500/500 [00:49<00:00, 10.10it/s]
+Precission: 0/0 0
+Recall 0/40 0.0
+P:0, TP:0, FP:0, FN:40, TN:1960, N:2000
+Epoch 1/3
+100%|██████████| 1250/1250 [06:43<00:00,  3.10it/s]
+Loss in this epoch: 350.5728516690433
+100%|██████████| 500/500 [00:49<00:00, 10.10it/s]
+Precission: 5/78 0.0641025641025641
+Recall 5/40 0.125
+P:78, TP:5, FP:73, FN:35, TN:1887, N:1922
+Epoch 2/3
+100%|██████████| 1250/1250 [06:43<00:00,  3.10it/s]
+Loss in this epoch: 116.49241442675702
+100%|██████████| 500/500 [00:49<00:00, 10.10it/s]
+Precission: 4/31 0.12903225806451613
+Recall 4/40 0.1
+P:31, TP:4, FP:27, FN:36, TN:1933, N:1969
+Model saw positive samples 3000 times and background samples 12000
+Ratio 1:4.0
+100%|██████████| 8919/8919 [14:42<00:00, 10.10it/s]
+Precission: 189/1103 0.17135086128739802
+Recall 189/1267 0.14917127071823205
+P:1103, TP:189, FP:914, FN:1078, TN:33495, N:34573
+
+XXX
+learning_rate 2e-06
+oversampling_ratio 1
+class_ratio 4
+precision 0.17135086128739802
+recall 0.14917127071823205
+XXX
+
+Some weights of the model checkpoint at microsoft/graphcodebert-base were not used when initializing RobertaModel: ['lm_head.dense.weight', 'lm_head.layer_norm.weight', 'lm_head.bias', 'lm_head.layer_norm.bias', 'lm_head.dense.bias', 'lm_head.decoder.bias', 'lm_head.decoder.weight']
+- This IS expected if you are initializing RobertaModel from the checkpoint of a model trained on another task or with another architecture (e.g. initializing a BertForSequenceClassification model from a BertForPreTraining model).
+- This IS NOT expected if you are initializing RobertaModel from the checkpoint of a model that you expect to be exactly identical (initializing a BertForSequenceClassification model from a BertForSequenceClassification model).
+Some weights of RobertaModel were not initialized from the model checkpoint at microsoft/graphcodebert-base and are newly initialized: ['roberta.pooler.dense.weight', 'roberta.pooler.dense.bias']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+Epoch 0/3
+100%|██████████| 1250/1250 [06:58<00:00,  2.99it/s]
+Loss in this epoch: 484.3729382492602
+100%|██████████| 500/500 [00:49<00:00, 10.10it/s]
+Precission: 0/0 0
+Recall 0/40 0.0
+P:0, TP:0, FP:0, FN:40, TN:1960, N:2000
+Epoch 1/3
+100%|██████████| 1250/1250 [06:43<00:00,  3.10it/s]
+Loss in this epoch: 293.17150229681283
+100%|██████████| 500/500 [00:49<00:00, 10.10it/s]
+Precission: 0/2 0.0
+Recall 0/40 0.0
+P:2, TP:0, FP:2, FN:40, TN:1958, N:1998
+Epoch 2/3
+100%|██████████| 1250/1250 [06:43<00:00,  3.10it/s]
+Loss in this epoch: 92.03241161175538
+100%|██████████| 500/500 [00:49<00:00, 10.09it/s]
+Precission: 2/12 0.16666666666666666
+Recall 2/40 0.05
+P:12, TP:2, FP:10, FN:38, TN:1950, N:1988
+Model saw positive samples 1665 times and background samples 13335
+Ratio 1:8.00900900900901
+100%|██████████| 8919/8919 [14:42<00:00, 10.10it/s]
+Precission: 206/439 0.46924829157175396
+Recall 206/1267 0.16258879242304658
+P:439, TP:206, FP:233, FN:1061, TN:34176, N:35237
+
+XXX
+learning_rate 2e-06
+oversampling_ratio 1
+class_ratio 8
+precision 0.46924829157175396
+recall 0.16258879242304658
+XXX
+
+Some weights of the model checkpoint at microsoft/graphcodebert-base were not used when initializing RobertaModel: ['lm_head.dense.weight', 'lm_head.layer_norm.weight', 'lm_head.bias', 'lm_head.layer_norm.bias', 'lm_head.dense.bias', 'lm_head.decoder.bias', 'lm_head.decoder.weight']
+- This IS expected if you are initializing RobertaModel from the checkpoint of a model trained on another task or with another architecture (e.g. initializing a BertForSequenceClassification model from a BertForPreTraining model).
+- This IS NOT expected if you are initializing RobertaModel from the checkpoint of a model that you expect to be exactly identical (initializing a BertForSequenceClassification model from a BertForSequenceClassification model).
+Some weights of RobertaModel were not initialized from the model checkpoint at microsoft/graphcodebert-base and are newly initialized: ['roberta.pooler.dense.weight', 'roberta.pooler.dense.bias']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+Epoch 0/3
+100%|██████████| 1250/1250 [06:58<00:00,  2.99it/s]
+Loss in this epoch: 853.6391683220863
+100%|██████████| 500/500 [00:49<00:00, 10.09it/s]
+Precission: 10/573 0.017452006980802792
+Recall 10/40 0.25
+P:573, TP:10, FP:563, FN:30, TN:1397, N:1427
+Epoch 1/3
+100%|██████████| 1250/1250 [06:43<00:00,  3.10it/s]
+Loss in this epoch: 291.8435784452595
+100%|██████████| 500/500 [00:49<00:00, 10.09it/s]
+Precission: 2/71 0.028169014084507043
+Recall 2/40 0.05
+P:71, TP:2, FP:69, FN:38, TN:1891, N:1929
+Epoch 2/3
+100%|██████████| 1250/1250 [06:43<00:00,  3.10it/s]
+Loss in this epoch: 55.08163957239594
+100%|██████████| 500/500 [00:49<00:00, 10.10it/s]
+Precission: 1/33 0.030303030303030304
+Recall 1/40 0.025
+P:33, TP:1, FP:32, FN:39, TN:1928, N:1967
+Model saw positive samples 7500 times and background samples 7500
+Ratio 1:1.0
+100%|██████████| 8919/8919 [14:42<00:00, 10.10it/s]
+Precission: 216/503 0.4294234592445328
+Recall 216/1267 0.17048145224940806
+P:503, TP:216, FP:287, FN:1051, TN:34122, N:35173
+
+XXX
+learning_rate 2e-06
+oversampling_ratio 2
+class_ratio 1
+precision 0.4294234592445328
+recall 0.17048145224940806
+XXX
+
+Some weights of the model checkpoint at microsoft/graphcodebert-base were not used when initializing RobertaModel: ['lm_head.dense.weight', 'lm_head.layer_norm.weight', 'lm_head.bias', 'lm_head.layer_norm.bias', 'lm_head.dense.bias', 'lm_head.decoder.bias', 'lm_head.decoder.weight']
+- This IS expected if you are initializing RobertaModel from the checkpoint of a model trained on another task or with another architecture (e.g. initializing a BertForSequenceClassification model from a BertForPreTraining model).
+- This IS NOT expected if you are initializing RobertaModel from the checkpoint of a model that you expect to be exactly identical (initializing a BertForSequenceClassification model from a BertForSequenceClassification model).
+Some weights of RobertaModel were not initialized from the model checkpoint at microsoft/graphcodebert-base and are newly initialized: ['roberta.pooler.dense.weight', 'roberta.pooler.dense.bias']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+Epoch 0/3
+100%|██████████| 1250/1250 [06:58<00:00,  2.99it/s]
+Loss in this epoch: 795.4382631182671
+100%|██████████| 500/500 [00:49<00:00, 10.10it/s]
+Precission: 0/3 0.0
+Recall 0/40 0.0
+P:3, TP:0, FP:3, FN:40, TN:1957, N:1997
+Epoch 1/3
+100%|██████████| 1250/1250 [06:43<00:00,  3.10it/s]
+Loss in this epoch: 386.72980129159987
+100%|██████████| 500/500 [00:49<00:00, 10.09it/s]
+Precission: 3/20 0.15
+Recall 3/40 0.075
+P:20, TP:3, FP:17, FN:37, TN:1943, N:1980
+Epoch 2/3
+100%|██████████| 1250/1250 [06:43<00:00,  3.10it/s]
+Loss in this epoch: 113.12428697571158
+100%|██████████| 500/500 [00:49<00:00, 10.09it/s]
+Precission: 7/71 0.09859154929577464
+Recall 7/40 0.175
+P:71, TP:7, FP:64, FN:33, TN:1896, N:1929
+Model saw positive samples 4998 times and background samples 10002
+Ratio 1:2.0012004801920766
+100%|██████████| 8919/8919 [14:42<00:00, 10.10it/s]
+Precission: 275/1305 0.210727969348659
+Recall 275/1267 0.2170481452249408
+P:1305, TP:275, FP:1030, FN:992, TN:33379, N:34371
+
+XXX
+learning_rate 2e-06
+oversampling_ratio 2
+class_ratio 2
+precision 0.210727969348659
+recall 0.2170481452249408
+XXX
+
+Some weights of the model checkpoint at microsoft/graphcodebert-base were not used when initializing RobertaModel: ['lm_head.dense.weight', 'lm_head.layer_norm.weight', 'lm_head.bias', 'lm_head.layer_norm.bias', 'lm_head.dense.bias', 'lm_head.decoder.bias', 'lm_head.decoder.weight']
+- This IS expected if you are initializing RobertaModel from the checkpoint of a model trained on another task or with another architecture (e.g. initializing a BertForSequenceClassification model from a BertForPreTraining model).
+- This IS NOT expected if you are initializing RobertaModel from the checkpoint of a model that you expect to be exactly identical (initializing a BertForSequenceClassification model from a BertForSequenceClassification model).
+Some weights of RobertaModel were not initialized from the model checkpoint at microsoft/graphcodebert-base and are newly initialized: ['roberta.pooler.dense.weight', 'roberta.pooler.dense.bias']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+Epoch 0/3
+100%|██████████| 1250/1250 [06:58<00:00,  2.99it/s]
+Loss in this epoch: 674.2693476304412
+100%|██████████| 500/500 [00:49<00:00, 10.10it/s]
+Precission: 0/0 0
+Recall 0/40 0.0
+P:0, TP:0, FP:0, FN:40, TN:1960, N:2000
+Epoch 1/3
+100%|██████████| 1250/1250 [06:43<00:00,  3.10it/s]
+Loss in this epoch: 401.07263765949756
+100%|██████████| 500/500 [00:49<00:00, 10.10it/s]
+Precission: 7/118 0.059322033898305086
+Recall 7/40 0.175
+P:118, TP:7, FP:111, FN:33, TN:1849, N:1882
+Epoch 2/3
+100%|██████████| 1250/1250 [06:43<00:00,  3.10it/s]
+Loss in this epoch: 124.33188724494539
+100%|██████████| 500/500 [00:49<00:00, 10.10it/s]
+Precission: 4/14 0.2857142857142857
+Recall 4/40 0.1
+P:14, TP:4, FP:10, FN:36, TN:1950, N:1986
+Model saw positive samples 3000 times and background samples 12000
+Ratio 1:4.0
+100%|██████████| 8919/8919 [14:42<00:00, 10.10it/s]
+Precission: 79/386 0.20466321243523317
+Recall 79/1267 0.062352012628255724
+P:386, TP:79, FP:307, FN:1188, TN:34102, N:35290
+
+XXX
+learning_rate 2e-06
+oversampling_ratio 2
+class_ratio 4
+precision 0.20466321243523317
+recall 0.062352012628255724
+XXX
+
+Some weights of the model checkpoint at microsoft/graphcodebert-base were not used when initializing RobertaModel: ['lm_head.dense.weight', 'lm_head.layer_norm.weight', 'lm_head.bias', 'lm_head.layer_norm.bias', 'lm_head.dense.bias', 'lm_head.decoder.bias', 'lm_head.decoder.weight']
+- This IS expected if you are initializing RobertaModel from the checkpoint of a model trained on another task or with another architecture (e.g. initializing a BertForSequenceClassification model from a BertForPreTraining model).
+- This IS NOT expected if you are initializing RobertaModel from the checkpoint of a model that you expect to be exactly identical (initializing a BertForSequenceClassification model from a BertForSequenceClassification model).
+Some weights of RobertaModel were not initialized from the model checkpoint at microsoft/graphcodebert-base and are newly initialized: ['roberta.pooler.dense.weight', 'roberta.pooler.dense.bias']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+Epoch 0/3
+100%|██████████| 1250/1250 [06:58<00:00,  2.99it/s]
+Loss in this epoch: 471.6965223029256
+100%|██████████| 500/500 [00:49<00:00, 10.09it/s]
+Precission: 0/0 0
+Recall 0/40 0.0
+P:0, TP:0, FP:0, FN:40, TN:1960, N:2000
+Epoch 1/3
+100%|██████████| 1250/1250 [06:43<00:00,  3.10it/s]
+Loss in this epoch: 353.2985911844298
+100%|██████████| 500/500 [00:49<00:00, 10.10it/s]
+Precission: 0/0 0
+Recall 0/40 0.0
+P:0, TP:0, FP:0, FN:40, TN:1960, N:2000
+Epoch 2/3
+100%|██████████| 1250/1250 [06:43<00:00,  3.10it/s]
+Loss in this epoch: 154.49234365089796
+100%|██████████| 500/500 [00:49<00:00, 10.10it/s]
+Precission: 1/19 0.05263157894736842
+Recall 1/40 0.025
+P:19, TP:1, FP:18, FN:39, TN:1942, N:1981
+Model saw positive samples 1665 times and background samples 13335
+Ratio 1:8.00900900900901
+100%|██████████| 8919/8919 [14:42<00:00, 10.10it/s]
+Precission: 225/673 0.3343239227340267
+Recall 225/1267 0.17758484609313338
+P:673, TP:225, FP:448, FN:1042, TN:33961, N:35003
+
+XXX
+learning_rate 2e-06
+oversampling_ratio 2
+class_ratio 8
+precision 0.3343239227340267
+recall 0.17758484609313338
+XXX
+
+Some weights of the model checkpoint at microsoft/graphcodebert-base were not used when initializing RobertaModel: ['lm_head.dense.weight', 'lm_head.layer_norm.weight', 'lm_head.bias', 'lm_head.layer_norm.bias', 'lm_head.dense.bias', 'lm_head.decoder.bias', 'lm_head.decoder.weight']
+- This IS expected if you are initializing RobertaModel from the checkpoint of a model trained on another task or with another architecture (e.g. initializing a BertForSequenceClassification model from a BertForPreTraining model).
+- This IS NOT expected if you are initializing RobertaModel from the checkpoint of a model that you expect to be exactly identical (initializing a BertForSequenceClassification model from a BertForSequenceClassification model).
+Some weights of RobertaModel were not initialized from the model checkpoint at microsoft/graphcodebert-base and are newly initialized: ['roberta.pooler.dense.weight', 'roberta.pooler.dense.bias']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+Epoch 0/3
+100%|██████████| 1250/1250 [06:58<00:00,  2.99it/s]
+Loss in this epoch: 863.6748497486115
+100%|██████████| 500/500 [00:49<00:00, 10.10it/s]
+Precission: 19/261 0.07279693486590039
+Recall 19/40 0.475
+P:261, TP:19, FP:242, FN:21, TN:1718, N:1739
+Epoch 1/3
+100%|██████████| 1250/1250 [06:43<00:00,  3.10it/s]
+Loss in this epoch: 325.6189609277062
+100%|██████████| 500/500 [00:49<00:00, 10.10it/s]
+Precission: 6/54 0.1111111111111111
+Recall 6/40 0.15
+P:54, TP:6, FP:48, FN:34, TN:1912, N:1946
+Epoch 2/3
+100%|██████████| 1250/1250 [06:43<00:00,  3.10it/s]
+Loss in this epoch: 55.53576231840998
+100%|██████████| 500/500 [00:49<00:00, 10.09it/s]
+Precission: 6/31 0.1935483870967742
+Recall 6/40 0.15
+P:31, TP:6, FP:25, FN:34, TN:1935, N:1969
+Model saw positive samples 7500 times and background samples 7500
+Ratio 1:1.0
+100%|██████████| 8919/8919 [14:42<00:00, 10.10it/s]
+Precission: 207/974 0.21252566735112938
+Recall 207/1267 0.1633780584056827
+P:974, TP:207, FP:767, FN:1060, TN:33642, N:34702
+
+XXX
+learning_rate 2e-06
+oversampling_ratio 4
+class_ratio 1
+precision 0.21252566735112938
+recall 0.1633780584056827
+XXX
+
+Some weights of the model checkpoint at microsoft/graphcodebert-base were not used when initializing RobertaModel: ['lm_head.dense.weight', 'lm_head.layer_norm.weight', 'lm_head.bias', 'lm_head.layer_norm.bias', 'lm_head.dense.bias', 'lm_head.decoder.bias', 'lm_head.decoder.weight']
+- This IS expected if you are initializing RobertaModel from the checkpoint of a model trained on another task or with another architecture (e.g. initializing a BertForSequenceClassification model from a BertForPreTraining model).
+- This IS NOT expected if you are initializing RobertaModel from the checkpoint of a model that you expect to be exactly identical (initializing a BertForSequenceClassification model from a BertForSequenceClassification model).
+Some weights of RobertaModel were not initialized from the model checkpoint at microsoft/graphcodebert-base and are newly initialized: ['roberta.pooler.dense.weight', 'roberta.pooler.dense.bias']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+Epoch 0/3
+100%|██████████| 1250/1250 [06:58<00:00,  2.99it/s]
+Loss in this epoch: 786.9828036725521
+100%|██████████| 500/500 [00:49<00:00, 10.10it/s]
+Precission: 0/47 0.0
+Recall 0/40 0.0
+P:47, TP:0, FP:47, FN:40, TN:1913, N:1953
+Epoch 1/3
+100%|██████████| 1250/1250 [06:43<00:00,  3.10it/s]
+Loss in this epoch: 434.60826200805604
+100%|██████████| 500/500 [00:49<00:00, 10.10it/s]
+Precission: 2/17 0.11764705882352941
+Recall 2/40 0.05
+P:17, TP:2, FP:15, FN:38, TN:1945, N:1983
+Epoch 2/3
+100%|██████████| 1250/1250 [06:43<00:00,  3.10it/s]
+Loss in this epoch: 111.03646565403324
+100%|██████████| 500/500 [00:49<00:00, 10.09it/s]
+Precission: 5/29 0.1724137931034483
+Recall 5/40 0.125
+P:29, TP:5, FP:24, FN:35, TN:1936, N:1971
+Model saw positive samples 4998 times and background samples 10002
+Ratio 1:2.0012004801920766
+100%|██████████| 8919/8919 [14:42<00:00, 10.10it/s]
+Precission: 312/1217 0.2563681183237469
+Recall 312/1267 0.2462509865824783
+P:1217, TP:312, FP:905, FN:955, TN:33504, N:34459
+
+XXX
+learning_rate 2e-06
+oversampling_ratio 4
+class_ratio 2
+precision 0.2563681183237469
+recall 0.2462509865824783
+XXX
+
+Some weights of the model checkpoint at microsoft/graphcodebert-base were not used when initializing RobertaModel: ['lm_head.dense.weight', 'lm_head.layer_norm.weight', 'lm_head.bias', 'lm_head.layer_norm.bias', 'lm_head.dense.bias', 'lm_head.decoder.bias', 'lm_head.decoder.weight']
+- This IS expected if you are initializing RobertaModel from the checkpoint of a model trained on another task or with another architecture (e.g. initializing a BertForSequenceClassification model from a BertForPreTraining model).
+- This IS NOT expected if you are initializing RobertaModel from the checkpoint of a model that you expect to be exactly identical (initializing a BertForSequenceClassification model from a BertForSequenceClassification model).
+Some weights of RobertaModel were not initialized from the model checkpoint at microsoft/graphcodebert-base and are newly initialized: ['roberta.pooler.dense.weight', 'roberta.pooler.dense.bias']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+Epoch 0/3
+100%|██████████| 1250/1250 [07:01<00:00,  2.97it/s]
+Loss in this epoch: 642.491618104279
+100%|██████████| 500/500 [00:48<00:00, 10.38it/s]
+Precission: 0/0 0
+Recall 0/40 0.0
+P:0, TP:0, FP:0, FN:40, TN:1960, N:2000
+Epoch 1/3
+100%|██████████| 1250/1250 [06:34<00:00,  3.17it/s]
+Loss in this epoch: 334.0277934158221
+100%|██████████| 500/500 [00:48<00:00, 10.38it/s]
+Precission: 0/51 0.0
+Recall 0/40 0.0
+P:51, TP:0, FP:51, FN:40, TN:1909, N:1949
+Epoch 2/3
+100%|██████████| 1250/1250 [06:34<00:00,  3.17it/s]
+Loss in this epoch: 96.0832635264378
+100%|██████████| 500/500 [00:48<00:00, 10.38it/s]
+Precission: 0/3 0.0
+Recall 0/40 0.0
+P:3, TP:0, FP:3, FN:40, TN:1957, N:1997
+Model saw positive samples 3000 times and background samples 12000
+Ratio 1:4.0
+100%|██████████| 8919/8919 [14:18<00:00, 10.39it/s]
+Precission: 152/317 0.4794952681388013
+Recall 152/1267 0.11996842936069456
+P:317, TP:152, FP:165, FN:1115, TN:34244, N:35359
+
+XXX
+learning_rate 2e-06
+oversampling_ratio 4
+class_ratio 4
+precision 0.4794952681388013
+recall 0.11996842936069456
+XXX
+
+Some weights of the model checkpoint at microsoft/graphcodebert-base were not used when initializing RobertaModel: ['lm_head.dense.weight', 'lm_head.layer_norm.weight', 'lm_head.bias', 'lm_head.layer_norm.bias', 'lm_head.dense.bias', 'lm_head.decoder.bias', 'lm_head.decoder.weight']
+- This IS expected if you are initializing RobertaModel from the checkpoint of a model trained on another task or with another architecture (e.g. initializing a BertForSequenceClassification model from a BertForPreTraining model).
+- This IS NOT expected if you are initializing RobertaModel from the checkpoint of a model that you expect to be exactly identical (initializing a BertForSequenceClassification model from a BertForSequenceClassification model).
+Some weights of RobertaModel were not initialized from the model checkpoint at microsoft/graphcodebert-base and are newly initialized: ['roberta.pooler.dense.weight', 'roberta.pooler.dense.bias']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+Epoch 0/3
+100%|██████████| 1250/1250 [06:48<00:00,  3.06it/s]
+Loss in this epoch: 483.3613896332681
+100%|██████████| 500/500 [00:48<00:00, 10.39it/s]
+Precission: 0/0 0
+Recall 0/40 0.0
+P:0, TP:0, FP:0, FN:40, TN:1960, N:2000
+Epoch 1/3
+100%|██████████| 1250/1250 [06:34<00:00,  3.17it/s]
+Loss in this epoch: 344.3110640505329
+100%|██████████| 500/500 [00:48<00:00, 10.35it/s]
+Precission: 3/13 0.23076923076923078
+Recall 3/40 0.075
+P:13, TP:3, FP:10, FN:37, TN:1950, N:1987
+Epoch 2/3
+100%|██████████| 1250/1250 [06:34<00:00,  3.17it/s]
+Loss in this epoch: 136.76308055478148
+100%|██████████| 500/500 [00:48<00:00, 10.37it/s]
+Precission: 3/29 0.10344827586206896
+Recall 3/40 0.075
+P:29, TP:3, FP:26, FN:37, TN:1934, N:1971
+Model saw positive samples 1665 times and background samples 13335
+Ratio 1:8.00900900900901
+100%|██████████| 8919/8919 [15:51<00:00,  9.37it/s]
+Precission: 146/694 0.21037463976945245
+Recall 146/1267 0.11523283346487766
+P:694, TP:146, FP:548, FN:1121, TN:33861, N:34982
+
+XXX
+learning_rate 2e-06
+oversampling_ratio 4
+class_ratio 8
+precision 0.21037463976945245
+recall 0.11523283346487766
+XXX
+
+Some weights of the model checkpoint at microsoft/graphcodebert-base were not used when initializing RobertaModel: ['lm_head.dense.weight', 'lm_head.layer_norm.weight', 'lm_head.bias', 'lm_head.layer_norm.bias', 'lm_head.dense.bias', 'lm_head.decoder.bias', 'lm_head.decoder.weight']
+- This IS expected if you are initializing RobertaModel from the checkpoint of a model trained on another task or with another architecture (e.g. initializing a BertForSequenceClassification model from a BertForPreTraining model).
+- This IS NOT expected if you are initializing RobertaModel from the checkpoint of a model that you expect to be exactly identical (initializing a BertForSequenceClassification model from a BertForSequenceClassification model).
+Some weights of RobertaModel were not initialized from the model checkpoint at microsoft/graphcodebert-base and are newly initialized: ['roberta.pooler.dense.weight', 'roberta.pooler.dense.bias']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+Epoch 0/3
+100%|██████████| 1250/1250 [06:58<00:00,  2.99it/s]
+Loss in this epoch: 859.1159778237343
+100%|██████████| 500/500 [00:49<00:00, 10.08it/s]
+Precission: 16/526 0.030418250950570342
+Recall 16/40 0.4
+P:526, TP:16, FP:510, FN:24, TN:1450, N:1474
+Epoch 1/3
+100%|██████████| 1250/1250 [06:43<00:00,  3.10it/s]
+Loss in this epoch: 388.72910123039037
+100%|██████████| 500/500 [00:49<00:00, 10.08it/s]
+Precission: 16/122 0.13114754098360656
+Recall 16/40 0.4
+P:122, TP:16, FP:106, FN:24, TN:1854, N:1878
+Epoch 2/3
+100%|██████████| 1250/1250 [06:43<00:00,  3.10it/s]
+Loss in this epoch: 110.1561396557372
+100%|██████████| 500/500 [00:49<00:00, 10.09it/s]
+Precission: 15/81 0.18518518518518517
+Recall 15/40 0.375
+P:81, TP:15, FP:66, FN:25, TN:1894, N:1919
+Model saw positive samples 7500 times and background samples 7500
+Ratio 1:1.0
+100%|██████████| 8919/8919 [14:43<00:00, 10.10it/s]
+Precission: 305/2057 0.1482741857073408
+Recall 305/1267 0.24072612470402527
+P:2057, TP:305, FP:1752, FN:962, TN:32657, N:33619
+
+XXX
+learning_rate 2e-06
+oversampling_ratio -1
+class_ratio 1
+precision 0.1482741857073408
+recall 0.24072612470402527
+XXX
+
+Some weights of the model checkpoint at microsoft/graphcodebert-base were not used when initializing RobertaModel: ['lm_head.dense.weight', 'lm_head.layer_norm.weight', 'lm_head.bias', 'lm_head.layer_norm.bias', 'lm_head.dense.bias', 'lm_head.decoder.bias', 'lm_head.decoder.weight']
+- This IS expected if you are initializing RobertaModel from the checkpoint of a model trained on another task or with another architecture (e.g. initializing a BertForSequenceClassification model from a BertForPreTraining model).
+- This IS NOT expected if you are initializing RobertaModel from the checkpoint of a model that you expect to be exactly identical (initializing a BertForSequenceClassification model from a BertForSequenceClassification model).
+Some weights of RobertaModel were not initialized from the model checkpoint at microsoft/graphcodebert-base and are newly initialized: ['roberta.pooler.dense.weight', 'roberta.pooler.dense.bias']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+Epoch 0/3
+100%|██████████| 1250/1250 [06:58<00:00,  2.99it/s]
+Loss in this epoch: 795.0761062949896
+100%|██████████| 500/500 [00:49<00:00, 10.09it/s]
+Precission: 0/34 0.0
+Recall 0/40 0.0
+P:34, TP:0, FP:34, FN:40, TN:1926, N:1966
+Epoch 1/3
+100%|██████████| 1250/1250 [06:43<00:00,  3.10it/s]
+Loss in this epoch: 318.70216929074377
+100%|██████████| 500/500 [00:49<00:00, 10.09it/s]
+Precission: 8/30 0.26666666666666666
+Recall 8/40 0.2
+P:30, TP:8, FP:22, FN:32, TN:1938, N:1970
+Epoch 2/3
+100%|██████████| 1250/1250 [06:43<00:00,  3.10it/s]
+Loss in this epoch: 55.31999122904381
+100%|██████████| 500/500 [00:49<00:00, 10.09it/s]
+Precission: 8/79 0.10126582278481013
+Recall 8/40 0.2
+P:79, TP:8, FP:71, FN:32, TN:1889, N:1921
+Model saw positive samples 4998 times and background samples 10002
+Ratio 1:2.0012004801920766
+100%|██████████| 8919/8919 [15:35<00:00,  9.53it/s]
+Precission: 394/1959 0.20112302194997447
+Recall 394/1267 0.31097079715864245
+P:1959, TP:394, FP:1565, FN:873, TN:32844, N:33717
+
+XXX
+learning_rate 2e-06
+oversampling_ratio -1
+class_ratio 2
+precision 0.20112302194997447
+recall 0.31097079715864245
+XXX
+
+Some weights of the model checkpoint at microsoft/graphcodebert-base were not used when initializing RobertaModel: ['lm_head.dense.weight', 'lm_head.layer_norm.weight', 'lm_head.bias', 'lm_head.layer_norm.bias', 'lm_head.dense.bias', 'lm_head.decoder.bias', 'lm_head.decoder.weight']
+- This IS expected if you are initializing RobertaModel from the checkpoint of a model trained on another task or with another architecture (e.g. initializing a BertForSequenceClassification model from a BertForPreTraining model).
+- This IS NOT expected if you are initializing RobertaModel from the checkpoint of a model that you expect to be exactly identical (initializing a BertForSequenceClassification model from a BertForSequenceClassification model).
+Some weights of RobertaModel were not initialized from the model checkpoint at microsoft/graphcodebert-base and are newly initialized: ['roberta.pooler.dense.weight', 'roberta.pooler.dense.bias']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+Epoch 0/3
+100%|██████████| 1250/1250 [06:58<00:00,  2.99it/s]
+Loss in this epoch: 629.926219008863
+100%|██████████| 500/500 [00:49<00:00, 10.09it/s]
+Precission: 0/0 0
+Recall 0/40 0.0
+P:0, TP:0, FP:0, FN:40, TN:1960, N:2000
+Epoch 1/3
+100%|██████████| 1250/1250 [06:43<00:00,  3.10it/s]
+Loss in this epoch: 334.55428583035246
+100%|██████████| 500/500 [00:49<00:00, 10.09it/s]
+Precission: 3/14 0.21428571428571427
+Recall 3/40 0.075
+P:14, TP:3, FP:11, FN:37, TN:1949, N:1986
+Epoch 2/3
+100%|██████████| 1250/1250 [06:43<00:00,  3.10it/s]
+Loss in this epoch: 87.46529566694517
+100%|██████████| 500/500 [00:49<00:00, 10.09it/s]
+Precission: 3/13 0.23076923076923078
+Recall 3/40 0.075
+P:13, TP:3, FP:10, FN:37, TN:1950, N:1987
+Model saw positive samples 3000 times and background samples 12000
+Ratio 1:4.0
+100%|██████████| 8919/8919 [14:43<00:00, 10.09it/s]
+Precission: 205/412 0.4975728155339806
+Recall 205/1267 0.16179952644041043
+P:412, TP:205, FP:207, FN:1062, TN:34202, N:35264
+
+XXX
+learning_rate 2e-06
+oversampling_ratio -1
+class_ratio 4
+precision 0.4975728155339806
+recall 0.16179952644041043
+XXX
+
+Some weights of the model checkpoint at microsoft/graphcodebert-base were not used when initializing RobertaModel: ['lm_head.dense.weight', 'lm_head.layer_norm.weight', 'lm_head.bias', 'lm_head.layer_norm.bias', 'lm_head.dense.bias', 'lm_head.decoder.bias', 'lm_head.decoder.weight']
+- This IS expected if you are initializing RobertaModel from the checkpoint of a model trained on another task or with another architecture (e.g. initializing a BertForSequenceClassification model from a BertForPreTraining model).
+- This IS NOT expected if you are initializing RobertaModel from the checkpoint of a model that you expect to be exactly identical (initializing a BertForSequenceClassification model from a BertForSequenceClassification model).
+Some weights of RobertaModel were not initialized from the model checkpoint at microsoft/graphcodebert-base and are newly initialized: ['roberta.pooler.dense.weight', 'roberta.pooler.dense.bias']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+Epoch 0/3
+100%|██████████| 1250/1250 [06:58<00:00,  2.99it/s]
+Loss in this epoch: 466.21257024630904
+100%|██████████| 500/500 [00:49<00:00, 10.09it/s]
+Precission: 0/0 0
+Recall 0/40 0.0
+P:0, TP:0, FP:0, FN:40, TN:1960, N:2000
+Epoch 1/3
+100%|██████████| 1250/1250 [06:43<00:00,  3.10it/s]
+Loss in this epoch: 288.0803499384783
+100%|██████████| 500/500 [00:49<00:00, 10.09it/s]
+Precission: 0/4 0.0
+Recall 0/40 0.0
+P:4, TP:0, FP:4, FN:40, TN:1956, N:1996
+Epoch 2/3
+100%|██████████| 1250/1250 [06:43<00:00,  3.10it/s]
+Loss in this epoch: 84.03810229338706
+100%|██████████| 500/500 [00:49<00:00, 10.08it/s]
+Precission: 2/35 0.05714285714285714
+Recall 2/40 0.05
+P:35, TP:2, FP:33, FN:38, TN:1927, N:1965
+Model saw positive samples 1665 times and background samples 13335
+Ratio 1:8.00900900900901
+100%|██████████| 8919/8919 [15:31<00:00,  9.57it/s]
+Precission: 250/555 0.45045045045045046
+Recall 250/1267 0.19731649565903708
+P:555, TP:250, FP:305, FN:1017, TN:34104, N:35121
+
+XXX
+learning_rate 2e-06
+oversampling_ratio -1
+class_ratio 8
+precision 0.45045045045045046
+recall 0.19731649565903708
+XXX
+
+Some weights of the model checkpoint at microsoft/graphcodebert-base were not used when initializing RobertaModel: ['lm_head.dense.weight', 'lm_head.layer_norm.weight', 'lm_head.bias', 'lm_head.layer_norm.bias', 'lm_head.dense.bias', 'lm_head.decoder.bias', 'lm_head.decoder.weight']
+- This IS expected if you are initializing RobertaModel from the checkpoint of a model trained on another task or with another architecture (e.g. initializing a BertForSequenceClassification model from a BertForPreTraining model).
+- This IS NOT expected if you are initializing RobertaModel from the checkpoint of a model that you expect to be exactly identical (initializing a BertForSequenceClassification model from a BertForSequenceClassification model).
+Some weights of RobertaModel were not initialized from the model checkpoint at microsoft/graphcodebert-base and are newly initialized: ['roberta.pooler.dense.weight', 'roberta.pooler.dense.bias']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+Epoch 0/3
+100%|██████████| 1250/1250 [06:58<00:00,  2.99it/s]
+Loss in this epoch: 565.400098690996
+100%|██████████| 500/500 [00:49<00:00, 10.08it/s]
+Precission: 0/25 0.0
+Recall 0/40 0.0
+P:25, TP:0, FP:25, FN:40, TN:1935, N:1975
+Epoch 1/3
+100%|██████████| 1250/1250 [06:52<00:00,  3.03it/s]
+Loss in this epoch: 64.73905466668657
+100%|██████████| 500/500 [00:56<00:00,  8.78it/s]
+Precission: 2/17 0.11764705882352941
+Recall 2/40 0.05
+P:17, TP:2, FP:15, FN:38, TN:1945, N:1983
+Epoch 2/3
+100%|██████████| 1250/1250 [07:19<00:00,  2.84it/s]
+Loss in this epoch: 16.438275128035457
+100%|██████████| 500/500 [00:54<00:00,  9.21it/s]
+Precission: 15/153 0.09803921568627451
+Recall 15/40 0.375
+P:153, TP:15, FP:138, FN:25, TN:1822, N:1847
+Model saw positive samples 7500 times and background samples 7500
+Ratio 1:1.0
+100%|██████████| 8919/8919 [14:58<00:00,  9.92it/s]
+Precission: 321/2543 0.12622886354699175
+Recall 321/1267 0.2533543804262036
+P:2543, TP:321, FP:2222, FN:946, TN:32187, N:33133
+
+XXX
+learning_rate 2e-05
+oversampling_ratio 1
+class_ratio 1
+precision 0.12622886354699175
+recall 0.2533543804262036
+XXX
+
+Some weights of the model checkpoint at microsoft/graphcodebert-base were not used when initializing RobertaModel: ['lm_head.dense.weight', 'lm_head.layer_norm.weight', 'lm_head.bias', 'lm_head.layer_norm.bias', 'lm_head.dense.bias', 'lm_head.decoder.bias', 'lm_head.decoder.weight']
+- This IS expected if you are initializing RobertaModel from the checkpoint of a model trained on another task or with another architecture (e.g. initializing a BertForSequenceClassification model from a BertForPreTraining model).
+- This IS NOT expected if you are initializing RobertaModel from the checkpoint of a model that you expect to be exactly identical (initializing a BertForSequenceClassification model from a BertForSequenceClassification model).
+Some weights of RobertaModel were not initialized from the model checkpoint at microsoft/graphcodebert-base and are newly initialized: ['roberta.pooler.dense.weight', 'roberta.pooler.dense.bias']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+Epoch 0/3
+100%|██████████| 1250/1250 [06:58<00:00,  2.99it/s]
+Loss in this epoch: 476.4789611713495
+100%|██████████| 500/500 [00:49<00:00, 10.09it/s]
+Precission: 19/158 0.12025316455696203
+Recall 19/40 0.475
+P:158, TP:19, FP:139, FN:21, TN:1821, N:1842
+Epoch 1/3
+100%|██████████| 1250/1250 [06:43<00:00,  3.10it/s]
+Loss in this epoch: 64.01990477002983
+100%|██████████| 500/500 [00:49<00:00, 10.09it/s]
+Precission: 8/59 0.13559322033898305
+Recall 8/40 0.2
+P:59, TP:8, FP:51, FN:32, TN:1909, N:1941
+Epoch 2/3
+100%|██████████| 1250/1250 [07:03<00:00,  2.95it/s]
+Loss in this epoch: 18.343698071315885
+100%|██████████| 500/500 [00:54<00:00,  9.22it/s]
+Precission: 11/51 0.21568627450980393
+Recall 11/40 0.275
+P:51, TP:11, FP:40, FN:29, TN:1920, N:1949
+Model saw positive samples 4998 times and background samples 10002
+Ratio 1:2.0012004801920766
+100%|██████████| 8919/8919 [15:05<00:00,  9.85it/s]
+Precission: 322/1184 0.2719594594594595
+Recall 322/1267 0.2541436464088398
+P:1184, TP:322, FP:862, FN:945, TN:33547, N:34492
+
+XXX
+learning_rate 2e-05
+oversampling_ratio 1
+class_ratio 2
+precision 0.2719594594594595
+recall 0.2541436464088398
+XXX
+
+Some weights of the model checkpoint at microsoft/graphcodebert-base were not used when initializing RobertaModel: ['lm_head.dense.weight', 'lm_head.layer_norm.weight', 'lm_head.bias', 'lm_head.layer_norm.bias', 'lm_head.dense.bias', 'lm_head.decoder.bias', 'lm_head.decoder.weight']
+- This IS expected if you are initializing RobertaModel from the checkpoint of a model trained on another task or with another architecture (e.g. initializing a BertForSequenceClassification model from a BertForPreTraining model).
+- This IS NOT expected if you are initializing RobertaModel from the checkpoint of a model that you expect to be exactly identical (initializing a BertForSequenceClassification model from a BertForSequenceClassification model).
+Some weights of RobertaModel were not initialized from the model checkpoint at microsoft/graphcodebert-base and are newly initialized: ['roberta.pooler.dense.weight', 'roberta.pooler.dense.bias']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+Epoch 0/3
+100%|██████████| 1250/1250 [06:58<00:00,  2.99it/s]
+Loss in this epoch: 410.5542025293689
+100%|██████████| 500/500 [00:49<00:00, 10.09it/s]
+Precission: 3/52 0.057692307692307696
+Recall 3/40 0.075
+P:52, TP:3, FP:49, FN:37, TN:1911, N:1948
+Epoch 1/3
+100%|██████████| 1250/1250 [06:43<00:00,  3.10it/s]
+Loss in this epoch: 72.57835809673998
+100%|██████████| 500/500 [00:49<00:00, 10.09it/s]
+Precission: 0/4 0.0
+Recall 0/40 0.0
+P:4, TP:0, FP:4, FN:40, TN:1956, N:1996
+Epoch 2/3
+100%|██████████| 1250/1250 [06:43<00:00,  3.10it/s]
+Loss in this epoch: 19.436014942239126
+100%|██████████| 500/500 [00:49<00:00, 10.09it/s]
+Precission: 11/61 0.18032786885245902
+Recall 11/40 0.275
+P:61, TP:11, FP:50, FN:29, TN:1910, N:1939
+Model saw positive samples 3000 times and background samples 12000
+Ratio 1:4.0
+100%|██████████| 8919/8919 [14:43<00:00, 10.09it/s]
+Precission: 258/911 0.283205268935236
+Recall 258/1267 0.20363062352012629
+P:911, TP:258, FP:653, FN:1009, TN:33756, N:34765
+
+XXX
+learning_rate 2e-05
+oversampling_ratio 1
+class_ratio 4
+precision 0.283205268935236
+recall 0.20363062352012629
+XXX
+
+Some weights of the model checkpoint at microsoft/graphcodebert-base were not used when initializing RobertaModel: ['lm_head.dense.weight', 'lm_head.layer_norm.weight', 'lm_head.bias', 'lm_head.layer_norm.bias', 'lm_head.dense.bias', 'lm_head.decoder.bias', 'lm_head.decoder.weight']
+- This IS expected if you are initializing RobertaModel from the checkpoint of a model trained on another task or with another architecture (e.g. initializing a BertForSequenceClassification model from a BertForPreTraining model).
+- This IS NOT expected if you are initializing RobertaModel from the checkpoint of a model that you expect to be exactly identical (initializing a BertForSequenceClassification model from a BertForSequenceClassification model).
+Some weights of RobertaModel were not initialized from the model checkpoint at microsoft/graphcodebert-base and are newly initialized: ['roberta.pooler.dense.weight', 'roberta.pooler.dense.bias']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+Epoch 0/3
+100%|██████████| 1250/1250 [06:58<00:00,  2.99it/s]
+Loss in this epoch: 342.7054660996655
+100%|██████████| 500/500 [00:49<00:00, 10.08it/s]
+Precission: 16/134 0.11940298507462686
+Recall 16/40 0.4
+P:134, TP:16, FP:118, FN:24, TN:1842, N:1866
+Epoch 1/3
+100%|██████████| 1250/1250 [06:43<00:00,  3.10it/s]
+Loss in this epoch: 74.48041439316876
+100%|██████████| 500/500 [00:49<00:00, 10.09it/s]
+Precission: 7/16 0.4375
+Recall 7/40 0.175
+P:16, TP:7, FP:9, FN:33, TN:1951, N:1984
+Epoch 2/3
+100%|██████████| 1250/1250 [06:43<00:00,  3.10it/s]
+Loss in this epoch: 17.36487812352425
+100%|██████████| 500/500 [00:49<00:00, 10.09it/s]
+Precission: 1/1 1.0
+Recall 1/40 0.025
+P:1, TP:1, FP:0, FN:39, TN:1960, N:1999
+Model saw positive samples 1665 times and background samples 13335
+Ratio 1:8.00900900900901
+100%|██████████| 8919/8919 [14:43<00:00, 10.09it/s]
+Precission: 156/260 0.6
+Recall 156/1267 0.12312549329123915
+P:260, TP:156, FP:104, FN:1111, TN:34305, N:35416
+
+XXX
+learning_rate 2e-05
+oversampling_ratio 1
+class_ratio 8
+precision 0.6
+recall 0.12312549329123915
+XXX
+
+Some weights of the model checkpoint at microsoft/graphcodebert-base were not used when initializing RobertaModel: ['lm_head.dense.weight', 'lm_head.layer_norm.weight', 'lm_head.bias', 'lm_head.layer_norm.bias', 'lm_head.dense.bias', 'lm_head.decoder.bias', 'lm_head.decoder.weight']
+- This IS expected if you are initializing RobertaModel from the checkpoint of a model trained on another task or with another architecture (e.g. initializing a BertForSequenceClassification model from a BertForPreTraining model).
+- This IS NOT expected if you are initializing RobertaModel from the checkpoint of a model that you expect to be exactly identical (initializing a BertForSequenceClassification model from a BertForSequenceClassification model).
+Some weights of RobertaModel were not initialized from the model checkpoint at microsoft/graphcodebert-base and are newly initialized: ['roberta.pooler.dense.weight', 'roberta.pooler.dense.bias']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+Epoch 0/3
+100%|██████████| 1250/1250 [06:58<00:00,  2.99it/s]
+Loss in this epoch: 586.661451674765
+100%|██████████| 500/500 [00:49<00:00, 10.09it/s]
+Precission: 13/65 0.2
+Recall 13/40 0.325
+P:65, TP:13, FP:52, FN:27, TN:1908, N:1935
+Epoch 1/3
+100%|██████████| 1250/1250 [06:43<00:00,  3.10it/s]
+Loss in this epoch: 57.83421992723015
+100%|██████████| 500/500 [00:49<00:00, 10.08it/s]
+Precission: 9/49 0.1836734693877551
+Recall 9/40 0.225
+P:49, TP:9, FP:40, FN:31, TN:1920, N:1951
+Epoch 2/3
+100%|██████████| 1250/1250 [06:43<00:00,  3.10it/s]
+Loss in this epoch: 21.56464953732211
+100%|██████████| 500/500 [00:49<00:00, 10.09it/s]
+Precission: 11/56 0.19642857142857142
+Recall 11/40 0.275
+P:56, TP:11, FP:45, FN:29, TN:1915, N:1944
+Model saw positive samples 7500 times and background samples 7500
+Ratio 1:1.0
+100%|██████████| 8919/8919 [14:44<00:00, 10.09it/s]
+Precission: 332/1118 0.29695885509839
+Recall 332/1267 0.26203630623520124
+P:1118, TP:332, FP:786, FN:935, TN:33623, N:34558
+
+XXX
+learning_rate 2e-05
+oversampling_ratio 2
+class_ratio 1
+precision 0.29695885509839
+recall 0.26203630623520124
+XXX
+
+Some weights of the model checkpoint at microsoft/graphcodebert-base were not used when initializing RobertaModel: ['lm_head.dense.weight', 'lm_head.layer_norm.weight', 'lm_head.bias', 'lm_head.layer_norm.bias', 'lm_head.dense.bias', 'lm_head.decoder.bias', 'lm_head.decoder.weight']
+- This IS expected if you are initializing RobertaModel from the checkpoint of a model trained on another task or with another architecture (e.g. initializing a BertForSequenceClassification model from a BertForPreTraining model).
+- This IS NOT expected if you are initializing RobertaModel from the checkpoint of a model that you expect to be exactly identical (initializing a BertForSequenceClassification model from a BertForSequenceClassification model).
+Some weights of RobertaModel were not initialized from the model checkpoint at microsoft/graphcodebert-base and are newly initialized: ['roberta.pooler.dense.weight', 'roberta.pooler.dense.bias']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+Epoch 0/3
+100%|██████████| 1250/1250 [06:58<00:00,  2.99it/s]
+Loss in this epoch: 580.9927543324884
+100%|██████████| 500/500 [00:49<00:00, 10.09it/s]
+Precission: 3/31 0.0967741935483871
+Recall 3/40 0.075
+P:31, TP:3, FP:28, FN:37, TN:1932, N:1969
+Epoch 1/3
+100%|██████████| 1250/1250 [06:43<00:00,  3.10it/s]
+Loss in this epoch: 78.57815654427395
+100%|██████████| 500/500 [00:49<00:00, 10.08it/s]
+Precission: 0/2 0.0
+Recall 0/40 0.0
+P:2, TP:0, FP:2, FN:40, TN:1958, N:1998
+Epoch 2/3
+100%|██████████| 1250/1250 [06:43<00:00,  3.10it/s]
+Loss in this epoch: 21.07377689175337
+100%|██████████| 500/500 [00:49<00:00, 10.08it/s]
+Precission: 0/12 0.0
+Recall 0/40 0.0
+P:12, TP:0, FP:12, FN:40, TN:1948, N:1988
+Model saw positive samples 4998 times and background samples 10002
+Ratio 1:2.0012004801920766
+100%|██████████| 8919/8919 [14:43<00:00, 10.09it/s]
+Precission: 242/366 0.6612021857923497
+Recall 242/1267 0.1910023677979479
+P:366, TP:242, FP:124, FN:1025, TN:34285, N:35310
+
+XXX
+learning_rate 2e-05
+oversampling_ratio 2
+class_ratio 2
+precision 0.6612021857923497
+recall 0.1910023677979479
+XXX
+
+Some weights of the model checkpoint at microsoft/graphcodebert-base were not used when initializing RobertaModel: ['lm_head.dense.weight', 'lm_head.layer_norm.weight', 'lm_head.bias', 'lm_head.layer_norm.bias', 'lm_head.dense.bias', 'lm_head.decoder.bias', 'lm_head.decoder.weight']
+- This IS expected if you are initializing RobertaModel from the checkpoint of a model trained on another task or with another architecture (e.g. initializing a BertForSequenceClassification model from a BertForPreTraining model).
+- This IS NOT expected if you are initializing RobertaModel from the checkpoint of a model that you expect to be exactly identical (initializing a BertForSequenceClassification model from a BertForSequenceClassification model).
+Some weights of RobertaModel were not initialized from the model checkpoint at microsoft/graphcodebert-base and are newly initialized: ['roberta.pooler.dense.weight', 'roberta.pooler.dense.bias']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+Epoch 0/3
+100%|██████████| 1250/1250 [06:58<00:00,  2.99it/s]
+Loss in this epoch: 503.3593895176891
+100%|██████████| 500/500 [00:49<00:00, 10.08it/s]
+Precission: 9/125 0.072
+Recall 9/40 0.225
+P:125, TP:9, FP:116, FN:31, TN:1844, N:1875
+Epoch 1/3
+100%|██████████| 1250/1250 [06:43<00:00,  3.10it/s]
+Loss in this epoch: 101.87183774498408
+100%|██████████| 500/500 [00:49<00:00, 10.08it/s]
+Precission: 6/48 0.125
+Recall 6/40 0.15
+P:48, TP:6, FP:42, FN:34, TN:1918, N:1952
+Epoch 2/3
+100%|██████████| 1250/1250 [06:43<00:00,  3.10it/s]
+Loss in this epoch: 21.893050622435112
+100%|██████████| 500/500 [00:49<00:00, 10.08it/s]
+Precission: 2/8 0.25
+Recall 2/40 0.05
+P:8, TP:2, FP:6, FN:38, TN:1954, N:1992
+Model saw positive samples 3000 times and background samples 12000
+Ratio 1:4.0
+100%|██████████| 8919/8919 [14:43<00:00, 10.09it/s]
+Precission: 144/304 0.47368421052631576
+Recall 144/1267 0.11365430149960537
+P:304, TP:144, FP:160, FN:1123, TN:34249, N:35372
+
+XXX
+learning_rate 2e-05
+oversampling_ratio 2
+class_ratio 4
+precision 0.47368421052631576
+recall 0.11365430149960537
+XXX
+
+Some weights of the model checkpoint at microsoft/graphcodebert-base were not used when initializing RobertaModel: ['lm_head.dense.weight', 'lm_head.layer_norm.weight', 'lm_head.bias', 'lm_head.layer_norm.bias', 'lm_head.dense.bias', 'lm_head.decoder.bias', 'lm_head.decoder.weight']
+- This IS expected if you are initializing RobertaModel from the checkpoint of a model trained on another task or with another architecture (e.g. initializing a BertForSequenceClassification model from a BertForPreTraining model).
+- This IS NOT expected if you are initializing RobertaModel from the checkpoint of a model that you expect to be exactly identical (initializing a BertForSequenceClassification model from a BertForSequenceClassification model).
+Some weights of RobertaModel were not initialized from the model checkpoint at microsoft/graphcodebert-base and are newly initialized: ['roberta.pooler.dense.weight', 'roberta.pooler.dense.bias']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+Epoch 0/3
+100%|██████████| 1250/1250 [06:58<00:00,  2.99it/s]
+Loss in this epoch: 414.79852609569207
+100%|██████████| 500/500 [00:49<00:00, 10.09it/s]
+Precission: 5/24 0.20833333333333334
+Recall 5/40 0.125
+P:24, TP:5, FP:19, FN:35, TN:1941, N:1976
+Epoch 1/3
+100%|██████████| 1250/1250 [06:43<00:00,  3.10it/s]
+Loss in this epoch: 144.7562053304864
+100%|██████████| 500/500 [00:49<00:00, 10.09it/s]
+Precission: 7/41 0.17073170731707318
+Recall 7/40 0.175
+P:41, TP:7, FP:34, FN:33, TN:1926, N:1959
+Epoch 2/3
+100%|██████████| 1250/1250 [06:43<00:00,  3.10it/s]
+Loss in this epoch: 31.233268288808176
+100%|██████████| 500/500 [00:49<00:00, 10.08it/s]
+Precission: 3/11 0.2727272727272727
+Recall 3/40 0.075
+P:11, TP:3, FP:8, FN:37, TN:1952, N:1989
+Model saw positive samples 1665 times and background samples 13335
+Ratio 1:8.00900900900901
+100%|██████████| 8919/8919 [14:44<00:00, 10.09it/s]
+Precission: 69/179 0.3854748603351955
+Recall 69/1267 0.05445935280189424
+P:179, TP:69, FP:110, FN:1198, TN:34299, N:35497
+
+XXX
+learning_rate 2e-05
+oversampling_ratio 2
+class_ratio 8
+precision 0.3854748603351955
+recall 0.05445935280189424
+XXX
+
+Some weights of the model checkpoint at microsoft/graphcodebert-base were not used when initializing RobertaModel: ['lm_head.dense.weight', 'lm_head.layer_norm.weight', 'lm_head.bias', 'lm_head.layer_norm.bias', 'lm_head.dense.bias', 'lm_head.decoder.bias', 'lm_head.decoder.weight']
+- This IS expected if you are initializing RobertaModel from the checkpoint of a model trained on another task or with another architecture (e.g. initializing a BertForSequenceClassification model from a BertForPreTraining model).
+- This IS NOT expected if you are initializing RobertaModel from the checkpoint of a model that you expect to be exactly identical (initializing a BertForSequenceClassification model from a BertForSequenceClassification model).
+Some weights of RobertaModel were not initialized from the model checkpoint at microsoft/graphcodebert-base and are newly initialized: ['roberta.pooler.dense.weight', 'roberta.pooler.dense.bias']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+Epoch 0/3
+100%|██████████| 1250/1250 [06:58<00:00,  2.99it/s]
+Loss in this epoch: 855.8874216228724
+100%|██████████| 500/500 [00:49<00:00, 10.07it/s]
+Precission: 1/4 0.25
+Recall 1/40 0.025
+P:4, TP:1, FP:3, FN:39, TN:1957, N:1996
+Epoch 1/3
+100%|██████████| 1250/1250 [06:43<00:00,  3.10it/s]
+Loss in this epoch: 856.8398695737123
+100%|██████████| 500/500 [00:49<00:00, 10.08it/s]
+Precission: 0/0 0
+Recall 0/40 0.0
+P:0, TP:0, FP:0, FN:40, TN:1960, N:2000
+Epoch 2/3
+100%|██████████| 1250/1250 [06:43<00:00,  3.10it/s]
+Loss in this epoch: 287.7537180376239
+100%|██████████| 500/500 [00:49<00:00, 10.08it/s]
+Precission: 5/87 0.05747126436781609
+Recall 5/40 0.125
+P:87, TP:5, FP:82, FN:35, TN:1878, N:1913
+Model saw positive samples 7500 times and background samples 7500
+Ratio 1:1.0
+100%|██████████| 8919/8919 [14:44<00:00, 10.09it/s]
+Precission: 273/1720 0.15872093023255815
+Recall 273/1267 0.2154696132596685
+P:1720, TP:273, FP:1447, FN:994, TN:32962, N:33956
+
+XXX
+learning_rate 2e-05
+oversampling_ratio 4
+class_ratio 1
+precision 0.15872093023255815
+recall 0.2154696132596685
+XXX
+
+Some weights of the model checkpoint at microsoft/graphcodebert-base were not used when initializing RobertaModel: ['lm_head.dense.weight', 'lm_head.layer_norm.weight', 'lm_head.bias', 'lm_head.layer_norm.bias', 'lm_head.dense.bias', 'lm_head.decoder.bias', 'lm_head.decoder.weight']
+- This IS expected if you are initializing RobertaModel from the checkpoint of a model trained on another task or with another architecture (e.g. initializing a BertForSequenceClassification model from a BertForPreTraining model).
+- This IS NOT expected if you are initializing RobertaModel from the checkpoint of a model that you expect to be exactly identical (initializing a BertForSequenceClassification model from a BertForSequenceClassification model).
+Some weights of RobertaModel were not initialized from the model checkpoint at microsoft/graphcodebert-base and are newly initialized: ['roberta.pooler.dense.weight', 'roberta.pooler.dense.bias']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+Epoch 0/3
+100%|██████████| 1250/1250 [06:58<00:00,  2.99it/s]
+Loss in this epoch: 450.47310350532643
+100%|██████████| 500/500 [00:49<00:00, 10.08it/s]
+Precission: 23/125 0.184
+Recall 23/40 0.575
+P:125, TP:23, FP:102, FN:17, TN:1858, N:1875
+Epoch 1/3
+100%|██████████| 1250/1250 [06:43<00:00,  3.10it/s]
+Loss in this epoch: 65.69221738298074
+100%|██████████| 500/500 [00:49<00:00, 10.08it/s]
+Precission: 1/12 0.08333333333333333
+Recall 1/40 0.025
+P:12, TP:1, FP:11, FN:39, TN:1949, N:1988
+Epoch 2/3
+100%|██████████| 1250/1250 [06:43<00:00,  3.10it/s]
+Loss in this epoch: 11.614759060284996
+100%|██████████| 500/500 [00:49<00:00, 10.08it/s]
+Precission: 3/45 0.06666666666666667
+Recall 3/40 0.075
+P:45, TP:3, FP:42, FN:37, TN:1918, N:1955
+Model saw positive samples 4998 times and background samples 10002
+Ratio 1:2.0012004801920766
+100%|██████████| 8919/8919 [14:44<00:00, 10.08it/s]
+Precission: 302/828 0.3647342995169082
+Recall 302/1267 0.23835832675611682
+P:828, TP:302, FP:526, FN:965, TN:33883, N:34848
+
+XXX
+learning_rate 2e-05
+oversampling_ratio 4
+class_ratio 2
+precision 0.3647342995169082
+recall 0.23835832675611682
+XXX
+
+Some weights of the model checkpoint at microsoft/graphcodebert-base were not used when initializing RobertaModel: ['lm_head.dense.weight', 'lm_head.layer_norm.weight', 'lm_head.bias', 'lm_head.layer_norm.bias', 'lm_head.dense.bias', 'lm_head.decoder.bias', 'lm_head.decoder.weight']
+- This IS expected if you are initializing RobertaModel from the checkpoint of a model trained on another task or with another architecture (e.g. initializing a BertForSequenceClassification model from a BertForPreTraining model).
+- This IS NOT expected if you are initializing RobertaModel from the checkpoint of a model that you expect to be exactly identical (initializing a BertForSequenceClassification model from a BertForSequenceClassification model).
+Some weights of RobertaModel were not initialized from the model checkpoint at microsoft/graphcodebert-base and are newly initialized: ['roberta.pooler.dense.weight', 'roberta.pooler.dense.bias']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+Epoch 0/3
+100%|██████████| 1250/1250 [06:58<00:00,  2.99it/s]
+Loss in this epoch: 471.9697584719397
+100%|██████████| 500/500 [00:49<00:00, 10.08it/s]
+Precission: 25/200 0.125
+Recall 25/40 0.625
+P:200, TP:25, FP:175, FN:15, TN:1785, N:1800
+Epoch 1/3
+100%|██████████| 1250/1250 [06:43<00:00,  3.10it/s]
+Loss in this epoch: 78.38371622035629
+100%|██████████| 500/500 [00:49<00:00, 10.08it/s]
+Precission: 5/36 0.1388888888888889
+Recall 5/40 0.125
+P:36, TP:5, FP:31, FN:35, TN:1929, N:1964
+Epoch 2/3
+100%|██████████| 1250/1250 [06:43<00:00,  3.10it/s]
+Loss in this epoch: 30.609406098541513
+100%|██████████| 500/500 [00:49<00:00, 10.08it/s]
+Precission: 3/19 0.15789473684210525
+Recall 3/40 0.075
+P:19, TP:3, FP:16, FN:37, TN:1944, N:1981
+Model saw positive samples 3000 times and background samples 12000
+Ratio 1:4.0
+100%|██████████| 8919/8919 [14:44<00:00, 10.08it/s]
+Precission: 114/264 0.4318181818181818
+Recall 114/1267 0.08997632202052092
+P:264, TP:114, FP:150, FN:1153, TN:34259, N:35412
+
+XXX
+learning_rate 2e-05
+oversampling_ratio 4
+class_ratio 4
+precision 0.4318181818181818
+recall 0.08997632202052092
+XXX
+
+Some weights of the model checkpoint at microsoft/graphcodebert-base were not used when initializing RobertaModel: ['lm_head.dense.weight', 'lm_head.layer_norm.weight', 'lm_head.bias', 'lm_head.layer_norm.bias', 'lm_head.dense.bias', 'lm_head.decoder.bias', 'lm_head.decoder.weight']
+- This IS expected if you are initializing RobertaModel from the checkpoint of a model trained on another task or with another architecture (e.g. initializing a BertForSequenceClassification model from a BertForPreTraining model).
+- This IS NOT expected if you are initializing RobertaModel from the checkpoint of a model that you expect to be exactly identical (initializing a BertForSequenceClassification model from a BertForSequenceClassification model).
+Some weights of RobertaModel were not initialized from the model checkpoint at microsoft/graphcodebert-base and are newly initialized: ['roberta.pooler.dense.weight', 'roberta.pooler.dense.bias']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+Epoch 0/3
+100%|██████████| 1250/1250 [06:58<00:00,  2.99it/s]
+Loss in this epoch: 406.80972992558964
+100%|██████████| 500/500 [00:49<00:00, 10.08it/s]
+Precission: 1/5 0.2
+Recall 1/40 0.025
+P:5, TP:1, FP:4, FN:39, TN:1956, N:1995
+Epoch 1/3
+100%|██████████| 1250/1250 [06:43<00:00,  3.10it/s]
+Loss in this epoch: 94.50007009816181
+100%|██████████| 500/500 [00:49<00:00, 10.08it/s]
+Precission: 10/63 0.15873015873015872
+Recall 10/40 0.25
+P:63, TP:10, FP:53, FN:30, TN:1907, N:1937
+Epoch 2/3
+100%|██████████| 1250/1250 [06:43<00:00,  3.10it/s]
+Loss in this epoch: 20.4421176573087
+100%|██████████| 500/500 [00:49<00:00, 10.08it/s]
+Precission: 3/15 0.2
+Recall 3/40 0.075
+P:15, TP:3, FP:12, FN:37, TN:1948, N:1985
+Model saw positive samples 1665 times and background samples 13335
+Ratio 1:8.00900900900901
+100%|██████████| 8919/8919 [14:44<00:00, 10.08it/s]
+Precission: 103/233 0.44206008583690987
+Recall 103/1267 0.08129439621152329
+P:233, TP:103, FP:130, FN:1164, TN:34279, N:35443
+
+XXX
+learning_rate 2e-05
+oversampling_ratio 4
+class_ratio 8
+precision 0.44206008583690987
+recall 0.08129439621152329
+XXX
+
+Some weights of the model checkpoint at microsoft/graphcodebert-base were not used when initializing RobertaModel: ['lm_head.dense.weight', 'lm_head.layer_norm.weight', 'lm_head.bias', 'lm_head.layer_norm.bias', 'lm_head.dense.bias', 'lm_head.decoder.bias', 'lm_head.decoder.weight']
+- This IS expected if you are initializing RobertaModel from the checkpoint of a model trained on another task or with another architecture (e.g. initializing a BertForSequenceClassification model from a BertForPreTraining model).
+- This IS NOT expected if you are initializing RobertaModel from the checkpoint of a model that you expect to be exactly identical (initializing a BertForSequenceClassification model from a BertForSequenceClassification model).
+Some weights of RobertaModel were not initialized from the model checkpoint at microsoft/graphcodebert-base and are newly initialized: ['roberta.pooler.dense.weight', 'roberta.pooler.dense.bias']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+Epoch 0/3
+100%|██████████| 1250/1250 [06:58<00:00,  2.99it/s]
+Loss in this epoch: 506.05574544752017
+100%|██████████| 500/500 [00:49<00:00, 10.08it/s]
+Precission: 11/110 0.1
+Recall 11/40 0.275
+P:110, TP:11, FP:99, FN:29, TN:1861, N:1890
+Epoch 1/3
+100%|██████████| 1250/1250 [06:43<00:00,  3.10it/s]
+Loss in this epoch: 50.36768973863218
+100%|██████████| 500/500 [00:49<00:00, 10.07it/s]
+Precission: 2/25 0.08
+Recall 2/40 0.05
+P:25, TP:2, FP:23, FN:38, TN:1937, N:1975
+Epoch 2/3
+100%|██████████| 1250/1250 [06:43<00:00,  3.10it/s]
+Loss in this epoch: 5.348120781127363
+100%|██████████| 500/500 [00:49<00:00, 10.08it/s]
+Precission: 0/9 0.0
+Recall 0/40 0.0
+P:9, TP:0, FP:9, FN:40, TN:1951, N:1991
+Model saw positive samples 7500 times and background samples 7500
+Ratio 1:1.0
+100%|██████████| 8919/8919 [14:44<00:00, 10.08it/s]
+Precission: 164/561 0.29233511586452765
+Recall 164/1267 0.12943962115232832
+P:561, TP:164, FP:397, FN:1103, TN:34012, N:35115
+
+XXX
+learning_rate 2e-05
+oversampling_ratio -1
+class_ratio 1
+precision 0.29233511586452765
+recall 0.12943962115232832
+XXX

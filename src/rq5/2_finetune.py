@@ -1,4 +1,5 @@
 import sys
+
 sys.path.insert(0, r'D:\Projects\aaa')
 
 from transformers import get_linear_schedule_with_warmup
@@ -17,32 +18,37 @@ from src.rq5.datasets.supporting.CsvDataset import CsvDataset
 from src.rq5.datasets.sampling.OverSampledDataset import OverSampledDataset
 from src.rq5.datasets.sampling.UnderSampledDataset import UnderSampledDataset
 
+from src.rq5.datasets.load import load_sample_level
 from src.rq5.dl_utils import save_dataset, read_dataset
+from src.utils.utils import get_files_in_from_directory
 from src.rq5.models.BertAndLinear import BertAndLinear as WorkingModel
 
 # Model config
 base_model = 'microsoft/graphcodebert-base'
 batch_size_ = 4
-num_epochs_ = 10
-fraction_of_data = 1
-train_percentage_size = 0.8
-class_ratio = 2
-learning_rate = 1e-5
+num_epochs_ = 3
+fraction_of_data = 0.05
+train_percentage_size = 0.9
+class_ratio = 1
+learning_rate = 2e-5
 
 save_model_in_each_epoch = True
-test_model_in_each_epoch = True
-model_name = 'new_added_code_mined_test'
+eval_model_in_each_epoch = True
+model_name = 't3_roll_java'
 work_dir = f'src/rq5/binaries/{model_name}'
 
 # Data config - Set to None if you want to use cached datasets
-raw_input_path = 'results/new_mined_code_added_code' #tokenized_java_only_added_code_miner_results_eval
+# raw_input_path = 'results/dl/CodeParserMiner_ast'
+# raw_input_path = 'results/dl/CodeParserMiner_edit'
+# raw_input_path = 'results/dl/AddedCodeMiner'
+raw_input_path = 'results/dl/RollingWindowMiner'
 # raw_input_path = None
 
-# eval_input_path = 'results/tokenized_java_only_added_code_miner_results_eval'
-eval_input_path = None
 
 # jsut for 'just_eval':
 model_to_eval = 'epoch_1'
+# eval_input_path = 'results/dl/AddedCodeMiner_test'
+eval_input_path = None
 
 
 device = torch.device("cuda") if torch.cuda.is_available() else torch.device("cpu")
@@ -50,7 +56,7 @@ random.seed(42)
 np.random.seed(42)
 torch.manual_seed(42)
 
-def train_model(model, optimizer, data_loader, loss_module, scheduler, test_loader = None):
+def train_model(model, optimizer, data_loader, loss_module, scheduler, eval_loader = None):
     torch.cuda.empty_cache()
     model.train()
     model.to(device)
@@ -96,8 +102,8 @@ def train_model(model, optimizer, data_loader, loss_module, scheduler, test_load
         if save_model_in_each_epoch:
             torch.save(model.state_dict(), f'{work_dir}/model_{model_name}_epoch_{epoch}.pickle')
 
-        if test_loader != None:
-            eval_model(model, test_loader)
+        if eval_loader != None:
+            eval_model(model, eval_loader)
 
 
     print(f'Model saw positive samples {positive_samples} times and background samples {all_samples-positive_samples}')
@@ -155,30 +161,34 @@ def eval_model(model, data_loader):
 
 def load_data(input_path):
     # Load Data
-    dataset = SampleLevelRawDataset()
-    dataset.load(input_path)
+    dataset, test_dataset = load_sample_level(input_path)
 
     # Data limit for testing
-    if fraction_of_data < 1:
-        dataset, rejected_data = dataset.split_data(fraction_of_data)
+    # if fraction_of_data < 1:
+    #     dataset, rejected_data = dataset.split_data(fraction_of_data)
+    dataset.crop_data(5000, 6000)
+    print('dataset.positive_data', len(dataset.positive_data))
+    print('dataset.background_data', len(dataset.background_data))
 
     # Train/Test split & rebalancing
-    train_dataset, test_dataset = dataset.split_data(train_percentage_size)
-    train_dataset = OverSampledDataset(train_dataset, class_ratio)
+    train_dataset, eval_dataset = dataset.split_data(train_percentage_size)
+    train_dataset = UnderSampledDataset(train_dataset, class_ratio)
 
     # Save the data
     save_dataset(train_dataset, f'{work_dir}/train_dataset_{model_name}.csv')
+    save_dataset(eval_dataset, f'{work_dir}/eval_dataset_{model_name}.csv')
     save_dataset(test_dataset, f'{work_dir}/test_dataset_{model_name}.csv')
 
-    return train_dataset, test_dataset
+    return train_dataset, eval_dataset, test_dataset
 
 
 def finetune_and_eval():
     # Load data
     if raw_input_path != None:
-        train_dataset, test_dataset = load_data(raw_input_path)
+        train_dataset, eval_dataset , test_dataset = load_data(raw_input_path)
     else:
         train_dataset = read_dataset(f'{work_dir}/train_dataset_{model_name}.csv')
+        eval_dataset = read_dataset(f'{work_dir}/eval_dataset_{model_name}.csv')
         test_dataset = read_dataset(f'{work_dir}/test_dataset_{model_name}.csv')
     
     # Define model
@@ -191,32 +201,33 @@ def finetune_and_eval():
 
     # Prep the loaders
     train_data_loader = data.DataLoader(train_dataset, batch_size=batch_size_, drop_last=True, shuffle=True)
-    if test_model_in_each_epoch:
-        test_data_loader = data.DataLoader(test_dataset, batch_size=batch_size_, drop_last=True, shuffle=True)
+    if eval_model_in_each_epoch:
+        eval_data_loader = data.DataLoader(eval_dataset, batch_size=batch_size_, drop_last=True, shuffle=True)
     else:
-        test_data_loader = None
+        eval_data_loader = None
 
     # Train the model
-    train_model(model, optimizer, train_data_loader, loss_module, scheduler, test_loader=test_data_loader)
+    train_model(model, optimizer, train_data_loader, loss_module, scheduler, eval_loader=eval_data_loader)
     torch.save(model.state_dict(), f'{work_dir}/model_{model_name}_final.pickle')
+
+    # Test the model on eval subset
+    eval_data_loader = data.DataLoader(eval_dataset, drop_last=True, batch_size=batch_size_)
+    eval_model(model, eval_data_loader)
 
     # Test the model on test subset
     test_data_loader = data.DataLoader(test_dataset, drop_last=True, batch_size=batch_size_)
     eval_model(model, test_data_loader)
 
-    # Test the model on eval subset
-    if eval_input_path != None:
-        eval_dataset = SampleLevelRawDataset()
-        eval_dataset.load(eval_input_path)
-        eval_data_loader = data.DataLoader(eval_dataset, drop_last=True, batch_size=batch_size_)
-        eval_model(model, eval_data_loader)
-
 
 def just_eval():
     model = WorkingModel(base_model)
     model.load_state_dict(torch.load(f'{work_dir}/model_{model_name}_{model_to_eval}.pickle'))
+
+    positive_json_files = get_files_in_from_directory(eval_input_path, extension='.json', startswith='positive-encodings')
+    background_json_files = get_files_in_from_directory(eval_input_path, extension='.json', startswith='background-encodings')
     eval_dataset = SampleLevelRawDataset()
-    eval_dataset.load(eval_input_path)
+    eval_dataset.load_files(positive_json_files, background_json_files)
+
     eval_data_loader = data.DataLoader(eval_dataset, drop_last=True, batch_size=batch_size_)
     eval_model(model, eval_data_loader)
 

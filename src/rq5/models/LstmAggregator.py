@@ -1,3 +1,4 @@
+from unicodedata import bidirectional
 from transformers import AutoModel
 import torch.nn as nn
 
@@ -7,6 +8,8 @@ class LstmAggregator(nn.Module):
         self.lstm = nn.LSTM(input_size=768,
             hidden_size=512,
             num_layers = 5,
+            # bidirectional=True,
+            dropout=0.2,
             batch_first = False)
         self.linear1 = nn.Linear(512, 2)
         self.act_fn = nn.Softmax()

@@ -4,7 +4,8 @@ import torch
 
 class CommitLevelRawDataset(BaseRawDataset):
     def __init__(self):
-        super().__init__('embedded-positive-encodings', 'embedded-background-encodings')
+        # super().__init__('embedded-positive-encodings', 'embedded-background-encodings')
+        super().__init__()
 
 
     def _load_file(self, collection, json_file):

@@ -18,7 +18,7 @@ from src.mining.CodeMiners.SampleEncoder import SampleEncoder
 
 cpus = 10
 repositories_path = '/repolist2'
-path_to_security_commits = r'D:\Projects\aaa\results\rq4_results\features.csv'
+path_to_security_commits = r'D:\Projects\aaa_data\rq2_final_results\silent_fixes.csv'
 input_data_location = 'results/checkpoints_fixMapper'
 
 results_location_RollingWindowMiner = 'results/dl/RollingWindowMiner'
@@ -46,12 +46,9 @@ _extensions_to_ignore = ['md', 'json' , 'txt', 'gradle', 'sha', 'lock', 'ruby-ve
 extensions_to_ignore = set(_extensions_to_ignore)
 
 def main():
-    commits_df = pd.read_csv(path_to_security_commits)
-    processed_comits, somewhat_processed_repos = get_processed_commits()
-
-    commits_df_filtered = commits_df[commits_df.apply(lambda row: row['label_sha'] not in processed_comits, axis=1)]
-
-    by_repo = commits_df_filtered.groupby('label_repo_full_name')
+    security_commits = pd.read_csv(path_to_security_commits)
+    security_commits['label_repo_full_name'] = security_commits.apply(lambda r: f'{r["repo_owner"]}/{r["repo_name"]}', axis=1)
+    by_repo = security_commits.groupby('label_repo_full_name')
 
     by_repo = sorted(by_repo, key=lambda x: -x[1].shape[0])
     # for x in by_repo:
@@ -59,27 +56,6 @@ def main():
     
     with Pool(cpus) as p:
         p.map(mine_a_repo, by_repo, chunksize=1)
-
-def get_processed_commits():
-    result_dirs = [
-        results_location_RollingWindowMiner,
-        results_location_AddedCodeMiner,
-        results_location_AST,
-        results_location_Actions,
-    ]
-    processed_comits = set()
-    processed_repos = set()
-
-    for rd in result_dirs:
-        for f in get_files_in_from_directory(rd):
-            filename = path.splitext(f)[0]
-            segments = filename.split('-')
-            processed_repos
-            processed_comits.add(segments[-1])
-            processed_repos.add(f'{segments[2]}/{segments[3]}')
-
-    return processed_comits, processed_repos
-
 
 
 def mine_a_repo(data):
