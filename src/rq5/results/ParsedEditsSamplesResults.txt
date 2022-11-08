@@ -1,0 +1,1182 @@
+ 
+Epoch 0/3
+100%|██████████| 325/325 [01:57<00:00,  2.76it/s]
+Loss in this epoch: 225.98658615350723
+100%|██████████| 500/500 [00:57<00:00,  8.76it/s]
+Precission: 15/1973 0.007602635580334516
+Recall 15/16 0.9375
+P:1973, TP:15, FP:1958, FN:1, TN:26, N:27
+Epoch 1/3
+100%|██████████| 325/325 [01:58<00:00,  2.74it/s]
+Loss in this epoch: 224.18898636102676
+100%|██████████| 500/500 [00:54<00:00,  9.26it/s]
+Precission: 15/1983 0.007564296520423601
+Recall 15/16 0.9375
+P:1983, TP:15, FP:1968, FN:1, TN:16, N:17
+Epoch 2/3
+100%|██████████| 325/325 [01:52<00:00,  2.88it/s]
+Loss in this epoch: 219.5883786380291
+100%|██████████| 500/500 [00:53<00:00,  9.29it/s]
+Precission: 3/195 0.015384615384615385
+Recall 3/16 0.1875
+P:195, TP:3, FP:192, FN:13, TN:1792, N:1805
+Model saw positive samples 1950 times and background samples 1950
+Ratio 1:1.0
+100%|██████████| 2082/2082 [03:48<00:00,  9.11it/s]
+Precission: 21/915 0.022950819672131147
+Recall 21/98 0.21428571428571427
+P:915, TP:21, FP:894, FN:77, TN:7336, N:7413
+
+XXX
+learning_rate 2e-06
+oversampling_ratio 1
+class_ratio 1
+precision 0.022950819672131147
+recall 0.21428571428571427
+XXX
+
+ 
+Epoch 0/3
+100%|██████████| 487/487 [02:42<00:00,  2.99it/s]
+Loss in this epoch: 324.8526816368103
+100%|██████████| 500/500 [00:49<00:00, 10.12it/s]
+Precission: 0/0 0
+Recall 0/16 0.0
+P:0, TP:0, FP:0, FN:16, TN:1984, N:2000
+Epoch 1/3
+100%|██████████| 487/487 [02:37<00:00,  3.10it/s]
+Loss in this epoch: 307.075135409832
+100%|██████████| 500/500 [00:49<00:00, 10.11it/s]
+Precission: 0/0 0
+Recall 0/16 0.0
+P:0, TP:0, FP:0, FN:16, TN:1984, N:2000
+Epoch 2/3
+100%|██████████| 487/487 [02:37<00:00,  3.10it/s]
+Loss in this epoch: 237.98229347914457
+100%|██████████| 500/500 [00:49<00:00, 10.12it/s]
+Precission: 3/141 0.02127659574468085
+Recall 3/16 0.1875
+P:141, TP:3, FP:138, FN:13, TN:1846, N:1859
+Model saw positive samples 1947 times and background samples 3897
+Ratio 1:2.0015408320493067
+100%|██████████| 2082/2082 [03:25<00:00, 10.11it/s]
+Precission: 26/621 0.04186795491143317
+Recall 26/98 0.2653061224489796
+P:621, TP:26, FP:595, FN:72, TN:7635, N:7707
+
+XXX
+learning_rate 2e-06
+oversampling_ratio 1
+class_ratio 2
+precision 0.04186795491143317
+recall 0.2653061224489796
+XXX
+
+ 
+Epoch 0/3
+100%|██████████| 812/812 [04:33<00:00,  2.97it/s]
+Loss in this epoch: 432.06849279999733
+100%|██████████| 500/500 [00:53<00:00,  9.29it/s]
+Precission: 0/0 0
+Recall 0/16 0.0
+P:0, TP:0, FP:0, FN:16, TN:1984, N:2000
+Epoch 1/3
+100%|██████████| 812/812 [04:48<00:00,  2.81it/s]
+Loss in this epoch: 345.34396811947227
+100%|██████████| 500/500 [00:53<00:00,  9.32it/s]
+Precission: 1/27 0.037037037037037035
+Recall 1/16 0.0625
+P:27, TP:1, FP:26, FN:15, TN:1958, N:1973
+Epoch 2/3
+100%|██████████| 812/812 [04:33<00:00,  2.97it/s]
+Loss in this epoch: 162.19542845804244
+100%|██████████| 500/500 [00:49<00:00, 10.13it/s]
+Precission: 1/20 0.05
+Recall 1/16 0.0625
+P:20, TP:1, FP:19, FN:15, TN:1965, N:1980
+Model saw positive samples 1949 times and background samples 7795
+Ratio 1:3.999486916367368
+100%|██████████| 2082/2082 [03:25<00:00, 10.14it/s]
+Precission: 11/117 0.09401709401709402
+Recall 11/98 0.11224489795918367
+P:117, TP:11, FP:106, FN:87, TN:8124, N:8211
+
+XXX
+learning_rate 2e-06
+oversampling_ratio 1
+class_ratio 4
+precision 0.09401709401709402
+recall 0.11224489795918367
+XXX
+
+ 
+Epoch 0/3
+100%|██████████| 1250/1250 [06:56<00:00,  3.00it/s]
+Loss in this epoch: 487.9278926476836
+100%|██████████| 500/500 [00:49<00:00, 10.16it/s]
+Precission: 0/0 0
+Recall 0/16 0.0
+P:0, TP:0, FP:0, FN:16, TN:1984, N:2000
+Epoch 1/3
+100%|██████████| 1250/1250 [06:41<00:00,  3.11it/s]
+Loss in this epoch: 291.5304508507252
+100%|██████████| 500/500 [00:49<00:00, 10.15it/s]
+Precission: 3/6 0.5
+Recall 3/16 0.1875
+P:6, TP:3, FP:3, FN:13, TN:1981, N:1994
+Epoch 2/3
+100%|██████████| 1250/1250 [06:41<00:00,  3.11it/s]
+Loss in this epoch: 88.99942592321895
+100%|██████████| 500/500 [00:49<00:00, 10.15it/s]
+Precission: 4/14 0.2857142857142857
+Recall 4/16 0.25
+P:14, TP:4, FP:10, FN:12, TN:1974, N:1986
+Model saw positive samples 1665 times and background samples 13335
+Ratio 1:8.00900900900901
+100%|██████████| 2082/2082 [03:25<00:00, 10.16it/s]
+Precission: 4/36 0.1111111111111111
+Recall 4/98 0.04081632653061224
+P:36, TP:4, FP:32, FN:94, TN:8198, N:8292
+
+XXX
+learning_rate 2e-06
+oversampling_ratio 1
+class_ratio 8
+precision 0.1111111111111111
+recall 0.04081632653061224
+XXX
+
+ 
+Epoch 0/3
+100%|██████████| 650/650 [03:36<00:00,  3.00it/s]
+Loss in this epoch: 451.88115495443344
+100%|██████████| 500/500 [00:49<00:00, 10.16it/s]
+Precission: 4/181 0.022099447513812154
+Recall 4/16 0.25
+P:181, TP:4, FP:177, FN:12, TN:1807, N:1819
+Epoch 1/3
+100%|██████████| 650/650 [03:28<00:00,  3.11it/s]
+Loss in this epoch: 398.26423451304436
+100%|██████████| 500/500 [00:49<00:00, 10.15it/s]
+Precission: 7/224 0.03125
+Recall 7/16 0.4375
+P:224, TP:7, FP:217, FN:9, TN:1767, N:1776
+Epoch 2/3
+100%|██████████| 650/650 [03:28<00:00,  3.11it/s]
+Loss in this epoch: 155.30875668115914
+100%|██████████| 500/500 [00:49<00:00, 10.16it/s]
+Precission: 6/97 0.061855670103092786
+Recall 6/16 0.375
+P:97, TP:6, FP:91, FN:10, TN:1893, N:1903
+Model saw positive samples 3900 times and background samples 3900
+Ratio 1:1.0
+100%|██████████| 2082/2082 [03:24<00:00, 10.16it/s]
+Precission: 18/405 0.044444444444444446
+Recall 18/98 0.1836734693877551
+P:405, TP:18, FP:387, FN:80, TN:7843, N:7923
+
+XXX
+learning_rate 2e-06
+oversampling_ratio 2
+class_ratio 1
+precision 0.044444444444444446
+recall 0.1836734693877551
+XXX
+
+ 
+Epoch 0/3
+100%|██████████| 975/975 [05:24<00:00,  3.00it/s]
+Loss in this epoch: 628.4958047270775
+100%|██████████| 500/500 [00:49<00:00, 10.16it/s]
+Precission: 0/4 0.0
+Recall 0/16 0.0
+P:4, TP:0, FP:4, FN:16, TN:1980, N:1996
+Epoch 1/3
+100%|██████████| 975/975 [05:13<00:00,  3.11it/s]
+Loss in this epoch: 353.0762963416055
+100%|██████████| 500/500 [00:49<00:00, 10.16it/s]
+Precission: 5/26 0.19230769230769232
+Recall 5/16 0.3125
+P:26, TP:5, FP:21, FN:11, TN:1963, N:1974
+Epoch 2/3
+100%|██████████| 975/975 [05:13<00:00,  3.11it/s]
+Loss in this epoch: 75.83178845536895
+100%|██████████| 500/500 [00:49<00:00, 10.16it/s]
+Precission: 6/32 0.1875
+Recall 6/16 0.375
+P:32, TP:6, FP:26, FN:10, TN:1958, N:1968
+Model saw positive samples 3900 times and background samples 7800
+Ratio 1:2.0
+100%|██████████| 2082/2082 [03:25<00:00, 10.16it/s]
+Precission: 9/126 0.07142857142857142
+Recall 9/98 0.09183673469387756
+P:126, TP:9, FP:117, FN:89, TN:8113, N:8202
+
+XXX
+learning_rate 2e-06
+oversampling_ratio 2
+class_ratio 2
+precision 0.07142857142857142
+recall 0.09183673469387756
+XXX
+
+ 
+Epoch 0/3
+100%|██████████| 1250/1250 [06:56<00:00,  3.00it/s]
+Loss in this epoch: 680.1224003136158
+100%|██████████| 500/500 [00:49<00:00, 10.16it/s]
+Precission: 0/0 0
+Recall 0/16 0.0
+P:0, TP:0, FP:0, FN:16, TN:1984, N:2000
+Epoch 1/3
+100%|██████████| 1250/1250 [06:41<00:00,  3.11it/s]
+Loss in this epoch: 370.3922799276188
+100%|██████████| 500/500 [00:49<00:00, 10.16it/s]
+Precission: 1/11 0.09090909090909091
+Recall 1/16 0.0625
+P:11, TP:1, FP:10, FN:15, TN:1974, N:1989
+Epoch 2/3
+100%|██████████| 1250/1250 [06:41<00:00,  3.11it/s]
+Loss in this epoch: 115.7439276240766
+100%|██████████| 500/500 [00:49<00:00, 10.16it/s]
+Precission: 1/2 0.5
+Recall 1/16 0.0625
+P:2, TP:1, FP:1, FN:15, TN:1983, N:1998
+Model saw positive samples 3000 times and background samples 12000
+Ratio 1:4.0
+100%|██████████| 2082/2082 [03:24<00:00, 10.16it/s]
+Precission: 0/15 0.0
+Recall 0/98 0.0
+P:15, TP:0, FP:15, FN:98, TN:8215, N:8313
+
+XXX
+learning_rate 2e-06
+oversampling_ratio 2
+class_ratio 4
+precision 0.0
+recall 0.0
+XXX
+
+ 
+Epoch 0/3
+100%|██████████| 1250/1250 [06:56<00:00,  3.00it/s]
+Loss in this epoch: 479.88373489305377
+100%|██████████| 500/500 [00:49<00:00, 10.15it/s]
+Precission: 0/0 0
+Recall 0/16 0.0
+P:0, TP:0, FP:0, FN:16, TN:1984, N:2000
+Epoch 1/3
+100%|██████████| 1250/1250 [06:41<00:00,  3.11it/s]
+Loss in this epoch: 327.2690167296678
+100%|██████████| 500/500 [00:49<00:00, 10.15it/s]
+Precission: 2/14 0.14285714285714285
+Recall 2/16 0.125
+P:14, TP:2, FP:12, FN:14, TN:1972, N:1986
+Epoch 2/3
+100%|██████████| 1250/1250 [06:41<00:00,  3.11it/s]
+Loss in this epoch: 120.73224741825834
+100%|██████████| 500/500 [00:49<00:00, 10.15it/s]
+Precission: 2/6 0.3333333333333333
+Recall 2/16 0.125
+P:6, TP:2, FP:4, FN:14, TN:1980, N:1994
+Model saw positive samples 1665 times and background samples 13335
+Ratio 1:8.00900900900901
+100%|██████████| 2082/2082 [03:24<00:00, 10.16it/s]
+Precission: 0/38 0.0
+Recall 0/98 0.0
+P:38, TP:0, FP:38, FN:98, TN:8192, N:8290
+
+XXX
+learning_rate 2e-06
+oversampling_ratio 2
+class_ratio 8
+precision 0.0
+recall 0.0
+XXX
+
+ 
+Epoch 0/3
+100%|██████████| 1250/1250 [06:56<00:00,  3.00it/s]
+Loss in this epoch: 869.2084887325764
+100%|██████████| 500/500 [00:49<00:00, 10.15it/s]
+Precission: 15/1619 0.00926497838171711
+Recall 15/16 0.9375
+P:1619, TP:15, FP:1604, FN:1, TN:380, N:381
+Epoch 1/3
+100%|██████████| 1250/1250 [06:41<00:00,  3.11it/s]
+Loss in this epoch: 329.78752423636615
+100%|██████████| 500/500 [00:49<00:00, 10.16it/s]
+Precission: 8/33 0.24242424242424243
+Recall 8/16 0.5
+P:33, TP:8, FP:25, FN:8, TN:1959, N:1967
+Epoch 2/3
+100%|██████████| 1250/1250 [06:41<00:00,  3.11it/s]
+Loss in this epoch: 51.3248369419598
+100%|██████████| 500/500 [00:49<00:00, 10.16it/s]
+Precission: 8/44 0.18181818181818182
+Recall 8/16 0.5
+P:44, TP:8, FP:36, FN:8, TN:1948, N:1956
+Model saw positive samples 7500 times and background samples 7500
+Ratio 1:1.0
+100%|██████████| 2082/2082 [03:24<00:00, 10.16it/s]
+Precission: 6/168 0.03571428571428571
+Recall 6/98 0.061224489795918366
+P:168, TP:6, FP:162, FN:92, TN:8068, N:8160
+
+XXX
+learning_rate 2e-06
+oversampling_ratio 4
+class_ratio 1
+precision 0.03571428571428571
+recall 0.061224489795918366
+XXX
+
+ 
+Epoch 0/3
+100%|██████████| 1250/1250 [06:56<00:00,  3.00it/s]
+Loss in this epoch: 803.8361096978188
+100%|██████████| 500/500 [00:49<00:00, 10.14it/s]
+Precission: 0/25 0.0
+Recall 0/16 0.0
+P:25, TP:0, FP:25, FN:16, TN:1959, N:1975
+Epoch 1/3
+100%|██████████| 1250/1250 [06:41<00:00,  3.11it/s]
+Loss in this epoch: 487.88244893588126
+100%|██████████| 500/500 [00:49<00:00, 10.15it/s]
+Precission: 5/61 0.08196721311475409
+Recall 5/16 0.3125
+P:61, TP:5, FP:56, FN:11, TN:1928, N:1939
+Epoch 2/3
+100%|██████████| 1250/1250 [06:41<00:00,  3.11it/s]
+Loss in this epoch: 130.5333568674978
+100%|██████████| 500/500 [00:49<00:00, 10.15it/s]
+Precission: 5/36 0.1388888888888889
+Recall 5/16 0.3125
+P:36, TP:5, FP:31, FN:11, TN:1953, N:1964
+Model saw positive samples 4998 times and background samples 10002
+Ratio 1:2.0012004801920766
+100%|██████████| 2082/2082 [03:25<00:00, 10.15it/s]
+Precission: 3/76 0.039473684210526314
+Recall 3/98 0.030612244897959183
+P:76, TP:3, FP:73, FN:95, TN:8157, N:8252
+
+XXX
+learning_rate 2e-06
+oversampling_ratio 4
+class_ratio 2
+precision 0.039473684210526314
+recall 0.030612244897959183
+XXX
+
+ 
+Epoch 0/3
+100%|██████████| 1250/1250 [06:56<00:00,  3.00it/s]
+Loss in this epoch: 649.4534023106098
+100%|██████████| 500/500 [00:49<00:00, 10.16it/s]
+Precission: 0/0 0
+Recall 0/16 0.0
+P:0, TP:0, FP:0, FN:16, TN:1984, N:2000
+Epoch 1/3
+100%|██████████| 1250/1250 [06:41<00:00,  3.11it/s]
+Loss in this epoch: 384.6708572162315
+100%|██████████| 500/500 [00:49<00:00, 10.15it/s]
+Precission: 1/38 0.02631578947368421
+Recall 1/16 0.0625
+P:38, TP:1, FP:37, FN:15, TN:1947, N:1962
+Epoch 2/3
+100%|██████████| 1250/1250 [06:41<00:00,  3.11it/s]
+Loss in this epoch: 73.7467256882228
+100%|██████████| 500/500 [00:49<00:00, 10.15it/s]
+Precission: 1/6 0.16666666666666666
+Recall 1/16 0.0625
+P:6, TP:1, FP:5, FN:15, TN:1979, N:1994
+Model saw positive samples 3000 times and background samples 12000
+Ratio 1:4.0
+100%|██████████| 2082/2082 [03:25<00:00, 10.15it/s]
+Precission: 0/19 0.0
+Recall 0/98 0.0
+P:19, TP:0, FP:19, FN:98, TN:8211, N:8309
+
+XXX
+learning_rate 2e-06
+oversampling_ratio 4
+class_ratio 4
+precision 0.0
+recall 0.0
+XXX
+
+ 
+Epoch 0/3
+100%|██████████| 1250/1250 [06:56<00:00,  3.00it/s]
+Loss in this epoch: 493.1933797560632
+100%|██████████| 500/500 [00:49<00:00, 10.15it/s]
+Precission: 0/0 0
+Recall 0/16 0.0
+P:0, TP:0, FP:0, FN:16, TN:1984, N:2000
+Epoch 1/3
+100%|██████████| 1250/1250 [06:41<00:00,  3.11it/s]
+Loss in this epoch: 347.45637620892376
+100%|██████████| 500/500 [00:49<00:00, 10.15it/s]
+Precission: 1/6 0.16666666666666666
+Recall 1/16 0.0625
+P:6, TP:1, FP:5, FN:15, TN:1979, N:1994
+Epoch 2/3
+100%|██████████| 1250/1250 [06:41<00:00,  3.11it/s]
+Loss in this epoch: 128.26289824885316
+100%|██████████| 500/500 [00:49<00:00, 10.16it/s]
+Precission: 1/14 0.07142857142857142
+Recall 1/16 0.0625
+P:14, TP:1, FP:13, FN:15, TN:1971, N:1986
+Model saw positive samples 1665 times and background samples 13335
+Ratio 1:8.00900900900901
+100%|██████████| 2082/2082 [03:24<00:00, 10.16it/s]
+Precission: 2/24 0.08333333333333333
+Recall 2/98 0.02040816326530612
+P:24, TP:2, FP:22, FN:96, TN:8208, N:8304
+
+XXX
+learning_rate 2e-06
+oversampling_ratio 4
+class_ratio 8
+precision 0.08333333333333333
+recall 0.02040816326530612
+XXX
+
+ 
+Epoch 0/3
+100%|██████████| 1250/1250 [06:56<00:00,  3.00it/s]
+Loss in this epoch: 859.9386479854584
+100%|██████████| 500/500 [00:49<00:00, 10.16it/s]
+Precission: 9/726 0.012396694214876033
+Recall 9/16 0.5625
+P:726, TP:9, FP:717, FN:7, TN:1267, N:1274
+Epoch 1/3
+100%|██████████| 1250/1250 [06:41<00:00,  3.11it/s]
+Loss in this epoch: 301.86455766670406
+100%|██████████| 500/500 [00:49<00:00, 10.15it/s]
+Precission: 4/23 0.17391304347826086
+Recall 4/16 0.25
+P:23, TP:4, FP:19, FN:12, TN:1965, N:1977
+Epoch 2/3
+100%|██████████| 1250/1250 [06:41<00:00,  3.11it/s]
+Loss in this epoch: 51.18287632986903
+100%|██████████| 500/500 [00:49<00:00, 10.15it/s]
+Precission: 4/23 0.17391304347826086
+Recall 4/16 0.25
+P:23, TP:4, FP:19, FN:12, TN:1965, N:1977
+Model saw positive samples 7500 times and background samples 7500
+Ratio 1:1.0
+100%|██████████| 2082/2082 [03:24<00:00, 10.16it/s]
+Precission: 1/46 0.021739130434782608
+Recall 1/98 0.01020408163265306
+P:46, TP:1, FP:45, FN:97, TN:8185, N:8282
+
+XXX
+learning_rate 2e-06
+oversampling_ratio -1
+class_ratio 1
+precision 0.021739130434782608
+recall 0.01020408163265306
+XXX
+
+ 
+Epoch 0/3
+100%|██████████| 1250/1250 [06:56<00:00,  3.00it/s]
+Loss in this epoch: 801.5134667307138
+100%|██████████| 500/500 [00:49<00:00, 10.15it/s]
+Precission: 0/1 0.0
+Recall 0/16 0.0
+P:1, TP:0, FP:1, FN:16, TN:1983, N:1999
+Epoch 1/3
+100%|██████████| 1250/1250 [06:41<00:00,  3.11it/s]
+Loss in this epoch: 405.0551776830107
+100%|██████████| 500/500 [00:49<00:00, 10.15it/s]
+Precission: 4/111 0.036036036036036036
+Recall 4/16 0.25
+P:111, TP:4, FP:107, FN:12, TN:1877, N:1889
+Epoch 2/3
+100%|██████████| 1250/1250 [06:41<00:00,  3.11it/s]
+Loss in this epoch: 80.64721231220756
+100%|██████████| 500/500 [00:49<00:00, 10.15it/s]
+Precission: 3/9 0.3333333333333333
+Recall 3/16 0.1875
+P:9, TP:3, FP:6, FN:13, TN:1978, N:1991
+Model saw positive samples 4998 times and background samples 10002
+Ratio 1:2.0012004801920766
+100%|██████████| 2082/2082 [03:24<00:00, 10.16it/s]
+Precission: 1/43 0.023255813953488372
+Recall 1/98 0.01020408163265306
+P:43, TP:1, FP:42, FN:97, TN:8188, N:8285
+
+XXX
+learning_rate 2e-06
+oversampling_ratio -1
+class_ratio 2
+precision 0.023255813953488372
+recall 0.01020408163265306
+XXX
+
+ 
+Epoch 0/3
+100%|██████████| 1250/1250 [06:56<00:00,  3.00it/s]
+Loss in this epoch: 645.9786084145308
+100%|██████████| 500/500 [00:49<00:00, 10.14it/s]
+Precission: 0/11 0.0
+Recall 0/16 0.0
+P:11, TP:0, FP:11, FN:16, TN:1973, N:1989
+Epoch 1/3
+100%|██████████| 1250/1250 [06:41<00:00,  3.11it/s]
+Loss in this epoch: 462.40638642571867
+100%|██████████| 500/500 [00:49<00:00, 10.16it/s]
+Precission: 2/12 0.16666666666666666
+Recall 2/16 0.125
+P:12, TP:2, FP:10, FN:14, TN:1974, N:1988
+Epoch 2/3
+100%|██████████| 1250/1250 [06:41<00:00,  3.11it/s]
+Loss in this epoch: 178.36526653612964
+100%|██████████| 500/500 [00:49<00:00, 10.15it/s]
+Precission: 3/16 0.1875
+Recall 3/16 0.1875
+P:16, TP:3, FP:13, FN:13, TN:1971, N:1984
+Model saw positive samples 3000 times and background samples 12000
+Ratio 1:4.0
+100%|██████████| 2082/2082 [03:25<00:00, 10.16it/s]
+Precission: 2/198 0.010101010101010102
+Recall 2/98 0.02040816326530612
+P:198, TP:2, FP:196, FN:96, TN:8034, N:8130
+
+XXX
+learning_rate 2e-06
+oversampling_ratio -1
+class_ratio 4
+precision 0.010101010101010102
+recall 0.02040816326530612
+XXX
+
+ 
+Epoch 0/3
+100%|██████████| 1250/1250 [06:56<00:00,  3.00it/s]
+Loss in this epoch: 475.4205992370844
+100%|██████████| 500/500 [00:49<00:00, 10.15it/s]
+Precission: 0/0 0
+Recall 0/16 0.0
+P:0, TP:0, FP:0, FN:16, TN:1984, N:2000
+Epoch 1/3
+100%|██████████| 1250/1250 [06:41<00:00,  3.11it/s]
+Loss in this epoch: 364.7559764739126
+100%|██████████| 500/500 [00:49<00:00, 10.15it/s]
+Precission: 2/3 0.6666666666666666
+Recall 2/16 0.125
+P:3, TP:2, FP:1, FN:14, TN:1983, N:1997
+Epoch 2/3
+100%|██████████| 1250/1250 [06:41<00:00,  3.11it/s]
+Loss in this epoch: 173.67557380720973
+100%|██████████| 500/500 [00:49<00:00, 10.15it/s]
+Precission: 3/15 0.2
+Recall 3/16 0.1875
+P:15, TP:3, FP:12, FN:13, TN:1972, N:1985
+Model saw positive samples 1665 times and background samples 13335
+Ratio 1:8.00900900900901
+100%|██████████| 2082/2082 [03:25<00:00, 10.15it/s]
+Precission: 0/53 0.0
+Recall 0/98 0.0
+P:53, TP:0, FP:53, FN:98, TN:8177, N:8275
+
+XXX
+learning_rate 2e-06
+oversampling_ratio -1
+class_ratio 8
+precision 0.0
+recall 0.0
+XXX
+
+ 
+Epoch 0/3
+100%|██████████| 325/325 [01:48<00:00,  3.00it/s]
+Loss in this epoch: 227.34042823314667
+100%|██████████| 500/500 [00:49<00:00, 10.15it/s]
+Precission: 11/759 0.014492753623188406
+Recall 11/16 0.6875
+P:759, TP:11, FP:748, FN:5, TN:1236, N:1241
+Epoch 1/3
+100%|██████████| 325/325 [01:44<00:00,  3.12it/s]
+Loss in this epoch: 100.40105976630002
+100%|██████████| 500/500 [00:49<00:00, 10.15it/s]
+Precission: 4/55 0.07272727272727272
+Recall 4/16 0.25
+P:55, TP:4, FP:51, FN:12, TN:1933, N:1945
+Epoch 2/3
+100%|██████████| 325/325 [01:44<00:00,  3.12it/s]
+Loss in this epoch: 18.517555802420247
+100%|██████████| 500/500 [00:49<00:00, 10.15it/s]
+Precission: 5/45 0.1111111111111111
+Recall 5/16 0.3125
+P:45, TP:5, FP:40, FN:11, TN:1944, N:1955
+Model saw positive samples 1950 times and background samples 1950
+Ratio 1:1.0
+100%|██████████| 2082/2082 [03:25<00:00, 10.15it/s]
+Precission: 27/279 0.0967741935483871
+Recall 27/98 0.2755102040816326
+P:279, TP:27, FP:252, FN:71, TN:7978, N:8049
+
+XXX
+learning_rate 2e-05
+oversampling_ratio 1
+class_ratio 1
+precision 0.0967741935483871
+recall 0.2755102040816326
+XXX
+
+ 
+Epoch 0/3
+100%|██████████| 487/487 [02:42<00:00,  3.00it/s]
+Loss in this epoch: 313.9557453393936
+100%|██████████| 500/500 [00:49<00:00, 10.15it/s]
+Precission: 0/35 0.0
+Recall 0/16 0.0
+P:35, TP:0, FP:35, FN:16, TN:1949, N:1965
+Epoch 1/3
+100%|██████████| 487/487 [02:36<00:00,  3.11it/s]
+Loss in this epoch: 126.94954381790012
+100%|██████████| 500/500 [00:49<00:00, 10.15it/s]
+Precission: 3/30 0.1
+Recall 3/16 0.1875
+P:30, TP:3, FP:27, FN:13, TN:1957, N:1970
+Epoch 2/3
+100%|██████████| 487/487 [02:36<00:00,  3.11it/s]
+Loss in this epoch: 24.03941253904486
+100%|██████████| 500/500 [00:49<00:00, 10.15it/s]
+Precission: 11/291 0.037800687285223365
+Recall 11/16 0.6875
+P:291, TP:11, FP:280, FN:5, TN:1704, N:1709
+Model saw positive samples 1947 times and background samples 3897
+Ratio 1:2.0015408320493067
+100%|██████████| 2082/2082 [03:25<00:00, 10.16it/s]
+Precission: 74/1457 0.05078929306794784
+Recall 74/98 0.7551020408163265
+P:1457, TP:74, FP:1383, FN:24, TN:6847, N:6871
+
+XXX
+learning_rate 2e-05
+oversampling_ratio 1
+class_ratio 2
+precision 0.05078929306794784
+recall 0.7551020408163265
+XXX
+
+ 
+Epoch 0/3
+100%|██████████| 812/812 [04:30<00:00,  3.00it/s]
+Loss in this epoch: 336.8509901931975
+100%|██████████| 500/500 [00:49<00:00, 10.15it/s]
+Precission: 1/3 0.3333333333333333
+Recall 1/16 0.0625
+P:3, TP:1, FP:2, FN:15, TN:1982, N:1997
+Epoch 1/3
+100%|██████████| 812/812 [04:20<00:00,  3.11it/s]
+Loss in this epoch: 72.41336711682379
+100%|██████████| 500/500 [00:49<00:00, 10.15it/s]
+Precission: 3/18 0.16666666666666666
+Recall 3/16 0.1875
+P:18, TP:3, FP:15, FN:13, TN:1969, N:1982
+Epoch 2/3
+100%|██████████| 812/812 [04:20<00:00,  3.11it/s]
+Loss in this epoch: 8.193342657847097
+100%|██████████| 500/500 [00:49<00:00, 10.15it/s]
+Precission: 1/7 0.14285714285714285
+Recall 1/16 0.0625
+P:7, TP:1, FP:6, FN:15, TN:1978, N:1993
+Model saw positive samples 1948 times and background samples 7796
+Ratio 1:4.002053388090349
+100%|██████████| 2082/2082 [03:24<00:00, 10.16it/s]
+Precission: 4/19 0.21052631578947367
+Recall 4/98 0.04081632653061224
+P:19, TP:4, FP:15, FN:94, TN:8215, N:8309
+
+XXX
+learning_rate 2e-05
+oversampling_ratio 1
+class_ratio 4
+precision 0.21052631578947367
+recall 0.04081632653061224
+XXX
+
+ 
+Epoch 0/3
+100%|██████████| 1250/1250 [06:56<00:00,  3.00it/s]
+Loss in this epoch: 383.51201318902895
+100%|██████████| 500/500 [00:49<00:00, 10.15it/s]
+Precission: 8/36 0.2222222222222222
+Recall 8/16 0.5
+P:36, TP:8, FP:28, FN:8, TN:1956, N:1964
+Epoch 1/3
+100%|██████████| 1250/1250 [06:41<00:00,  3.11it/s]
+Loss in this epoch: 77.16320042888401
+100%|██████████| 500/500 [00:49<00:00, 10.15it/s]
+Precission: 8/34 0.23529411764705882
+Recall 8/16 0.5
+P:34, TP:8, FP:26, FN:8, TN:1958, N:1966
+Epoch 2/3
+100%|██████████| 1250/1250 [06:41<00:00,  3.11it/s]
+Loss in this epoch: 13.647730320662959
+100%|██████████| 500/500 [00:49<00:00, 10.15it/s]
+Precission: 9/55 0.16363636363636364
+Recall 9/16 0.5625
+P:55, TP:9, FP:46, FN:7, TN:1938, N:1945
+Model saw positive samples 1665 times and background samples 13335
+Ratio 1:8.00900900900901
+100%|██████████| 2082/2082 [03:24<00:00, 10.16it/s]
+Precission: 29/227 0.1277533039647577
+Recall 29/98 0.29591836734693877
+P:227, TP:29, FP:198, FN:69, TN:8032, N:8101
+
+XXX
+learning_rate 2e-05
+oversampling_ratio 1
+class_ratio 8
+precision 0.1277533039647577
+recall 0.29591836734693877
+XXX
+
+ 
+Epoch 0/3
+100%|██████████| 650/650 [03:36<00:00,  3.00it/s]
+Loss in this epoch: 453.3001824617386
+100%|██████████| 500/500 [00:49<00:00, 10.15it/s]
+Precission: 6/113 0.05309734513274336
+Recall 6/16 0.375
+P:113, TP:6, FP:107, FN:10, TN:1877, N:1887
+Epoch 1/3
+100%|██████████| 650/650 [03:28<00:00,  3.11it/s]
+Loss in this epoch: 346.25934936106205
+100%|██████████| 500/500 [00:49<00:00, 10.16it/s]
+Precission: 14/207 0.06763285024154589
+Recall 14/16 0.875
+P:207, TP:14, FP:193, FN:2, TN:1791, N:1793
+Epoch 2/3
+100%|██████████| 650/650 [03:28<00:00,  3.11it/s]
+Loss in this epoch: 47.87542664841749
+100%|██████████| 500/500 [00:49<00:00, 10.15it/s]
+Precission: 10/28 0.35714285714285715
+Recall 10/16 0.625
+P:28, TP:10, FP:18, FN:6, TN:1966, N:1972
+Model saw positive samples 3900 times and background samples 3900
+Ratio 1:1.0
+100%|██████████| 2082/2082 [03:25<00:00, 10.15it/s]
+Precission: 14/91 0.15384615384615385
+Recall 14/98 0.14285714285714285
+P:91, TP:14, FP:77, FN:84, TN:8153, N:8237
+
+XXX
+learning_rate 2e-05
+oversampling_ratio 2
+class_ratio 1
+precision 0.15384615384615385
+recall 0.14285714285714285
+XXX
+
+ 
+Epoch 0/3
+100%|██████████| 975/975 [05:24<00:00,  3.00it/s]
+Loss in this epoch: 578.6123582851142
+100%|██████████| 500/500 [00:49<00:00, 10.14it/s]
+Precission: 7/255 0.027450980392156862
+Recall 7/16 0.4375
+P:255, TP:7, FP:248, FN:9, TN:1736, N:1745
+Epoch 1/3
+100%|██████████| 975/975 [05:13<00:00,  3.11it/s]
+Loss in this epoch: 621.5402506347746
+100%|██████████| 500/500 [00:49<00:00, 10.14it/s]
+Precission: 0/0 0
+Recall 0/16 0.0
+P:0, TP:0, FP:0, FN:16, TN:1984, N:2000
+Epoch 2/3
+100%|██████████| 975/975 [05:13<00:00,  3.11it/s]
+Loss in this epoch: 626.3920789957047
+100%|██████████| 500/500 [00:49<00:00, 10.16it/s]
+Precission: 0/0 0
+Recall 0/16 0.0
+P:0, TP:0, FP:0, FN:16, TN:1984, N:2000
+Model saw positive samples 3900 times and background samples 7800
+Ratio 1:2.0
+100%|██████████| 2082/2082 [03:25<00:00, 10.15it/s]
+Precission: 0/0 0
+Recall 0/98 0.0
+P:0, TP:0, FP:0, FN:98, TN:8230, N:8328
+
+XXX
+learning_rate 2e-05
+oversampling_ratio 2
+class_ratio 2
+precision 0
+recall 0.0
+XXX
+
+ 
+Epoch 0/3
+100%|██████████| 1250/1250 [06:56<00:00,  3.00it/s]
+Loss in this epoch: 451.85247565433383
+100%|██████████| 500/500 [00:49<00:00, 10.15it/s]
+Precission: 7/70 0.1
+Recall 7/16 0.4375
+P:70, TP:7, FP:63, FN:9, TN:1921, N:1930
+Epoch 1/3
+100%|██████████| 1250/1250 [06:41<00:00,  3.11it/s]
+Loss in this epoch: 63.54135087969189
+100%|██████████| 500/500 [00:49<00:00, 10.15it/s]
+Precission: 4/4 1.0
+Recall 4/16 0.25
+P:4, TP:4, FP:0, FN:12, TN:1984, N:1996
+Epoch 2/3
+100%|██████████| 1250/1250 [06:41<00:00,  3.11it/s]
+Loss in this epoch: 8.390983722139936
+100%|██████████| 500/500 [00:49<00:00, 10.15it/s]
+Precission: 7/32 0.21875
+Recall 7/16 0.4375
+P:32, TP:7, FP:25, FN:9, TN:1959, N:1968
+Model saw positive samples 3000 times and background samples 12000
+Ratio 1:4.0
+100%|██████████| 2082/2082 [03:24<00:00, 10.16it/s]
+Precission: 16/42 0.38095238095238093
+Recall 16/98 0.16326530612244897
+P:42, TP:16, FP:26, FN:82, TN:8204, N:8286
+
+XXX
+learning_rate 2e-05
+oversampling_ratio 2
+class_ratio 4
+precision 0.38095238095238093
+recall 0.16326530612244897
+XXX
+
+ 
+Epoch 0/3
+100%|██████████| 1250/1250 [06:56<00:00,  3.00it/s]
+Loss in this epoch: 422.7090351646766
+100%|██████████| 500/500 [00:49<00:00, 10.15it/s]
+Precission: 10/55 0.18181818181818182
+Recall 10/16 0.625
+P:55, TP:10, FP:45, FN:6, TN:1939, N:1945
+Epoch 1/3
+100%|██████████| 1250/1250 [06:41<00:00,  3.11it/s]
+Loss in this epoch: 96.57085497083608
+100%|██████████| 500/500 [00:49<00:00, 10.16it/s]
+Precission: 6/10 0.6
+Recall 6/16 0.375
+P:10, TP:6, FP:4, FN:10, TN:1980, N:1990
+Epoch 2/3
+100%|██████████| 1250/1250 [06:41<00:00,  3.11it/s]
+Loss in this epoch: 22.450458546416485
+100%|██████████| 500/500 [00:49<00:00, 10.15it/s]
+Precission: 8/12 0.6666666666666666
+Recall 8/16 0.5
+P:12, TP:8, FP:4, FN:8, TN:1980, N:1988
+Model saw positive samples 1665 times and background samples 13335
+Ratio 1:8.00900900900901
+100%|██████████| 2082/2082 [03:25<00:00, 10.15it/s]
+Precission: 27/130 0.2076923076923077
+Recall 27/98 0.2755102040816326
+P:130, TP:27, FP:103, FN:71, TN:8127, N:8198
+
+XXX
+learning_rate 2e-05
+oversampling_ratio 2
+class_ratio 8
+precision 0.2076923076923077
+recall 0.2755102040816326
+XXX
+
+ 
+Epoch 0/3
+100%|██████████| 1250/1250 [06:56<00:00,  3.00it/s]
+Loss in this epoch: 557.6203456087969
+100%|██████████| 500/500 [00:49<00:00, 10.15it/s]
+Precission: 10/59 0.1694915254237288
+Recall 10/16 0.625
+P:59, TP:10, FP:49, FN:6, TN:1935, N:1941
+Epoch 1/3
+100%|██████████| 1250/1250 [06:41<00:00,  3.11it/s]
+Loss in this epoch: 41.21718022314599
+100%|██████████| 500/500 [00:49<00:00, 10.15it/s]
+Precission: 9/33 0.2727272727272727
+Recall 9/16 0.5625
+P:33, TP:9, FP:24, FN:7, TN:1960, N:1967
+Epoch 2/3
+100%|██████████| 1250/1250 [06:41<00:00,  3.11it/s]
+Loss in this epoch: 4.662458184255229
+100%|██████████| 500/500 [00:49<00:00, 10.15it/s]
+Precission: 7/15 0.4666666666666667
+Recall 7/16 0.4375
+P:15, TP:7, FP:8, FN:9, TN:1976, N:1985
+Model saw positive samples 7500 times and background samples 7500
+Ratio 1:1.0
+100%|██████████| 2082/2082 [03:24<00:00, 10.16it/s]
+Precission: 1/25 0.04
+Recall 1/98 0.01020408163265306
+P:25, TP:1, FP:24, FN:97, TN:8206, N:8303
+
+XXX
+learning_rate 2e-05
+oversampling_ratio 4
+class_ratio 1
+precision 0.04
+recall 0.01020408163265306
+XXX
+
+ 
+Epoch 0/3
+100%|██████████| 1250/1250 [06:56<00:00,  3.00it/s]
+Loss in this epoch: 465.413236683351
+100%|██████████| 500/500 [00:49<00:00, 10.15it/s]
+Precission: 12/149 0.08053691275167785
+Recall 12/16 0.75
+P:149, TP:12, FP:137, FN:4, TN:1847, N:1851
+Epoch 1/3
+100%|██████████| 1250/1250 [06:41<00:00,  3.11it/s]
+Loss in this epoch: 47.892888122965815
+100%|██████████| 500/500 [00:49<00:00, 10.16it/s]
+Precission: 11/18 0.6111111111111112
+Recall 11/16 0.6875
+P:18, TP:11, FP:7, FN:5, TN:1977, N:1982
+Epoch 2/3
+100%|██████████| 1250/1250 [06:41<00:00,  3.11it/s]
+Loss in this epoch: 6.584788848122116
+100%|██████████| 500/500 [00:49<00:00, 10.15it/s]
+Precission: 11/19 0.5789473684210527
+Recall 11/16 0.6875
+P:19, TP:11, FP:8, FN:5, TN:1976, N:1981
+Model saw positive samples 4998 times and background samples 10002
+Ratio 1:2.0012004801920766
+100%|██████████| 2082/2082 [03:25<00:00, 10.15it/s]
+Precission: 17/59 0.288135593220339
+Recall 17/98 0.17346938775510204
+P:59, TP:17, FP:42, FN:81, TN:8188, N:8269
+
+XXX
+learning_rate 2e-05
+oversampling_ratio 4
+class_ratio 2
+precision 0.288135593220339
+recall 0.17346938775510204
+XXX
+
+ 
+Epoch 0/3
+100%|██████████| 1250/1250 [06:56<00:00,  3.00it/s]
+Loss in this epoch: 374.6100728379097
+100%|██████████| 500/500 [00:49<00:00, 10.16it/s]
+Precission: 8/99 0.08080808080808081
+Recall 8/16 0.5
+P:99, TP:8, FP:91, FN:8, TN:1893, N:1901
+Epoch 1/3
+100%|██████████| 1250/1250 [06:41<00:00,  3.11it/s]
+Loss in this epoch: 43.367850620212266
+100%|██████████| 500/500 [00:49<00:00, 10.15it/s]
+Precission: 7/28 0.25
+Recall 7/16 0.4375
+P:28, TP:7, FP:21, FN:9, TN:1963, N:1972
+Epoch 2/3
+100%|██████████| 1250/1250 [06:41<00:00,  3.11it/s]
+Loss in this epoch: 20.574430101027247
+100%|██████████| 500/500 [00:49<00:00, 10.15it/s]
+Precission: 5/10 0.5
+Recall 5/16 0.3125
+P:10, TP:5, FP:5, FN:11, TN:1979, N:1990
+Model saw positive samples 3000 times and background samples 12000
+Ratio 1:4.0
+100%|██████████| 2082/2082 [03:25<00:00, 10.15it/s]
+Precission: 1/29 0.034482758620689655
+Recall 1/98 0.01020408163265306
+P:29, TP:1, FP:28, FN:97, TN:8202, N:8299
+
+XXX
+learning_rate 2e-05
+oversampling_ratio 4
+class_ratio 4
+precision 0.034482758620689655
+recall 0.01020408163265306
+XXX
+
+ 
+Epoch 0/3
+100%|██████████| 1250/1250 [06:56<00:00,  3.00it/s]
+Loss in this epoch: 455.0892790555954
+100%|██████████| 500/500 [00:49<00:00, 10.15it/s]
+Precission: 1/2 0.5
+Recall 1/16 0.0625
+P:2, TP:1, FP:1, FN:15, TN:1983, N:1998
+Epoch 1/3
+100%|██████████| 1250/1250 [06:41<00:00,  3.11it/s]
+Loss in this epoch: 103.96344030328328
+100%|██████████| 500/500 [00:49<00:00, 10.15it/s]
+Precission: 7/36 0.19444444444444445
+Recall 7/16 0.4375
+P:36, TP:7, FP:29, FN:9, TN:1955, N:1964
+Epoch 2/3
+100%|██████████| 1250/1250 [06:41<00:00,  3.11it/s]
+Loss in this epoch: 16.42446726279013
+100%|██████████| 500/500 [00:49<00:00, 10.16it/s]
+Precission: 6/19 0.3157894736842105
+Recall 6/16 0.375
+P:19, TP:6, FP:13, FN:10, TN:1971, N:1981
+Model saw positive samples 1665 times and background samples 13335
+Ratio 1:8.00900900900901
+100%|██████████| 2082/2082 [03:24<00:00, 10.16it/s]
+Precission: 0/22 0.0
+Recall 0/98 0.0
+P:22, TP:0, FP:22, FN:98, TN:8208, N:8306
+
+XXX
+learning_rate 2e-05
+oversampling_ratio 4
+class_ratio 8
+precision 0.0
+recall 0.0
+XXX
+
+ 
+Epoch 0/3
+100%|██████████| 1250/1250 [06:56<00:00,  3.00it/s]
+Loss in this epoch: 505.2409566489514
+100%|██████████| 500/500 [00:49<00:00, 10.15it/s]
+Precission: 7/107 0.06542056074766354
+Recall 7/16 0.4375
+P:107, TP:7, FP:100, FN:9, TN:1884, N:1893
+Epoch 1/3
+100%|██████████| 1250/1250 [06:41<00:00,  3.11it/s]
+Loss in this epoch: 63.19127869294607
+100%|██████████| 500/500 [00:49<00:00, 10.15it/s]
+Precission: 7/12 0.5833333333333334
+Recall 7/16 0.4375
+P:12, TP:7, FP:5, FN:9, TN:1979, N:1988
+Epoch 2/3
+100%|██████████| 1250/1250 [06:41<00:00,  3.11it/s]
+Loss in this epoch: 4.0072615081080585
+100%|██████████| 500/500 [00:49<00:00, 10.15it/s]
+Precission: 7/141 0.04964539007092199
+Recall 7/16 0.4375
+P:141, TP:7, FP:134, FN:9, TN:1850, N:1859
+Model saw positive samples 7500 times and background samples 7500
+Ratio 1:1.0
+100%|██████████| 2082/2082 [03:25<00:00, 10.15it/s]
+Precission: 48/755 0.06357615894039735
+Recall 48/98 0.4897959183673469
+P:755, TP:48, FP:707, FN:50, TN:7523, N:7573
+
+XXX
+learning_rate 2e-05
+oversampling_ratio -1
+class_ratio 1
+precision 0.06357615894039735
+recall 0.4897959183673469
+XXX
+
+ 
+Epoch 0/3
+100%|██████████| 1250/1250 [06:56<00:00,  3.00it/s]
+Loss in this epoch: 619.9070424316451
+100%|██████████| 500/500 [00:49<00:00, 10.15it/s]
+Precission: 7/26 0.2692307692307692
+Recall 7/16 0.4375
+P:26, TP:7, FP:19, FN:9, TN:1965, N:1974
+Epoch 1/3
+100%|██████████| 1250/1250 [06:41<00:00,  3.11it/s]
+Loss in this epoch: 58.44215909723425
+100%|██████████| 500/500 [00:49<00:00, 10.15it/s]
+Precission: 7/8 0.875
+Recall 7/16 0.4375
+P:8, TP:7, FP:1, FN:9, TN:1983, N:1992
+Epoch 2/3
+100%|██████████| 1250/1250 [06:41<00:00,  3.11it/s]
+Loss in this epoch: 5.453453940270265
+100%|██████████| 500/500 [00:49<00:00, 10.15it/s]
+Precission: 7/16 0.4375
+Recall 7/16 0.4375
+P:16, TP:7, FP:9, FN:9, TN:1975, N:1984
+Model saw positive samples 4998 times and background samples 10002
+Ratio 1:2.0012004801920766
+100%|██████████| 2082/2082 [03:25<00:00, 10.15it/s]
+Precission: 10/95 0.10526315789473684
+Recall 10/98 0.10204081632653061
+P:95, TP:10, FP:85, FN:88, TN:8145, N:8233
+
+XXX
+learning_rate 2e-05
+oversampling_ratio -1
+class_ratio 2
+precision 0.10526315789473684
+recall 0.10204081632653061
+XXX
+
+ 
+Epoch 0/3
+100%|██████████| 1250/1250 [06:56<00:00,  3.00it/s]
+Loss in this epoch: 588.6264083776623
+100%|██████████| 500/500 [00:49<00:00, 10.15it/s]
+Precission: 3/22 0.13636363636363635
+Recall 3/16 0.1875
+P:22, TP:3, FP:19, FN:13, TN:1965, N:1978
+Epoch 1/3
+100%|██████████| 1250/1250 [06:41<00:00,  3.11it/s]
+Loss in this epoch: 147.27301253535552
+100%|██████████| 500/500 [00:49<00:00, 10.15it/s]
+Precission: 9/42 0.21428571428571427
+Recall 9/16 0.5625
+P:42, TP:9, FP:33, FN:7, TN:1951, N:1958
+Epoch 2/3
+100%|██████████| 1250/1250 [06:41<00:00,  3.11it/s]
+Loss in this epoch: 31.227777814565343
+100%|██████████| 500/500 [00:49<00:00, 10.15it/s]
+Precission: 6/11 0.5454545454545454
+Recall 6/16 0.375
+P:11, TP:6, FP:5, FN:10, TN:1979, N:1989
+Model saw positive samples 3000 times and background samples 12000
+Ratio 1:4.0
+100%|██████████| 2082/2082 [03:25<00:00, 10.15it/s]
+Precission: 0/31 0.0
+Recall 0/98 0.0
+P:31, TP:0, FP:31, FN:98, TN:8199, N:8297
+
+XXX
+learning_rate 2e-05
+oversampling_ratio -1
+class_ratio 4
+precision 0.0
+recall 0.0
+XXX
+
+ 
+Epoch 0/3
+100%|██████████| 1250/1250 [06:56<00:00,  3.00it/s]
+Loss in this epoch: 423.9154693428427
+100%|██████████| 500/500 [00:49<00:00, 10.16it/s]
+Precission: 4/6 0.6666666666666666
+Recall 4/16 0.25
+P:6, TP:4, FP:2, FN:12, TN:1982, N:1994
+Epoch 1/3
+100%|██████████| 1250/1250 [06:41<00:00,  3.11it/s]
+Loss in this epoch: 121.80252663313877
+100%|██████████| 500/500 [00:49<00:00, 10.16it/s]
+Precission: 6/10 0.6
+Recall 6/16 0.375
+P:10, TP:6, FP:4, FN:10, TN:1980, N:1990
+Epoch 2/3
+100%|██████████| 1250/1250 [06:41<00:00,  3.11it/s]
+Loss in this epoch: 19.05006994958967
+100%|██████████| 500/500 [00:49<00:00, 10.16it/s]
+Precission: 6/15 0.4
+Recall 6/16 0.375
+P:15, TP:6, FP:9, FN:10, TN:1975, N:1985
+Model saw positive samples 1665 times and background samples 13335
+Ratio 1:8.00900900900901
+100%|██████████| 2082/2082 [03:24<00:00, 10.17it/s]Precission: 5/28 0.17857142857142858
+Recall 5/98 0.05102040816326531
+P:28, TP:5, FP:23, FN:93, TN:8207, N:8300
+
+XXX
+learning_rate 2e-05
+oversampling_ratio -1
+class_ratio 8
+precision 0.17857142857142858
+recall 0.05102040816326531
+XXX
