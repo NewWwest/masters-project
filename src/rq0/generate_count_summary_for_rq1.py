@@ -1,26 +1,20 @@
-import sys
-sys.path.insert(0, r'D:\Projects\aaa')
+# import sys
+# sys.path.insert(0, PATH_TO_REPO)
 
 
 from src.loaders.NvdLoader import NvdLoader
 from src.loaders.OsvLoader import OsvLoader
 from src.loaders.OmniLoader import OmniLoader
 import matplotlib.pyplot as plt
-from wordcloud import WordCloud
 
-commits = set()
-commits_data = {}
-input_data_location = 'results/checkpoints_fixMapper'
-keywords_regexes_path = r'src\rq3\bigquery\keywords_to_upload.csv'
-all_labels = []
-
-
-
+path_to_osv_dump = ''
+path_to_nvd_dump = ''
+path_to_ghsa_dump = ''
 
 def main():
-    nvd = NvdLoader(r'D:\Projects\VulnerabilityData\new_nvd')
-    osv = OsvLoader(r'D:\Projects\VulnerabilityData\new_osv')
-    ghsa = OsvLoader(r'D:\Projects\VulnerabilityData\advisory-database/advisories/github-reviewed')
+    nvd = NvdLoader(path_to_nvd_dump)
+    osv = OsvLoader(path_to_osv_dump)
+    ghsa = OsvLoader(path_to_ghsa_dump)
     omni = OmniLoader(nvd, osv, ghsa)
 
     vuln_sets = set()
