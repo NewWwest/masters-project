@@ -149,15 +149,15 @@ class OmniLoader:
                 for n in self._nvdLoader.reports[id]['configurations']['nodes']:
                     cpes += self._dfs_nodesearch(n)
 
-                xxxx = set([cpe.split(':')[10] for cpe in cpes])
+                xxxx = set([cpe.split(':')[10].lower() for cpe in cpes])
                 xxxx.discard('*')
                 xxxx.discard('-')
                 ecosystems += list(xxxx)
             if id in self._osvLoader.reports:
-                ec = [x['package']['ecosystem'] for x in self._osvLoader.reports[id]['affected']]
+                ec = [x['package']['ecosystem'].lower() for x in self._osvLoader.reports[id]['affected']]
                 ecosystems += ec 
             if id in self._ghsaLoader.reports:
-                ec = [x['package']['ecosystem'] for x in self._ghsaLoader.reports[id]['affected']]
+                ec = [x['package']['ecosystem'].lower() for x in self._ghsaLoader.reports[id]['affected']]
                 ecosystems += ec 
 
         return ecosystems
