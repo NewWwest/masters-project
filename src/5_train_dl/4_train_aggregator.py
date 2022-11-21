@@ -1,5 +1,6 @@
-import sys
-sys.path.insert(0, r'D:\Projects\aaa')
+#!/usr/bin/env python3
+# import sys
+# sys.path.insert(0, r'PATH_TO_REPO')
 
 from transformers import get_linear_schedule_with_warmup
 import torch.nn as nn

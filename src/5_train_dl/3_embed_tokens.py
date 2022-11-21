@@ -1,10 +1,11 @@
-from math import ceil
-import sys
-sys.path.insert(0, r'D:\Projects\aaa')
+#!/usr/bin/env python3
+# import sys
+# sys.path.insert(0, r'PATH_TO_REPO')
 
 import random
 random.seed(42)
 
+from math import ceil
 from transformers import AutoModel
 import os
 import torch
@@ -13,6 +14,7 @@ import time
 import json
 from multiprocessing import Pool
 import tqdm
+
 from src.dl.models.BertAndLinear import BertAndLinear
 from src.utils.utils import get_files_in_from_directory
 

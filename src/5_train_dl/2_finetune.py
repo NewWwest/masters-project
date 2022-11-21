@@ -1,6 +1,6 @@
-import sys
-
-sys.path.insert(0, r'D:\Projects\aaa')
+#!/usr/bin/env python3
+# import sys
+# sys.path.insert(0, r'PATH_TO_REPO')
 
 from transformers import get_linear_schedule_with_warmup
 import torch.nn as nn
@@ -32,6 +32,7 @@ train_percentage_size = 0.9
 class_ratio = 1
 learning_rate = 2e-5
 
+# Output&Evaluation configuration
 save_model_in_each_epoch = True
 eval_model_in_each_epoch = True
 model_name = 't3_roll_java'
