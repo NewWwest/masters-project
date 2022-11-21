@@ -225,6 +225,6 @@ def mine_tokens():
 
 if __name__ == '__main__':
     start_time = time.time()
-    # mine_tokens()
+    mine_tokens()
     rank_tokens()
     print("--- %s seconds ---" % (time.time() - start_time))
