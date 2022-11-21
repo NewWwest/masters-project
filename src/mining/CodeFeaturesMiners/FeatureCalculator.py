@@ -1,19 +1,16 @@
 import pandas as pd
 
-import src.mining.CodeFeaturesMiners.constants_and_configs as constants_and_configs
-
-features_cache_location = 'results/checkpoints3'
-
 class FeatureCalculator:
-    def __init__(self) -> None:
-        pass
+    def __init__(self, features_cache_location) -> None:
+        self.features_cache_location = features_cache_location
+
 
     def process_repo(self, commits_df, files_df, repo_full_name):
         segments = repo_full_name.split('/')
 
         if commits_df.shape[0] == 0 or files_df.shape[0] == 0:
             features_df = pd.DataFrame([])
-            features_df.to_csv(f'{features_cache_location}/features-{segments[0]}-{segments[1]}.csv', index=False)
+            features_df.to_csv(f'{self.features_cache_location}/features-{segments[0]}-{segments[1]}.csv', index=False)
             return
         
         files = files_df.groupby('label_sha')
@@ -24,9 +21,8 @@ class FeatureCalculator:
             features.append(final_features)
 
         features_df = pd.DataFrame(features)
-        features_df.to_csv(f'{features_cache_location}/features-{segments[0]}-{segments[1]}.csv', index=False)
+        features_df.to_csv(f'{self.features_cache_location}/features-{segments[0]}-{segments[1]}.csv', index=False)
         return features_df
-
 
 
     def select_features_for_commit(self, commit_level, file_level):
@@ -117,9 +113,6 @@ features_to_copy_from_commit = [
 ]
 
 
-
-
-
 features_to_agregate_as_flags = [
     'has_npm_code',
     'has_npm_like_code',
@@ -167,6 +160,7 @@ features_to_agregate_as_flags = [
     'malicious_in_patch',
     'corrupt_in_patch'
 ]
+
 
 features_to_agregate_as_avg_max_values = [
     'removed_lines_count',

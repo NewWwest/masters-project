@@ -1,6 +1,3 @@
-import sys
-sys.path.insert(0, r'D:\Projects\2022')
-
 import json
 from pydriller import RepositoryMining,ModificationType,Commit,GitRepository
 from datetime import datetime, date
@@ -10,29 +7,28 @@ import pandas as pd
 import math
 import typing
 
+import random
+random.seed(42)
+
 from src.mining.CodeFeaturesMiners.CommitLevelFeatureMiner import CommitLevelFeatureMiner
 from src.mining.CodeFeaturesMiners.FileLevelFeatureMiner import FileLevelFeatureMiner
 from src.mining.CodeFeaturesMiners.AbstractMiner import AbstractMiner
 
 
 
-import random
-random.seed(42)
-
-
-START_YEAR = 2017
-LIMIT = None
+START_YEAR = 2010
 RATIO = 50
 
-features_cache_location = 'results\checkpoints1'
 
 class CommitMiner:
-    def __init__(self, path_to_repository_store, log_fnc):
+    def __init__(self, path_to_repository_store, features_cache_location, log_fnc, ratio=RATIO):
+        self.features_cache_location = features_cache_location
         self.file_miner = FileLevelFeatureMiner(AbstractMiner.features)
         self.commit_miner = CommitLevelFeatureMiner(AbstractMiner.features)
         self._repositories_location = path_to_repository_store
         self.log_fnc = log_fnc
 
+        self.ratio = ratio
         self.total_commits = 0
         self.commit_result = {}
         self.file_result = {}
@@ -61,14 +57,11 @@ class CommitMiner:
 
 
         if fix_commits != None:
-            probability_of_mine = len(fix_commits)*RATIO / len(pre_mined_commits)
+            probability_of_mine = len(fix_commits)*self.ratio / len(pre_mined_commits)
             self.log_fnc(f'Mining {len(fix_commits)} fix commits and some commits with probability {probability_of_mine}')
 
         fix_commits_set =  set(fix_commits) if fix_commits else set()
         for index in range(len(pre_mined_commits)):
-            if LIMIT != None and len(self.commit_result[repo_full_name]) >= LIMIT:
-                break
-            
             if random.random() <= probability_of_mine:
                 self._save_mine_commit(index, pre_mined_commits, repo_full_name, contributors)
             elif pre_mined_commits[index].hash in fix_commits_set:
@@ -78,15 +71,15 @@ class CommitMiner:
                 pre_mined_commits[index - 200] = None
 
         commit_df = pd.DataFrame(self.commit_result[repo_full_name])
-        commit_df.to_csv(f'{features_cache_location}/commit-level-{segments[0]}-{segments[1]}.csv')
+        commit_df.to_csv(f'{self.features_cache_location}/commit-level-{segments[0]}-{segments[1]}.csv')
         file_df = pd.DataFrame(self.file_result[repo_full_name])
-        file_df.to_csv(f'{features_cache_location}/file-level-{segments[0]}-{segments[1]}.csv')
+        file_df.to_csv(f'{self.features_cache_location}/file-level-{segments[0]}-{segments[1]}.csv')
         return commit_df, file_df
 
 
     def _pre_mine_changes(self, repo_path, start_year) -> typing.List[Commit]:
         pre_mined_commits = []
-        for commit in RepositoryMining(repo_path, since=datetime(start_year,1,1)).traverse_commits():
+        for commit in RepositoryMining(repo_path, since=datetime(start_year,1,1), include_refs=True, include_remotes=True).traverse_commits():
             pre_mined_commits.append(commit)
         return pre_mined_commits
 

@@ -1,4 +1,19 @@
 import os
+import logging
+
+logging.basicConfig()
+logging.getLogger().setLevel(logging.INFO)
+
+
+def info_log(*args):
+    log_message = '\t'.join([str(x) for x in args])
+    logging.info(log_message)
+
+
+def warn_log(*args):
+    log_message = '\t'.join([str(x) for x in args])
+    logging.warning(log_message)
+
 
 def get_files_in_from_directory(dir, extension=None, startswith=None):
     files_list = []
@@ -13,6 +28,7 @@ def get_files_in_from_directory(dir, extension=None, startswith=None):
             file_path = os.path.join(root, file)
             files_list.append(file_path)
     return files_list
+
 
 def is_hexadecimal_string(val):
     try:

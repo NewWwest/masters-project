@@ -1,3 +1,7 @@
+#!/usr/bin/env python3
+# import sys
+# sys.path.insert(0, r'PATH_TO_REPO')
+
 from typing import Iterable
 import dateutil.parser as parser
 from src.loaders.NvdLoader import NvdLoader
@@ -8,7 +12,7 @@ class DualReport:
     NVD_type = 1
     OSV_type = 2
     def __init__(self, report_source, report) -> None:
-        self.report_source = report_source # 1 for NVD, 2 FOR OSV
+        self.report_source = report_source
         self.report = report
 
 
@@ -76,8 +80,8 @@ class OmniLoader:
         
     def title_of_report(self, report_id):
         if report_id in self._nvdLoader.reports:
-            #TODO: this line was never used
             return self._nvdLoader.reports[report_id]['cve']['description']['description_data'][0]['value']
+
         if report_id in self._osvLoader.reports:
             if 'summary' in self._osvLoader.reports[report_id]:
                 return self._osvLoader.reports[report_id]['summary']
@@ -85,6 +89,7 @@ class OmniLoader:
                 return self._osvLoader.reports[report_id]['details']
             else:
                 return report_id
+
         if report_id in self._ghsaLoader.reports:
             if 'summary' in self._ghsaLoader.reports[report_id]:
                 return self._ghsaLoader.reports[report_id]['summary']
@@ -107,6 +112,7 @@ class OmniLoader:
                 raise Exception(f'Invalid report source {report.report_source}')
 
         return list(set([x.lower() for x in references]))
+
 
     def publish_date_of_report(self, report_id):
         if report_id not in self.related_ids:
@@ -149,18 +155,19 @@ class OmniLoader:
                 for n in self._nvdLoader.reports[id]['configurations']['nodes']:
                     cpes += self._dfs_nodesearch(n)
 
-                xxxx = set([cpe.split(':')[10] for cpe in cpes])
+                xxxx = set([cpe.split(':')[10].lower() for cpe in cpes])
                 xxxx.discard('*')
                 xxxx.discard('-')
                 ecosystems += list(xxxx)
             if id in self._osvLoader.reports:
-                ec = [x['package']['ecosystem'] for x in self._osvLoader.reports[id]['affected']]
+                ec = [x['package']['ecosystem'].lower() for x in self._osvLoader.reports[id]['affected']]
                 ecosystems += ec 
             if id in self._ghsaLoader.reports:
-                ec = [x['package']['ecosystem'] for x in self._ghsaLoader.reports[id]['affected']]
+                ec = [x['package']['ecosystem'].lower() for x in self._ghsaLoader.reports[id]['affected']]
                 ecosystems += ec 
 
         return ecosystems
+
 
     def _dfs_nodesearch(self, node):
         cpes = [c['cpe23Uri'] for c in node['cpe_match'] if c['vulnerable']]
@@ -169,15 +176,17 @@ class OmniLoader:
         return cpes
 
                 
-
-
 if __name__ == '__main__':
-    nvd = NvdLoader('/Users/awestfalewicz/Private/data/new_nvd')
-    osv = OsvLoader('/Users/awestfalewicz/Private/data/new_osv')
-    ghsa = OsvLoader('/Users/awestfalewicz/Private/data/advisory-database/advisories/github-reviewed')
+    path_to_nvd_dump_json_files = 'path_to_nvd_dump_json_files'
+    path_to_osv_data_dump = 'path_to_osv_data_dump'
+    path_to_ghsa_data_dump = 'path_to_ghsa_data_dump'
+
+    nvd = NvdLoader(path_to_nvd_dump_json_files)
+    osv = OsvLoader(path_to_osv_data_dump)
+    ghsa = OsvLoader(path_to_ghsa_data_dump)
     omni = OmniLoader(nvd, osv, ghsa)
-    print(len(nvd.reports))
-    print(len(osv.reports))
-    print(len(ghsa.reports))
-    print(len(omni.reports))
+    print(len(nvd.reports))   # 193404
+    print(len(osv.reports))   # 30387
+    print(len(ghsa.reports))  # 8696
+    print(len(omni.reports))  # 224246
 

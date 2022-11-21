@@ -7,6 +7,10 @@ from src.utils.constants import github_api, max_allowed_commits_in_link
 class GithubProxy:
     headers = {'Authorization': f'token {secrets.github_token}'}
 
+    def __init__(self):
+        pass
+
+
     def do_get(self, url):
         time.sleep(0.4)  # you can do about 1.4 requests a second
         try:
@@ -31,10 +35,6 @@ class GithubProxy:
                 return None
 
 
-    def __init__(self):
-        pass
-
-
     def get_commit_data(self, repo_owner, repo_name, reference_value):
         api_url = f'{github_api}/repos/{repo_owner}/{repo_name}/commits/{reference_value}'
         response = self.do_get(api_url)
@@ -42,6 +42,7 @@ class GithubProxy:
             return None
 
         return response.json()
+
 
     def get_issue_data(self, repo_owner, repo_name, reference_value):
         api_url = f'{github_api}/repos/{repo_owner}/{repo_name}/issues/{reference_value}'
@@ -64,6 +65,7 @@ class GithubProxy:
         if 'timeline_url' in issue_json_obj:
             issue_json_obj['timeline_data'] = self._simple_paged_request(issue_json_obj['timeline_url'])
         return issue_json_obj
+
 
     def _get_data_as_pr(self, issue_json_obj):
         if 'pull_request' not in issue_json_obj:
@@ -154,6 +156,7 @@ class GithubProxy:
                 break
 
         return result
+
 
     def get_top_contributors(self, repo_owner, repo_name):
         api_url = f'{github_api}/repos/{repo_owner}/{repo_name}/contributors?per_page=100'

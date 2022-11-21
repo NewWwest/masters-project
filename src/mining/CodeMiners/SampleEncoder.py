@@ -9,18 +9,13 @@ model_input_size = 512
 max_tokenizer_input = 128*1024 #for RAM paging issues 
 
 class SampleEncoder:
-
-    def __init__(self, tokenizer_name, valid_extensions) -> None:
+    def __init__(self, tokenizer_name) -> None:
         self.tokenizer = AutoTokenizer.from_pretrained(tokenizer_name)
-        self.valid_extensions = set(valid_extensions)
 
     def process_sample(self, sample_object):
         commit_title = sample_object['commit_title']
         sample = sample_object['commit_sample']
-        file_name = sample_object['file_name']
 
-        if file_name.split('.')[-1] not in self.valid_extensions:
-            return None
         if sample == None or len(sample) == 0:
             return None
 
@@ -40,3 +35,11 @@ class SampleEncoder:
 
         tokens_ids = self.tokenizer.convert_tokens_to_ids(tokens)
         return tokens_ids
+
+
+
+
+
+
+
+

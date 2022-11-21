@@ -32,3 +32,5 @@ code_extensions = {
     'pypi':pypi_code,
     'pypi_like':pypi_code_like,
 }
+
+separators = ['/','\\','`','*','_','{','}','[',']','(',')','>','#','+','-',',','.','!','$','\'', '\t', '\n', '\r']

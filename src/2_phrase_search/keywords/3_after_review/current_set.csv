@@ -1,0 +1,716 @@
+path equivalence
+object-injection
+infiniteloop
+unexpected sign extension
+overflow memory
+missing custom error page
+inaccurate comments
+missing authentication
+exploit
+incomplete validate
+insufficient access control
+dead-code
+signal errors
+incorrect initialization
+single factor authentication
+timing discrepancy
+denial-of-service
+improper locking
+sql injection
+improper authorization
+encoding error
+empty code block
+plaintext password
+underflow
+null byte injection
+csrf
+hard-coded
+off-by-one
+xml external entity
+click jacking
+untrusted site
+spyware
+permissive whitelist
+unquoted search path
+tap jacking
+uninitialized resource
+cross-zone scripting
+self generated error message
+incorrect length
+eaves-dropping
+penetration-test
+conversion error
+improper handling
+sensitive information
+incorrect type
+leak
+untrusted source
+origin validation error
+unchecked input
+type confusion
+poison
+segmentation fault
+wrong status code
+cross frame scripting
+cross-site scripting
+xml entity expansion
+incomplete identification
+web problems
+attacks
+improper synchronization
+spoofing
+memory-leaks
+eval injection
+time-of-check
+irrelevant code
+channel errors
+faulty buffer
+antixsslibrary
+buffer overflow
+cisq
+stack-smash
+information loss
+incorrect input
+early validation
+null-byte injection
+bypass
+xml injection
+cross-zone-scripting
+dead-lock
+cross cutting
+improper error handling
+malicious script
+file issues
+insecure permissions
+penetration test
+untrusted control sphere
+premature release
+pen test
+pen-test
+unconditional control flow
+path-equivalence
+xpath injection
+cleartext storage
+dynamic variable evaluation
+cwe
+missing release
+arithmetic overflow
+input-validation
+missing check
+inconsistent interpretation
+malware
+user interface errors
+overflow error
+hardcoded
+restrictive regular expression
+concurrency issues
+cross-cutting
+spoof
+insufficient permissions
+xss
+logic error
+excessive iteration
+incorrect synchronization
+weak pseudo-random number
+unsafe value
+comparison errors
+cvss2
+improper ownership
+infinite-loop
+hard coded
+command injection
+improper following
+wraparound error
+double decoding
+insecure configuration
+missing default case
+remote file inclusion
+unreachable exit
+insecure authentication
+untrusted method
+sqlmap
+validation problems
+incorrect default permissions
+improper resource shutdown
+privilege-escalation
+crosszone-scripting
+open web application security project
+unchecked error
+capec
+null pointer dereference
+vulnerabilities
+missing serialization
+xml-injection
+predictable salt
+improper enforcement
+suspicious comment
+mitm
+multiple unlocks
+circular dependencies
+incorrect usage
+improper link resolution
+bad coding practices
+crosssite scripting
+insecure deserialization
+privilege-elevation
+missing reference
+argument-injection
+ambiguous exception type
+weak access permissions
+malicious code
+incomplete model
+missing synchronization
+cleanup errors
+incorrect access
+unnecessary privileges
+privilege escalation
+dos
+privacy violation
+missing lock
+missing encryption
+hijack
+memory overflow
+processing errors
+interpretation conflict
+over-flow
+insecure cryptographic
+xquery injection
+incorrect check
+dangerous method
+pointer issues
+handler errors
+coding-standard
+containment errors
+excessive execution
+incorrect regular expression
+trust boundary violation
+race condition
+code-injection
+exposed data
+leftover debug code
+missing function level access control
+unsynchronized access
+unrestricted upload
+directory traversal
+reversible one-way hash
+platform dependent third party
+eavesdropping
+incorrect buffer length
+cross zone scripting
+stack smash
+weak pseudo random number
+incompatible types
+cvss
+insufficient isolation
+insufficient logging
+weakness
+tap-jacking
+insufficient encapsulation
+covert storage channel
+empty code-block
+infoleak
+unauthorized control
+missing handler
+incomplete comparison
+pentest
+uninitialized pointer
+overflowerror
+uncontrolled resource consumption
+broken access control
+glitch
+argument injection
+ldap injection
+back-door
+improper resolution
+path traversal
+open redirect
+cryptographic issues
+dead lock
+numeric errors
+null-pointer dereference
+insecure interaction
+unsafe reflection
+sanitization
+path-manipulation
+faulty memory
+unchecked return value
+http response splitting
+time of check
+out-of-bounds
+insecure storage
+data structure issues
+crosssite-tracing
+denial of service
+out of range pointer
+untrusted caller
+incorrect permissions
+cross site scripting
+risky cryptographic algorithm
+data exposure
+crossframe-scripting
+insecure communications
+incorrect implementation
+failing open
+worm
+nosql-injection
+sql-injection
+incorrect order
+excessive reliance
+dangerous operations
+string errors
+redundant code
+buffer-overflow
+http request smuggling
+unsafe jni
+out-of-range pointer
+open-redirect
+inconsistent naming
+antimalware
+bad practices
+broken authentication
+path-injection
+permissive regular expression
+confused deputy
+wrong handler
+hardcode
+incorrect permission assignment
+owasp
+insufficient warnings
+virus
+incorrect privilege
+crlf injection
+shatter
+integer-overflow
+antiforgerytoken
+type error
+less secure algorithm
+trap-door
+segfault
+clickjacking
+wrap-around error
+xxe
+single-factor authentication
+ransomware
+secure coding
+cross site tracing
+buffer over read
+host-header-injection
+session fixation
+untrusted data
+unvalidated redirects
+unrestricted authentication
+incorrect provision
+infinite loop
+default-password
+insufficient session expiration
+seg fault
+use-after-free
+off by one error
+crlf-injection
+dot dot slash
+improper error-handling
+missing xml validation
+malicious-file
+uncaught exception
+logic-error
+incorrect comparison
+buffer-overrun
+attack
+heap-overflow
+integer overflow
+cross-frame scripting
+incorrect operator
+cross-frame-scripting
+improper cleanup
+information exposure
+neutralization
+malicious file
+buffer overrun
+misrepresentation
+unexpected status code
+infinite-recursion
+sensitive data
+command-injection
+expression issues
+confused-deputy
+excessive data
+zap
+double checked locking
+insecure default
+dead code
+partial string comparison
+time-of-use
+object model violation
+trojan
+path errors
+insufficient privileges
+unnecessary complexity
+sensitive communication
+improper encoding
+incorrect behavior
+dangling database cursor
+missing initialization
+malicious-code
+arithmetic-overflow
+insecure direct object reference
+misconfiguration
+duplicate identifier
+business logic errors
+improper use
+cursor injection
+null-byte-injection
+click-jacking
+incorrect conversion
+incorrectly-resolved name
+ldap-injection
+information leakage
+failure to restrict url access
+dot-dot-slash
+improper check
+buffer under-read
+buffer overread
+insufficient documentation
+untrusted inputs
+duplicate validation
+representation errors
+buffer underwrite
+double free
+faulty pointer
+infinite recursion
+missing support
+improper filtering
+cve
+incorrect group
+incorrect authorization
+identity impersonation
+bomb
+vulnerability
+unvalidated input
+trap door
+coding standard
+excessive use
+trapdoor
+buffer over-read
+deadlock
+forgery
+improper validation
+behavioral inconsistency
+insecure temporary file
+missing report
+session-hijacking
+path manipulation
+broken cryptography
+incorrect use
+outofbounds
+back door
+improper initialization
+segmentation-fault
+tainted input
+uncontrolled format string
+toctou
+empty exception
+incorrect calculation
+incomplete cleanup
+secure-coding
+insufficient control
+inadequate encryption
+predictability problems
+insufficient entropy
+wrap around error
+externally-controlled format string
+uncontrolled recursion
+deep nesting
+man-in-the-middle
+double-checked locking
+sensitive cookie
+hidden functionality
+insufficient session-id length
+incomplete blacklist
+stack-overflow
+incorrect scope
+weak cryptography
+path-traversal
+improper access control
+behavioral problems
+forced browsing
+html-sanitizing
+empty synchronized block
+generic exception
+double-free
+response discrepancy
+locking problems
+management errors
+path-errors
+element injection
+excessive index
+nvd
+porous defenses
+inappropriate encoding
+improper update
+race-condition
+esapi
+improper control
+crosszone scripting
+missing authorization
+excessive complex
+improper null termination
+expression language injection
+inconsistent implementations
+ddos
+cross-site tracing
+missing validation
+cvss3
+unexpected entry points
+incorrect byte ordering
+incomplete filtering
+non-serializable object stored
+privilege elevation
+input validation
+cross-site-scripting
+protection
+stackunderflow
+improper restriction
+unprotected storage
+el-injection
+seg-fault
+directory-traversal
+invalid pointer
+multiple locks
+improper authentication
+empty password
+man in the middle
+ssrf
+weak pseudorandom number
+permission issues
+missing documentation
+out of bounds
+doublechecked locking
+tapjacking
+time of use
+weak password
+backdoor
+deadcode
+flaws
+dangerous function
+cross-site-tracing
+data-leakage
+incomplete documentation
+code injection
+asymmetric resource amplification
+asymmetric resource consumption
+adversarial input
+serverside security
+server-side security
+creation of emergent resource
+excessive code complexity
+execution after redirect
+exposure of information
+externally controlled reference
+bad sanitizing
+failure to sanitize
+predictable initialization vector
+predictable iv
+predictable ids
+predictable identifiers
+weak iv
+weak initialization vector
+improper address validation
+improper adherence
+improper privilege management
+improper verification
+missing security
+incorrect resource transfer
+incorrect decoding of security
+incorrect control flow scoping
+heap inspection
+prototype pollution
+incorrect user management
+regular expression complexity
+insecure automated
+insecure operation
+control over security
+insufficiently protected
+insufficient verification
+missing origin validation
+assumed-immutable data
+untrusted domains
+predictable seed
+lowering errors
+privilege dropping
+process control
+regular expression without anchors
+updateable component
+file name injection
+filename injection
+security critical action
+security-critical action
+security through obscurity
+algorithm downgrade
+small seed space
+security feature
+symbolic link (symlink) following
+symbolic link following
+symlink following
+unix hard link
+secure design principles
+weak authentication
+windows hard link
+windows shortcut following
+one-way hash without a salt
+use after free
+improper isolation of shared resources
+improper finite state machines
+blocking code in single-threaded
+blocking code in singlethreaded
+default credentials in production
+default cryptographic key in production
+default password in production
+default credentials in prod
+default cryptographic key in prod
+default password in prod
+sensitive query strings
+insufficiently random values
+invariant value in dynamically
+prohibited code
+rsa algorithm without oaep
+sizeof() on a pointer
+sizeof on a pointer
+umask() with chmodstyle
+umask() with chmod style
+umask with chmodstyle
+umask with chmod style
+use of uninitialized variable
+using uninitialized variable
+untrusted target
+security-critical code
+unsafe actions
+security decision
+not updateable component
+cookies without validation
+externally-supplied file name
+externally supplied filename
+security related inputs
+security-related inputs
+security related information
+security-related information
+ip address for authentication
+security relevant inputs
+security-relevant inputs
+reusing key pair
+reusing a nonce
+same seed in pseudorandom
+same seed in pseudo-random
+security version number mutable
+security-sensitive
+security sensitive
+sensitive nonvolatile information
+sensitive non-volatile information
+small space of random values
+storing passwords in recoverable format
+storing passwords in a recoverable format
+security relevant information
+security-relevant information
+trust of system event data
+trusting http permission methods
+error injection
+uncontrolled search path element
+invocation of nonreentrant code
+invocation of non-reentrant code
+unprotected alternate channel
+unprotected confidential information
+unprotected transport of credentials
+unprotected credentials
+unrestricted lock
+untrusted pointer dereference
+untrusted search path
+unverified ownership
+unverified password change
+risky implementation
+client-side authentication
+default cryptographic key
+use of default password
+use of expired file descriptor
+less trusted source
+nottrusted source
+not trusted source
+password hash with insufficient
+predictable algorithm in random
+umask() with chmodstyle
+umask() with chmod-style
+weak credentials
+weak encoding
+weak hash
+variable extraction error
+unmaintained third party
+access control check
+critical private variable
+binding to an unrestricted ip 
+channel accessible by nonendpoint
+channel accessible by non-endpoint
+externally accessible directory
+security critical
+security-critical
+compiler removal of code
+chroot jail without changing working directory
+critical data
+critical public variable
+sensitive operation
+sensitive operations
+credential sharing
+code without integrity check
+expected behavior violation
+data to wrong session
+data element to wrong session
+private personal information
+sensitive system information
+external initialization of trusted
+critical state data
+assumed-immutable
+incorrect security 
+generation of predictable identifiers
+insecure desynchronization
+insecure de-synchronization
+improper certificate validation
+sensitive log
+sensitive trace
+improper access
+improper physical access
+improper preservation of permissions
+improper preventions
+improper prevention
+improper protections
+improper protection
+improper resource locking
+security attributes
+improper zeroization of register
+improper zeroization of hardware register
+improperly implemented security
+improperly preserved integrity
+handling disallowed inputs
+incomplete list of disallowed inputs
+incorrect execution assigned permissions
+incorrect execution-assigned permissions
+inefficient algorithmic complexity
+insecure inherited permissions
+insecure permissions
+insecure security identifier
+without entity authentication
+least privilege violation
+missing password field masking
+missing immutable root of trust
+missing cryptographic step
+missing critical step in authentication
+password aging
+observable behavioral discrepancy
+observable internal behavioral discrepancy
+security related
+security-related
+security relevant
+security-relevant
+overly restrictive account lockout
+plaintext password
+plaintext storage of a password
+obsolete encoding
+untrusted execution core
+security settings
+security setting

@@ -1,7 +1,7 @@
 import json
 import pandas as pd
 
-from src.Mining.IssuesMiners.extract_commits_from_issue import extract_commits_from_issue
+from src.mining.IssuesMiners.extract_commits_from_issue import extract_commits_from_issue
 from src.proxies.GitHubProxy import GithubProxy
 
 checkpoint_frequency = 100

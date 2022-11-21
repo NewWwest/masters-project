@@ -1,5 +1,5 @@
 
-separators = ['/','\\','`','*','_','{','}','[',']','(',')','>','#','+','-',',','.','!','$','\'', '\t', '\n', '\r']
+from src.mining.CodeFeaturesMiners.constants_and_configs import separators
 
 class AbstractMiner:
     features = ['basic', 'code_analysis', 'bag_of_words', 'history']

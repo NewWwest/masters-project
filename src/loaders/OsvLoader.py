@@ -1,39 +1,24 @@
-import os
+#!/usr/bin/env python3
+# import sys
+# sys.path.insert(0, r'PATH_TO_REPO')
+
 import json
 
-from src.utils.constants import path_separator
-
-focus_ecosystems = ['PyPI', 'Maven', 'npm']
+from src.utils.utils import get_files_in_from_directory 
 
 class OsvLoader:
-    def __init__(self, path, ecosystems = None) -> None:
+    def __init__(self, path) -> None:
         self.data_path = path
         self.reports = {}
         self.reports_also_by_aliases = {}
-        self.ecosystems_to_load = set(ecosystems) if ecosystems != None else None
         self._load()
 
 
     def _load(self):
-        files = self._enumerate_files(self.data_path)
+        files = get_files_in_from_directory(self.data_path, extension='.json')
         self._read_reports(files)
         self.alphabetical_order = list(self.reports)
         self.alphabetical_order.sort()
-
-
-    # TODO: use the one from utils
-    def _enumerate_files(self, rootdir):
-        all_advisories = []
-        for root, subdirs, files in os.walk(rootdir):
-            ecosystem = root.split(path_separator)[-1]
-            if self.ecosystems_to_load != None and ecosystem not in self.ecosystems_to_load:
-                continue
-            for file in files:
-                if file.endswith('.json'):
-                    file_path = os.path.join(root, file)
-                    all_advisories.append(file_path)
-
-        return all_advisories
 
 
     def _read_reports(self, files):
@@ -69,7 +54,8 @@ class OsvLoader:
 
 
 if __name__ == '__main__':
-    repo = OsvLoader('/Users/awestfalewicz/Private/data/new_osv')
+    path_to_osv_data_dump = 'path_to_osv_data_dump'
+    repo = OsvLoader(path_to_osv_data_dump)
     print(len(repo.reports))
-    # All => 30387
-    # npm+pypi+mvn => 7922
+    # OSV => 30387
+    # GHSA => 8696

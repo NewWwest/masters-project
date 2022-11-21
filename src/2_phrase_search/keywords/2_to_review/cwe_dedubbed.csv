@@ -1,0 +1,402 @@
+access control check implemented after asset is accessed
+access of memory location after end of buffer
+access of memory location before start of buffer
+access to critical private variable via public method
+active debug code
+addition of data structure sentinel
+allocation of file descriptors or handles without limits or throttling
+allocation of resources without limits or throttling
+always-incorrect control flow implementation
+application-level admin tool with inconsistent view of underlying operating system
+architecture with number of horizontal layers outside of expected range
+"array declared public, final, and static"
+assigning instead of comparing
+assignment of a fixed address to a pointer
+assignment to variable without use
+assumed-immutable data is stored in writable memory
+asymmetric resource consumption (amplification)
+attempt to access child of a non-structure pointer
+automated recognition mechanism with inadequate detection or handling of adversarial input perturbations
+behavioral change in new version or environment
+binding to an unrestricted ip address
+buffer access using size of source buffer
+call to non-ubiquitous api
+call to thread run() instead of start()
+callable with insufficient behavioral summary
+channel accessible by non-endpoint
+class instance self destruction control element
+class with excessive number of child classes
+class with excessively deep inheritance
+class with virtual method without a virtual destructor
+client-side enforcement of server-side security
+clone() method without super.clone()
+command shell in externally accessible directory
+comparing instead of assigning
+comparison of classes by name
+comparison of object references instead of object contents
+comparison using wrong factors
+compiler optimization removal or modification of security-critical code
+compiler removal of code to clear buffers
+covert channel
+covert timing channel
+cpu hardware not configured to support exclusivity of write and execute operations
+creation of chroot jail without changing working directory
+creation of class instance within a static code block
+creation of emergent resource
+creation of immutable text using string concatenation
+critical data element declared public
+critical public variable without final modifier
+cryptographic operations are run before supporting units are ready
+dangerous signal handler not disabled during sensitive operations
+data access from outside expected data manager component
+data access operations outside of expected data manager component
+data element aggregating an excessively large number of non-primitive elements
+data element containing pointer item without proper copy control element
+data resource access without use of connection pooling
+debug messages revealing unnecessary information
+declaration of variable with unnecessarily wide scope
+deletion of data structure sentinel
+detection of error condition without action
+device unlock credential sharing
+divide by zero
+dma device enabled too early in boot phase
+download of code without integrity check
+duplicate key in associative list (alist)
+excessive code complexity
+excessive halstead complexity
+excessive mccabe cyclomatic complexity
+excessive number of inefficient server-side data accesses
+excessive platform resource consumption within a loop
+excessively complex data representation
+executable regular expression error
+execution after redirect (ear)
+expected behavior violation
+expired pointer dereference
+explicit call to finalize()
+exposed unsafe activex method
+exposure of data element to wrong session
+exposure of information through directory listing
+exposure of information through shell error message
+exposure of private personal information to an unauthorized actor
+exposure of resource to wrong sphere
+exposure of sensitive system information due to uncleared debug information
+expression is always false
+expression is always true
+external control of assumed-immutable web parameter
+external control of critical state data
+external control of file name or path
+external control of system or configuration setting
+external influence of sphere definition
+external initialization of trusted variables or data stores
+externally controlled reference to a resource in another sphere
+fabric-address map allows programming of unwarranted overlaps of protected and unprotected ranges
+failure to disable reserved bits
+failure to handle incomplete element
+failure to handle missing parameter
+failure to sanitize paired delimiters
+files or directories accessible to external parties
+finalize() method declared public
+finalize() method without super.finalize()
+firmware not updateable
+free of memory not on the heap
+free of pointer not at start of buffer
+function call with incorrect argument type
+function call with incorrect number of arguments
+function call with incorrect variable or reference as argument
+function call with incorrectly specified argument value
+function call with incorrectly specified arguments
+generation of incorrect security tokens
+generation of predictable iv with cbc mode
+generation of predictable numbers or identifiers
+generation of weak initialization vector (iv)
+guessable captcha
+hardware allows activation of test or debug logic at runtime
+hardware child block incorrectly connected to parent system
+hardware internal or debug modes allow override of locks
+hardware logic contains race conditions
+hardware logic with insecure de-synchronization between control and data channels
+improper address validation in ioctl with method_neither i/o control code
+improper adherence to coding standards
+improper certificate validation
+improper clearing of heap memory before release ('heap inspection')
+improper export of android application components
+improper finite state machines (fsms) in hardware logic
+improper interaction between multiple correctly-behaving entities
+improper isolation of shared resources in network on chip (noc)
+improper isolation of shared resources on system-on-a-chip (soc)
+improper isolation or compartmentalization
+improper lock behavior after power state transition
+improper management of sensitive trace data
+improper physical access control
+improper preservation of consistency between independent representations of shared state
+improper preservation of permissions
+improper prevention of lock bit modification
+improper privilege management
+improper protections against hardware overheating
+improper resource locking
+improper setting of bus controlling capability in fabric end-point
+improper translation of security attributes by fabric bridge
+improper verification of cryptographic signature
+improper verification of intent by broadcast receiver
+improper verification of source of a communication channel
+improper write handling in limited-write non-volatile memories
+improper zeroization of hardware register
+improperly controlled modification of dynamically-determined object attributes
+improperly controlled modification of object prototype attributes ('prototype pollution')
+improperly controlled sequential memory allocation
+improperly implemented security check for standard
+improperly preserved integrity of hardware configuration state during a power save/restore operation
+inappropriate comment style
+inappropriate source code style or formatting
+inappropriate whitespace style
+inclusion of undocumented features or chicken bits
+incomplete design documentation
+incomplete i/o documentation
+incomplete internal state distinction
+incomplete list of disallowed inputs
+inconsistency between implementation and documented design
+incorrect bitwise shift of integer
+incorrect block delimitation
+incorrect chaining or granularity of debug components
+incorrect control flow scoping
+incorrect decoding of security identifiers 
+incorrect execution-assigned permissions
+incorrect ownership assignment
+incorrect parsing of numbers with different radices
+incorrect pointer scaling
+incorrect register defaults or module parameters
+incorrect resource transfer between spheres
+incorrect selection of fuse values
+incorrect short circuit evaluation
+incorrect user management
+incorrectly specified destination in a communication channel
+inefficient algorithmic complexity
+inefficient cpu computation
+inefficient regular expression complexity
+insecure automated optimizations
+insecure inherited permissions
+insecure operation on windows junction / mount point
+insecure preserved inherited permissions
+insecure security identifier mechanism
+insufficient adherence to expected conventions
+insufficient granularity of access control
+insufficient granularity of address regions protected by register locks
+insufficient or incomplete data removal within hardware component
+insufficient precision or accuracy of a real number
+insufficient psychological acceptability
+insufficient resource pool
+insufficient technical documentation
+insufficient type distinction
+insufficient use of symbolic constants
+insufficient verification of data authenticity
+insufficient visual distinction of homoglyphs presented to user
+insufficiently protected credentials
+integer coercion error
+internal asset exposed to unsafe debug access level or state
+invocation of a control element at an unnecessarily deep horizontal layer
+invokable control element in multi-thread context with non-final static storable or member element
+invokable control element with excessive file or data access operations
+invokable control element with excessive volume of commented-out code
+invokable control element with large number of outward calls
+invokable control element with signature containing an excessive number of parameters
+invokable control element with variadic parameters
+j2ee framework: saving unserializable objects to disk
+key exchange without entity authentication
+lack of administrator control over security
+large data table with excessive number of indices
+least privilege violation
+loop condition value update within the loop
+memory allocation with excessive size value
+method containing access of a member element from another class
+mirrored regions with different values
+misinterpretation of input
+mismatched memory management routines
+missing ability to patch rom code
+missing critical step in authentication
+missing cryptographic step
+missing immutable root of trust in hardware
+missing origin validation in websockets
+missing password field masking
+missing security identifier
+missing source correlation of multiple independent data
+missing standardized error handling mechanism
+modification of assumed-immutable data (maid)
+multiple binds to the same port
+multiple inheritance from concrete classes
+multiple interpretations of ui input
+multiple operations on resource in single-operation context
+multiple releases of same resource or handle
+mutable attestation or measurement reporting data
+non-exit on failed initialization
+non-sql invokable control element with excessive number of data resource accesses
+non-transparent sharing of microarchitectural resources
+not using complete mediation
+not using password aging
+numeric range comparison without minimum check
+numeric truncation error
+obscured security-relevant information by alternate name
+observable behavioral discrepancy
+observable discrepancy
+observable internal behavioral discrepancy
+obsolete feature in ui
+omission of security-relevant information
+omitted break statement in switch
+only filtering one instance of a special element
+only filtering special elements at a specified location
+only filtering special elements at an absolute position
+only filtering special elements relative to a marker
+operation on a resource after expiration or release
+operation on resource in wrong phase of lifetime
+overly restrictive account lockout mechanism
+parent class with a virtual destructor and a child class without a virtual destructor
+parent class with references to child class
+parent class without virtual destructor method
+password aging with long expiration
+password in configuration file
+permissive cross-domain policy with untrusted domains
+permissive list of allowed inputs
+persistent storable data element without associated comparison control element
+php external variable modification
+plaintext storage of a password
+policy privileges are not assigned consistently between control and data agents
+policy uses obsolete encoding
+power-on of untrusted execution core before enabling fabric access control
+predictable exact value from previous values
+predictable from observable state
+predictable seed in pseudo-random number generator (prng)
+predictable value range from previous values
+private data structure returned from a public method
+privilege chaining
+privilege context switching error
+privilege defined with unsafe actions
+privilege dropping / lowering errors
+process control
+processor optimization removal or modification of security-critical code
+product released in non-release configuration
+product ui does not warn user of unsafe actions
+public data assigned to private array-typed field
+public key re-use for signing both debug and production code
+public static field not marked final
+public static final field references mutable object
+reachable assertion
+regular expression without anchors
+reliance on a single factor in a security decision
+reliance on component that is not updateable
+reliance on cookies without validation and integrity checking
+reliance on data/memory layout
+reliance on file name or extension of externally-supplied file
+reliance on ip address for authentication
+reliance on machine-dependent data representation
+reliance on obfuscation or encryption of security-relevant inputs without integrity checking
+reliance on package-level scope
+reliance on reverse dns resolution for a security-critical action
+reliance on runtime component in generated code
+reliance on security through obscurity
+reliance on uncontrolled component
+"reliance on undefined, unspecified, or implementation-defined behavior"
+remanent data readable after memory erase
+return inside finally block
+return of pointer value outside of expected range
+return of stack variable address
+"reusing a nonce, key pair in encryption"
+runtime resource management control element in a component built to run on application servers
+same seed in pseudo-random number generator (prng)
+security version number mutable to older versions
+selection of less-secure algorithm during negotiation ('algorithm downgrade')
+semiconductor defects in hardware logic with security-sensitive implications
+sensitive non-volatile information not protected during debug
+sequence of processor instructions leads to unexpected behavior
+serializable data element containing non-serializable item elements
+signal handler function associated with multiple signals
+signal handler use of a non-reentrant function
+signal handler with functionality that is not asynchronous-safe
+singleton class instance creation without proper locking or synchronization
+small seed space in prng
+small space of random values
+source code element without standard prologue
+source code file with excessive number of lines of code
+static member data element outside of a singleton class element
+storing passwords in a recoverable format
+struts: form bean does not extend validation class
+struts: form field without validator
+struts: non-private field in actionform class
+struts: plug-in framework not in use
+struts: unused validation form
+struts: unvalidated action form
+struts: validator turned off
+struts: validator without form field
+symbolic name not mapping to correct object
+synchronous access of remote resource without timeout
+"system-on-chip (soc) using components without unique, immutable identifiers"
+the ui performs the wrong action
+truncation of security-relevant information
+trust of system event data
+trusting http permission methods on the server side
+ui discrepancy for security feature
+unauthorized error injection can degrade hardware redundancy
+uncontrolled search path element
+undefined behavior for input to api
+unimplemented or unsupported feature in ui
+uninitialized value on reset for registers holding security settings
+unintended reentrant invocation of non-reentrant code via nested calls
+unix hard link
+unix symbolic link (symlink) following
+unlock of a resource that is not locked
+unparsed raw web content delivery
+unprotected alternate channel
+unprotected confidential information on device is accessible by osat vendors
+unprotected primary channel
+unprotected transport of credentials
+unrestricted externally accessible lock
+unsafe activex control marked safe for scripting
+untrusted pointer dereference
+untrusted search path
+unverified ownership
+unverified password change
+use after free
+use of a cryptographic primitive with a risky implementation
+use of a key past its expiration date
+use of a non-reentrant function in a concurrent context
+use of a one-way hash without a salt
+"use of blocking code in single-threaded, non-blocking context"
+use of client-side authentication
+use of default credentials
+use of default cryptographic key
+use of default password
+use of expired file descriptor
+use of get request method with sensitive query strings
+use of getlogin() in multithreaded application
+use of insufficiently random values
+use of invariant value in dynamically changing context
+use of less trusted source
+use of low-level functionality
+use of non-canonical url paths for authorization decisions
+use of object without invoking destructor method
+use of obsolete function
+use of password hash instead of password for authentication
+use of password hash with insufficient computational effort
+use of password system for primary authentication
+use of platform-dependent third party components
+use of pointer subtraction to determine size
+use of predictable algorithm in random number generator
+use of prohibited code
+use of rsa algorithm without oaep
+use of same invokable control element in multiple architectural layers
+use of same variable for multiple purposes
+use of singleton pattern without synchronization in a multithreaded context
+use of sizeof() on a pointer type
+use of umask() with chmod-style argument
+use of uninitialized variable
+use of unmaintained third party components
+use of weak credentials
+use of weak hash
+use of web link to untrusted target with window.opener access
+use of wrong operator in string comparison
+using referer field for authentication
+variable extraction error
+violation of secure design principles
+weak authentication
+weak encoding for password
+windows hard link
+windows shortcut following (.lnk)
+write-what-where condition
