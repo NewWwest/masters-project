@@ -11,18 +11,18 @@ from zipfile import ZipFile
 from src.utils.utils import get_files_in_from_directory 
 
 # directory from which to read the zipped results
-directory_with_zipped_mining_results = r'zipped-results'
+directory_with_zipped_mining_results = r'C:\Projects\dl_samples\5_deep_learning_samples\run2\subset'
 
 # Configuration of what samples to extract from the mined results
 positive_datapoints_count = 250
-back_datapoints = 2000
-selected_ecosystems = ['mvn'] # ['ALL', 'npm', 'mvn', 'pypi']
-selected_miners = ['VulFixMinerMiner'] # ['RollingWindowMiner', 'AddedCodeMiner', 'CodeParserMiner_ast', 'CodeParserMiner_edit', 'VulFixMinerMiner','CommitSizeMiner']
+back_datapoints_count = 2000
+selected_ecosystems = ['ALL'] # ['ALL', 'npm', 'mvn', 'pypi']
+selected_miners = ['RollingWindowMiner'] # ['RollingWindowMiner', 'AddedCodeMiner', 'CodeParserMiner_ast', 'CodeParserMiner_edit', 'VulFixMinerMiner','CommitSizeMiner']
 selected_sample_type = ['encoding'] # ['sample', 'encoding']
 
 
 # directory to which save the extracted sample types
-output_directory = 'results/vulfixminer_run1'
+output_directory = 'results\\asd2'
 
 npm_code  = set(['js', 'jsx', 'ts', 'tsx', ])
 java_code  = set(['java'])
@@ -30,9 +30,9 @@ pypi_code = set(['py', 'py3'])
 
 
 def main(input_location):
-    s_selected_ecosystems = set(['ALL', 'npm', 'mvn', 'pypi'])
-    s_selected_miners = set(['RollingWindowMiner', 'AddedCodeMiner', 'CodeParserMiner_ast', 'CodeParserMiner_edit', 'VulFixMinerMiner','CommitSizeMiner'])
-    s_selected_sample_type = set(['sample', 'encoding'])
+    s_selected_ecosystems = set(selected_ecosystems)
+    s_selected_miners = set(selected_miners)
+    s_selected_sample_type = set(selected_sample_type)
 
 
     selected_data = []
@@ -55,13 +55,13 @@ def main(input_location):
 
                 if sample_type in s_selected_sample_type:
                     if len(miners.intersection(s_selected_miners)) > 0:
-                        if len(ecosystems.intersection(s_selected_ecosystems)) > 0:
-                            selected_data.append(data_commit)
+                        if len(set(ecosystems).intersection(s_selected_ecosystems)) > 0:
+                            selected_data.append((f.filename, data_commit))
 
 
     positive = []
     back = []
-    for x in selected_data:
+    for file_name, x in selected_data:
         if x == None or len(x) == 0:
             continue
 
@@ -70,16 +70,19 @@ def main(input_location):
         else:
             label = 'background'
 
-        commit_id = x[0]['commit_id'].replace('/','-')
-        fn = f'{label}-sample-{commit_id}.json'
+        sample_type_fn = 'encodings' if '-encodings-' in file_name else 'samples'
+        
+        commit_id_key = 'commit_id' if 'commit_id' in x[0] else 'id'
+        commit_id = x[0][commit_id_key].replace('/','-')
+        fn = f'{label}-{sample_type_fn}-{commit_id}.json'
 
         if x[0]['is_security_related']:
             positive.append((fn, x))
         else:
             back.append((fn, x))
 
-    positive_datapoints = random.sample(positive, 225)
-    back_datapoints = random.sample(back, 2000)
+    positive_datapoints = random.sample(positive, min(len(positive), positive_datapoints_count))
+    back_datapoints = random.sample(back, min(back_datapoints_count, len(back)))
     for x in positive_datapoints:
         with open(os.path.join(output_directory, x[0]), 'w') as f:
             json.dump(x[1], f)
