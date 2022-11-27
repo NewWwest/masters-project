@@ -1,7 +1,8 @@
-import json
-import sys
-sys.path.insert(0, r'D:\Projects\aaa')
+#!/usr/bin/env python3
+# import sys
+# sys.path.insert(0, r'PATH_TO_REPO')
 
+import json
 import pandas as pd
 import random
 

@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
-import sys
-sys.path.insert(0, r'D:\Projects\aaadoc')
+# import sys
+# sys.path.insert(0, r'PATH_TO_REPO')
 
 import time
 import json
@@ -11,7 +11,7 @@ from zipfile import ZipFile
 
 from src.utils.utils import get_files_in_from_directory 
 
-directory_with_zipped_mining_results = r'D:\Projects\aaa\zipss_temp'
+directory_with_zipped_mining_results = r'zipped-result'
 
 valid_extensions = set()
 npm_code  = set(['js', 'jsx', 'ts', 'tsx', ])

@@ -25,6 +25,7 @@ VALID_EXTENSIONS = set(['java'])
 # technical configuration
 data_location = r'results/dl/java/RollingWindowMiner' 
 results_dir = r'results/dl/java/RollingWindowMiner_embedded1' 
+tokenizer_file = 'data/Bert_and_linear_fine_tuned.pickle'
 max_samples_per_file = 1024
 device = torch.device("cuda") if torch.cuda.is_available() else torch.device("cpu")
 cpus = 6
@@ -33,7 +34,7 @@ cpus = 6
 
 def get_tokenizer():
     model = BertAndLinear(base_model)
-    model.load_state_dict(torch.load(r'D:\Projects\aaa\src\rq5\binaries\t3_roll_java\model_t3_roll_java_final.pickle'))
+    model.load_state_dict(torch.load(tokenizer_file))
     transformer = model.codebert
 
     # transformer = AutoModel.from_pretrained(base_model)

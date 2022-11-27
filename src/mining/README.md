@@ -17,7 +17,7 @@ CodeParser is a mini project in Maven to run the GumTreeDiff tool. The `CodePars
 
 ## Issues Miners
 
-TODO
+Issues Miners directory contains code used to search for and download issues. Addtionally it contains the code used to find the linked/related commits in a given issue object (with additional data downloaded). 
 
 
 ## Vulnerability Miners

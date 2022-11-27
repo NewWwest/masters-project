@@ -1,10 +1,10 @@
 import json
 import pandas as pd
 
-import src.src2.utils.utils as utils
+import src.utils.utils as utils
 
 mapper_results_directory = 'results/checkpoints_fixMapper'
-p = 'src/src2/rq2_precission/data/most_used_pypi'
+p = 'data/rq2_precission/data/most_used_pypi'
 input_issue_references_dataset = f'{p}/filterred_commits.csv'
 input_issue_content_dataset = f'{p}/filterred_issues.csv'
 

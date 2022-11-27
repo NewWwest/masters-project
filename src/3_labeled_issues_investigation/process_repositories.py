@@ -1,12 +1,13 @@
-import sys
-sys.path.insert(0, r'D:\Projects\aaa')
+#!/usr/bin/env python3
+# import sys
+# sys.path.insert(0, r'PATH_TO_REPO')
 
 import json
 import pandas as pd
 import os
-from src.Mining.IssuesMiners.IssueDownloader import IssueDownloader
-from src.Mining.IssuesMiners.IssueFinder import IssueFinder
 
+from src.mining.IssuesMiners.IssueDownloader import IssueDownloader
+from src.mining.IssuesMiners.IssueFinder import IssueFinder
 from src.proxies.GitHubProxy import GithubProxy
 
 

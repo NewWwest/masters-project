@@ -3,7 +3,7 @@
 
 ## Scripts
 
-The scripts were the first iteration of the deep learning experiment. Each stage (as depicked below) can be examined in more detail and experimented on
+The scripts were the first iteration of the deep learning experiment. Each stage (as depicked below) can be examined in more detail and experimented on. Partially outdated compared to CrossVal notebook.
 
 ### Fine-Tune
 The fine-tuning step involves training the transformed to produce the best possible mebedding of the provided samples for the specific task. To do that we train a model build from the GraphCodeBERT transformer with a linear layer attached to it. The model is train for cross entropy loss and after trainng the linear layer is discarded.

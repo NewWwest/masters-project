@@ -1,5 +1,6 @@
-import sys
-sys.path.insert(0, r'D:\Projects\aaa')
+#!/usr/bin/env python3
+# import sys
+# sys.path.insert(0, r'PATH_TO_REPO')
 
 import json
 import pandas as pd
@@ -9,16 +10,16 @@ from src.utils.utils import get_files_in_from_directory
 input_data_location = 'results/checkpoints_fixMapper'
 
 input_issues_references_dataset = [
-    r'D:\Projects\aaa_data\rq2_final_results\most_starred\filterred_commits.csv',
-    r'D:\Projects\aaa_data\rq2_final_results\most_used_npm\filterred_commits.csv',
-    r'D:\Projects\aaa_data\rq2_final_results\most_used_pypi\filterred_commits.csv',
-    r'D:\Projects\aaa_data\rq2_final_results\most_used_mvn\filterred_commits.csv',
+    r'data\most_starred\filterred_commits.csv',
+    r'data\most_used_npm\filterred_commits.csv',
+    r'data\most_used_pypi\filterred_commits.csv',
+    r'data\most_used_mvn\filterred_commits.csv',
 ]
 input_issues_content_dataset = [
-    r'D:\Projects\aaa_data\rq2_final_results\most_starred\filterred_issues.csv',
-    r'D:\Projects\aaa_data\rq2_final_results\most_used_npm\filterred_issues.csv',
-    r'D:\Projects\aaa_data\rq2_final_results\most_used_pypi\filterred_issues.csv',
-    r'D:\Projects\aaa_data\rq2_final_results\most_used_mvn\filterred_issues.csv',
+    r'data\most_starred\filterred_issues.csv',
+    r'data\most_used_npm\filterred_issues.csv',
+    r'data\most_used_pypi\filterred_issues.csv',
+    r'data\most_used_mvn\filterred_issues.csv',
 ]
 
 

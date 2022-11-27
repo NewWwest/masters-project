@@ -1,5 +1,6 @@
-import sys
-sys.path.insert(0, r'D:\Projects\aaa')
+#!/usr/bin/env python3
+# import sys
+# sys.path.insert(0, r'PATH_TO_REPO')
 
 import json
 import pandas as pd
@@ -14,16 +15,16 @@ output_data_location = 'temp.csv'
 
 input_data_location = 'results/checkpoints_fixMapper'
 input_issues_references_dataset = [
-    r'D:\Projects\aaa_data\rq2_final_results\most_starred\manually_annotated_mapping.csv',
-    r'D:\Projects\aaa_data\rq2_final_results\most_used_npm\manually_annotated_mapping.csv',
-    r'D:\Projects\aaa_data\rq2_final_results\most_used_pypi\manually_annotated_mapping.csv',
-    r'D:\Projects\aaa_data\rq2_final_results\most_used_mvn\manually_annotated_mapping.csv',
+    r'data\most_starred\manually_annotated_mapping.csv',
+    r'data\most_used_npm\manually_annotated_mapping.csv',
+    r'data\most_used_pypi\manually_annotated_mapping.csv',
+    r'data\most_used_mvn\manually_annotated_mapping.csv',
 ]
 
 def extract_data_from_disclosures():
-    nvd = NvdLoader(r'D:\Projects\VulnerabilityData\new_nvd')
-    osv = OsvLoader(r'D:\Projects\VulnerabilityData\new_osv')
-    ghsa = OsvLoader(r'D:\Projects\VulnerabilityData\advisory-database/advisories/github-reviewed')
+    nvd = NvdLoader('data/new_nvd')
+    osv = OsvLoader('data/new_osv')
+    ghsa = OsvLoader('data/advisory-database/advisories/github-reviewed')
     omni = OmniLoader(nvd, osv, ghsa)
 
     res = []

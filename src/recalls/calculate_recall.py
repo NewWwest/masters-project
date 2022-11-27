@@ -1,8 +1,6 @@
 #!/usr/bin/env python3
 # import sys
 # sys.path.insert(0, r'PATH_TO_REPO')
-import sys
-sys.path.insert(0, r'D:\Projects\aaadoc')
 
 from statistics import mean, median
 from collections import Counter
@@ -17,7 +15,7 @@ import matplotlib.pyplot as plt
 import random
 import regex as re
 
-input_data_location = r'D:\Projects\aaa_data\2_extracted_references\data'
+input_data_location = r'data\2_extracted_references\data'
 keywords_regexes_path = r'src\2_phrase_search\bigquery\keywords_v1.csv'
 
 commits_data = {}
@@ -367,9 +365,9 @@ def load_first_sec_label(data, references_data):
 def main():
     global commits_data
     # Import data from vulnerability databases
-    nvd = NvdLoader(r'D:\Projects\VulnerabilityData\new_nvd')
-    osv = OsvLoader(r'D:\Projects\VulnerabilityData\new_osv')
-    ghsa = OsvLoader(r'D:\Projects\VulnerabilityData\advisory-database\advisories\github-reviewed')
+    nvd = NvdLoader(r'data\new_nvd')
+    osv = OsvLoader(r'data\new_osv')
+    ghsa = OsvLoader(r'data\advisory-database\advisories\github-reviewed')
     omni = OmniLoader(nvd, osv, ghsa)
     
     # Import data from fix mapper result

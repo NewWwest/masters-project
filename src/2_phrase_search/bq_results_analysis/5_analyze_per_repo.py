@@ -1,13 +1,14 @@
-import sys
-sys.path.insert(0, r'D:\Projects\aaa')
+#!/usr/bin/env python3
+# import sys
+# sys.path.insert(0, r'PATH_TO_REPO')
 
 import pandas as pd
 import csv
 import json
 
-input_file = r'src\rq3\bq_results_analysis\results_from_bq_search.csv'
+input_file = r'data\results_from_bq_search.csv'
 all_issues_input_file = r'all_issues_scanned.csv'
-repos_file = r'src/rq3/repos/most_popular_pypi_packages.csv'
+repos_file = r'data/repos/most_popular_pypi_packages.csv'
 repos_datasets = [
     'src/rq3/repos/top_starred_repositories.csv',
     'src/rq3/repos/most_popular_maven_packages.csv',

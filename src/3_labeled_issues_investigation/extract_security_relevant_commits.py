@@ -1,15 +1,16 @@
-import sys
-sys.path.insert(0, r'D:\Projects\aaadoc')
+#!/usr/bin/env python3
+# import sys
+# sys.path.insert(0, r'PATH_TO_REPO')
 
 import pandas as pd
 from src.utils.constants import max_allowed_commits_in_link
 
 
 data_files = [
-    'D:\\Projects\\aaa_data\\3_security_labels\\rq2_final_results\\most_starred\\filterred_commits.csv',
-    'D:\\Projects\\aaa_data\\3_security_labels\\rq2_final_results\\most_used_mvn\\filterred_commits.csv',
-    'D:\\Projects\\aaa_data\\3_security_labels\\rq2_final_results\\most_used_npm\\filterred_commits.csv',
-    'D:\\Projects\\aaa_data\\3_security_labels\\rq2_final_results\\most_used_pypi\\filterred_commits.csv'
+    'data\\most_starred\\filterred_commits.csv',
+    'data\\most_used_mvn\\filterred_commits.csv',
+    'data\\most_used_npm\\filterred_commits.csv',
+    'data\\most_used_pypi\\filterred_commits.csv'
 ]
 
 dfs = [pd.read_csv(data_file) for data_file in data_files]

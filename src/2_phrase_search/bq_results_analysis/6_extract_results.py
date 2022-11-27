@@ -1,11 +1,12 @@
-import sys
-sys.path.insert(0, r'D:\Projects\aaa')
+#!/usr/bin/env python3
+# import sys
+# sys.path.insert(0, r'PATH_TO_REPO')
 
 from src.utils.utils import get_files_in_from_directory
 import pandas as pd
 import json
 
-input_path = r'src\rq3\bq_results_analysis\results\annotated_longest_phrases.csv'
+input_path = r'data\bq_results_analysis\results\annotated_longest_phrases.csv'
 
 df = pd.read_csv(input_path)
 
@@ -20,7 +21,7 @@ df = pd.read_csv(input_path)
 #     print(k, ';', g.shape[0], ';', oks, ';', oks/g.shape[0]*100, ';', vulns, ';', vulns/g.shape[0]*100)
 
 
-input_path = r'src\rq3\bq_results_analysis\results\annotated_most_entities.csv'
+input_path = r'data\bq_results_analysis\results\annotated_most_entities.csv'
 df = pd.read_csv(input_path)
 
 oks = 0

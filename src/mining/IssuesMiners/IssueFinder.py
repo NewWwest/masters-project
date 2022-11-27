@@ -95,6 +95,6 @@ class IssueFinder:
 
 if __name__ == '__main__':
     finder = IssueFinder('results/issue_finder_checkpoints')
-    path_to_repos_csv = r'src\rq2_precission\final_results\most_starred\top_starred_repositories.csv'
+    path_to_repos_csv = r'data\most_starred\top_starred_repositories.csv'
     finder.find_issues(path_to_repos_csv, ['secur', 'vulnerab', 'exploit'], 'repos_with_security_labels.csv', 'security_issues.csv')
     

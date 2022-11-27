@@ -1,5 +1,6 @@
-import sys
-sys.path.insert(0, r'D:\Projects\aaa')
+#!/usr/bin/env python3
+# import sys
+# sys.path.insert(0, r'PATH_TO_REPO')
 
 import json
 import pandas as pd
@@ -12,10 +13,10 @@ from src.proxies.GitHubProxy import GithubProxy
 
 
 input_issues_references_dataset = [
-    r'D:\Projects\aaa_data\rq2_final_results\most_starred\manually_annotated_mapping.csv',
-    r'D:\Projects\aaa_data\rq2_final_results\most_used_npm\manually_annotated_mapping.csv',
-    r'D:\Projects\aaa_data\rq2_final_results\most_used_pypi\manually_annotated_mapping.csv',
-    r'D:\Projects\aaa_data\rq2_final_results\most_used_mvn\manually_annotated_mapping.csv',
+    r'data\most_starred\manually_annotated_mapping.csv',
+    r'data\most_used_npm\manually_annotated_mapping.csv',
+    r'data\most_used_pypi\manually_annotated_mapping.csv',
+    r'data\most_used_mvn\manually_annotated_mapping.csv',
 ]
 
 def main():

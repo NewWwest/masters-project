@@ -1,5 +1,6 @@
-import sys
-sys.path.insert(0, r'D:\Projects\2022')
+#!/usr/bin/env python3
+# import sys
+# sys.path.insert(0, r'PATH_TO_REPO')
 
 import json
 import time
@@ -144,6 +145,7 @@ if __name__ == '__main__':
     # # Step 2: Manually filter the file to find cpes that may relate to the repo
 
     # # Step 3: Get vulnerabilities for the repos and create the file for review
-    create_nvd_mapping_file()
+    # create_nvd_mapping_file()
 
     # # Step 4: Find similar packages in OSV
+    pass
