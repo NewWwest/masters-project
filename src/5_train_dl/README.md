@@ -28,3 +28,12 @@ This notebook contains the code to evaluate to embedding transformer different c
 ## Results
 
 The `results` folder contains the outputs of the search for the optimal hyper-parameters setting using the `Test transformer hyper-parameters` notebook. The individual outputs are contained in the text files named after the used sampling method while the .ods and .xls file contain the contatinated results in tables.
+
+## Step-by-Step
+
+- Mine code samples as described in directory `5_mine_code_samples`
+- Extract the samples you want with `3_extract_sample_from_zips`
+- Split the data up into folds with `1_fold_data` 
+- Set the correct model name and directories in `CrossVal.ipynb`
+- Use fraction_of_data, sample_limit and eval_sample_limit to limit used data.
+- You can comment out specific aggregator models in `evaluate_aggregators`

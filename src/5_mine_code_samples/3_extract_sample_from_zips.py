@@ -11,7 +11,7 @@ from zipfile import ZipFile
 from src.utils.utils import get_files_in_from_directory 
 
 # directory from which to read the zipped results
-directory_with_zipped_mining_results = r'C:\Projects\dl_samples\5_deep_learning_samples\run2\subset'
+directory_with_zipped_mining_results = r'zipped-result'
 
 # Configuration of what samples to extract from the mined results
 positive_datapoints_count = 250
@@ -22,7 +22,7 @@ selected_sample_type = ['encoding'] # ['sample', 'encoding']
 
 
 # directory to which save the extracted sample types
-output_directory = 'results\\asd2'
+output_directory = 'results\\run_1'
 
 npm_code  = set(['js', 'jsx', 'ts', 'tsx', ])
 java_code  = set(['java'])
@@ -37,10 +37,15 @@ def main(input_location):
 
     selected_data = []
     zipped_files = get_files_in_from_directory(input_location)
+    # zipped_files = zipped_files[:5]
+    
     for file in zipped_files:
         with ZipFile(file, 'r') as zipped:
             for f in zipped.filelist:
                 data_commit = json.loads(zipped.read(f.filename))
+                if data_commit == None or len(data_commit) == 0:
+                    continue
+
                 ecosystems = ['ALL']
                 extensions = set([x['file_name'].split('.')[-1] for x in data_commit])
                 if any([x in npm_code for x in extensions]):

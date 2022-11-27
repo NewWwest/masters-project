@@ -1,6 +1,7 @@
 import json
 import pandas as pd
 import random
+import os
 
 from src.dl.datasets.supporting.CsvDataset import CsvDataset
 
@@ -42,3 +43,24 @@ def get_files_in_set(filenames, test_repos):
             filtered_json_files.append(x)
 
     return filtered_json_files
+
+
+def chunks(array, number_of_chunks):
+    for i in range(0, number_of_chunks):
+        yield array[i::number_of_chunks]
+
+        
+def save_file_datasets(file_dataset, dataset_type, dir):
+    data = {
+        'positive_files': file_dataset[0],
+        'background_files': file_dataset[1]
+    }
+    with open(os.path.join(dir, f'{dataset_type}-files.json'), 'w') as f:
+        json.dump(data, f)
+
+
+def load_file_dataset(dataset_type, dir):
+    with open(os.path.join(dir, f'{dataset_type}-files.json'), 'r') as f:
+        data = json.load(f)
+
+    return (data['positive_files'], data['background_files'])

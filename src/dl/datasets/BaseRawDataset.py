@@ -5,14 +5,14 @@ import torch.utils.data as data
 import random
 
 class BaseRawDataset(data.Dataset):
-    def __init__(self, VALID_EXTENSIONS):
+    def __init__(self, VALID_EXTENSIONS = None):
         self.VALID_EXTENSIONS = VALID_EXTENSIONS
         self.positive_data = []
         self.background_data = []
 
 
     @abstractmethod
-    def _load_file(self, collection, json_file):
+    def _load_file(self, collection, json_file, commit_id):
         pass
 
 
@@ -35,7 +35,7 @@ class BaseRawDataset(data.Dataset):
         self.positive_data = self.positive_data * oversampling_ratio
         background_count = class_ratio*len(self.positive_data)
         self.background_data = random.sample(self.background_data, min(background_count, len(self.background_data)))
-
+    
         final_positive_count = int(samples_limit*positive_count/(positive_count+background_count))
         self.positive_data = random.sample(self.positive_data, min(final_positive_count, len(self.positive_data)))
         self.background_data = random.sample(self.background_data, min(samples_limit-final_positive_count, len(self.background_data)))
@@ -68,8 +68,11 @@ class BaseRawDataset(data.Dataset):
             try:
                 with open(filename, 'r') as f:
                     temp_data = json.load(f)
-                    temp_data = [x for x in temp_data if x['file_name'].split('.')[-1] in self.VALID_EXTENSIONS]
-                    self._load_file(positive_data_temp, temp_data)
+                    if self.VALID_EXTENSIONS != None:
+                        temp_data = [x for x in temp_data if x['file_name'].split('.')[-1] in self.VALID_EXTENSIONS]
+                    commit_id_key = 'commit_id' if 'commit_id' in temp_data[0] else 'id'
+                    commit_id = temp_data[0][commit_id_key]
+                    self._load_file(positive_data_temp, temp_data, commit_id)
             except Exception as e:
                 print('Failed to load', filename)
                 print(e)
@@ -78,8 +81,11 @@ class BaseRawDataset(data.Dataset):
             try:
                 with open(filename, 'r') as f:
                     temp_data = json.load(f)
-                    temp_data = [x for x in temp_data if x['file_name'].split('.')[-1] in self.VALID_EXTENSIONS]
-                    self._load_file(background_data_temp, temp_data)
+                    if self.VALID_EXTENSIONS != None:
+                        temp_data = [x for x in temp_data if x['file_name'].split('.')[-1] in self.VALID_EXTENSIONS]
+                    commit_id_key = 'commit_id' if 'commit_id' in temp_data[0] else 'id'
+                    commit_id = temp_data[0][commit_id_key]
+                    self._load_file(background_data_temp, temp_data, commit_id)
             except Exception as e:
                 print('Failed to load', filename)
                 print(e)

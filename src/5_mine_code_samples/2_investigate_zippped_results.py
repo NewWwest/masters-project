@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
-# import sys
-# sys.path.insert(0, r'PATH_TO_REPO')
+import sys
+sys.path.insert(0, r'D:\Projects\aaadoc')
 
 import time
 import json
@@ -11,7 +11,7 @@ from zipfile import ZipFile
 
 from src.utils.utils import get_files_in_from_directory 
 
-directory_with_zipped_mining_results = r'zipped-results'
+directory_with_zipped_mining_results = r'D:\Projects\aaa\zipss_temp'
 
 valid_extensions = set()
 npm_code  = set(['js', 'jsx', 'ts', 'tsx', ])
@@ -30,14 +30,18 @@ CommitSizeMiner =  'CommitSizeMiner'
 def main(input_location):
     ecosystems_all = ['ALL', 'npm', 'mvn', 'pypi']
     miners_all = ['RollingWindowMiner', 'AddedCodeMiner', 'CodeParserMiner_ast', 'CodeParserMiner_edit', 'VulFixMinerMiner','CommitSizeMiner']
+    data_types = ['encoding', 'sample']
+    sample_types = ['positive', 'background']
     data = {}
 
     for eco in ecosystems_all:
         data[eco] = {}
         for miner in miners_all:
             data[eco][miner] = {}
-            data[eco][miner]['sample'] = []
-            data[eco][miner]['encoding'] = []
+            for data_type in data_types:
+                data[eco][miner][data_type] = {}
+                for sample_type in sample_types:
+                    data[eco][miner][data_type][sample_type] = []
 
     zipped_files = get_files_in_from_directory(input_location)
     for file in zipped_files:
@@ -53,21 +57,28 @@ def main(input_location):
                 if any([x in pypi_code for x in extensions]):
                     ecosystems.append('pypi')
 
+                if data_commit[0]['is_security_related']:
+                    label = 'positive'
+                else:
+                    label = 'background'
+                    
+                if '-encodings-' in f.filename:
+                    data_type = 'encoding'
+                else:
+                    data_type = 'sample'
+
                 miners = set([x['sample_type'].split('.')[-1] for x in data_commit])
                 idx = data_commit[0]['commit_id'] if 'commit_id' in data_commit[0] else data_commit[0]['id']
 
                 for eco in ecosystems:
                     for miner in miners:
-                        if '-encodings-' in f.filename:
-                            data[eco][miner]['encoding'].append(idx)
-                        else:
-                            data[eco][miner]['sample'].append(idx)
+                        data[eco][miner][data_type][label].append(idx)
 
 
     for k,v in data.items():
         for kk,vv in v.items():
-            for kkk,vvv in vv.items():
-                print(k, kk, kkk, len(vvv))
+            for kkk, vvv in vv.items():
+                print(k, kk, kkk, len(vvv['positive']),'/', len(vvv['background']))
 
 
 if __name__ == '__main__':

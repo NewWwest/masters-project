@@ -10,12 +10,12 @@ import random
 from src.dl.dl_utils import get_repo_seminames, chunks, get_files_in_set, save_file_datasets
 from src.utils.utils import get_files_in_from_directory
 
-fraction_of_data = 0.1
+fraction_of_data = 0.2
 folds_count = 5
 
-model_name = 'debug_test'
-work_dir = f'src/rq5/binaries/{model_name}'
-raw_input_path = r'C:\Projects\masters-project\results\asd2'
+model_name = 'debug_test_folds'
+work_dir = f'src/5_train_dl/binaries/{model_name}'
+raw_input_path = r'results\\run_1'
 
 
 random.seed(42)
