@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
-# import sys
-# sys.path.insert(0, r'PATH_TO_REPO')
+import sys
+sys.path.insert(0, r'D:\Projects\aaadoc')
 
 from statistics import mean, median
 from collections import Counter
@@ -15,11 +15,21 @@ import matplotlib.pyplot as plt
 import random
 import regex as re
 
-input_data_location = r'data\2_extracted_references\data'
-keywords_regexes_path = r'src\2_phrase_search\bigquery\keywords_v1.csv'
+input_data_location = r'D:\Projects\aaa\results\checkpoints_fixMapper'
+keywords_regexes_path = r'D:\Projects\aaadoc\src\2_phrase_search\bigquery\keywords_v2.csv'
+vfm_classified_commits = r'D:\Projects\aaadoc\src\recalls\data\sap_result_training_excluded.json'
+security_relevant_commits_file = r'src\recalls\data\security_relevant_commits.csv'
+security_relevant_commits_info_file = r'src\recalls\data\security_relevant_commits_info2.json'
+
+fb_predictions_all = r'D:\Projects\aaadoc\src\recalls\data\prediction_all.json'
+fb_predictions_npm = r'D:\Projects\aaadoc\src\recalls\data\prediction_npm.json'
+fb_predictions_pypi = r'D:\Projects\aaadoc\src\recalls\data\prediction_pypi.json'
+fb_predictions_mvn = r'D:\Projects\aaadoc\src\recalls\data\prediction_mvn.json'
 
 commits_data = {}
 security_label_keywords  = ['secur', 'vulnerab', 'exploit']
+
+phrases_to_ids = {}
 
 # General
 def _get_ref_date(ref):
@@ -109,7 +119,7 @@ def _safe_add(text, stuff):
     return text + ' ' + stuff if stuff else text
 
 # Security phrases helper
-def _contains_secuirty_related_phrases(ref, regexes):
+def _contains_secuirty_related_phrases(ref, regexes, report_id):
     text = ''
     asd = ref['data_obj']
     if ref['reference_type'] == 'commit':
@@ -139,12 +149,17 @@ def _contains_secuirty_related_phrases(ref, regexes):
         for c in asd['commits']:
             text = _safe_add(text, c['commit']['message'])
 
+    global phrases_to_ids
+    found_phrases = False
     if text:
         for req in regexes:
             if regexes[req].search(text):
-                return True
+                if req not in phrases_to_ids:
+                    phrases_to_ids[req] = set()
+                phrases_to_ids[req].add(report_id)
+                found_phrases = True
 
-    return False
+    return found_phrases
 
 # Security labels helper
 def _security_related_label(label_name):
@@ -205,6 +220,18 @@ def load_ecosystem(data, omni):
 
         ecosystems = list(set([xx.lower() for xx in omni.ecosystems_of_a_report(x)]))
         data[x]['ecosystem'] = ecosystems
+
+
+def load_severity(data, omni):
+    for x in data.keys():
+        asd = omni.publish_date_of_report(x)
+        asd = [x['publish_date'] for x in asd]
+        first = min(asd)
+        if first.year < 2017:
+            continue
+
+        severity = omni.highest_severity(x)
+        data[x]['severity'] = severity
 
 
 def load_repositories(data, references_data):
@@ -320,7 +347,7 @@ def load_first_sec_phrase(data, references_data):
 
         dates = {}
         for ref in references_data[x]: 
-            if not _contains_secuirty_related_phrases(ref, regexes):
+            if not _contains_secuirty_related_phrases(ref, regexes, x):
                 continue
 
             ref_date = _get_ref_date(ref)
@@ -360,14 +387,129 @@ def load_first_sec_label(data, references_data):
             data[x]['first_sec_label'] = min_dates
 
 
+def load_fb_commit_classification(data):
+    with open(security_relevant_commits_info_file, 'r') as f:
+        commits_info_data = json.load(f)
+
+    predictions = {}
+    prediction_files = [
+        fb_predictions_all, 
+        fb_predictions_npm,
+        fb_predictions_pypi,
+        fb_predictions_mvn, 
+    ]
+    for prediction_file in prediction_files:
+        with open(prediction_file, 'r') as f:
+            temp = json.load(f)
+            for x in temp:
+                if x['actual_value']:
+                    if x['commit_id'] not in predictions:
+                        predictions[x['commit_id']] = x['prediction'] == 'True'
+                    else:
+                        if not predictions[x['commit_id']]:
+                            predictions[x['commit_id']] = x['prediction'] == 'True'
+
+    sighted_vulnerabilities = set()
+    per_vulnerability = {}
+    for commit_id in predictions:
+        if commit_id not in commits_info_data:
+            continue
+
+        commit = commits_info_data[commit_id]['commit_info']
+        sighted_vulnerabilities.update(commits_info_data[commit_id]['report_ids'])
+
+        date1 = parser.parse(commit['commit']['committer']['date'])
+        date2 = parser.parse(commit['commit']['author']['date'])
+        first = date1 if date1 < date2 else date2
+
+        if predictions[commit_id]:
+            for report_id in commits_info_data[commit_id]['report_ids']:
+                if report_id not in per_vulnerability:
+                    per_vulnerability[report_id]=[]
+                per_vulnerability[report_id].append(first)
+
+
+    for x in sighted_vulnerabilities:
+        if x not in per_vulnerability:
+            data[x]['fb_commit_classification'] = 'not_spotted'
+        else:
+            data[x]['fb_commit_classification'] = min(per_vulnerability[x])
+
+
+def load_vfm_commit_classification(data):
+    with open(security_relevant_commits_info_file, 'r') as f:
+        commits_info_data = json.load(f)
+
+    with open(vfm_classified_commits, 'r') as f:
+        vfm_classified = json.load(f)
+
+    sighted_vulnerabilities = set()
+    per_vulnerability_msg = {}
+    per_vulnerability_patch = {}
+    per_vulnerability_combined = {}
+    for x in vfm_classified:
+        if not x['is_security_related']:
+            continue
+
+        if x['id'] not in commits_info_data:
+            continue
+
+        commit = commits_info_data[x['id']]['commit_info']
+        sighted_vulnerabilities.update(commits_info_data[x['id']]['report_ids'])
+
+        date1 = parser.parse(commit['commit']['committer']['date'])
+        date2 = parser.parse(commit['commit']['author']['date'])
+        first = date1 if date1 < date2 else date2
+        if x['msg_prob'][0] >= 0.5 :
+            for report_id in commits_info_data[x['id']]['report_ids']:
+                if report_id not in per_vulnerability_msg:
+                    per_vulnerability_msg[report_id]=[]
+                per_vulnerability_msg[report_id].append(first)
+
+        if x['patch_prob'][0] >= 0.5 :
+            for report_id in commits_info_data[x['id']]['report_ids']:
+                if report_id not in per_vulnerability_patch:
+                    per_vulnerability_patch[report_id]=[]
+                per_vulnerability_patch[report_id].append(first)
+
+        if x['msg_prob'][0]*x['msg_prob'][0] + x['patch_prob'][0]*x['patch_prob'][0] >= 0.25 :
+            for report_id in commits_info_data[x['id']]['report_ids']:
+                if report_id not in per_vulnerability_combined:
+                    per_vulnerability_combined[report_id]=[]
+                per_vulnerability_combined[report_id].append(first)
+
+
+    
+    for x in sighted_vulnerabilities:
+        if x not in per_vulnerability_msg:
+            data[x]['vfm_message_classification'] = 'not_spotted'
+        else:
+            data[x]['vfm_message_classification'] = min(per_vulnerability_msg[x])
+
+    for x in sighted_vulnerabilities:
+        if x not in per_vulnerability_patch:
+            data[x]['vfm_patch_classification'] = 'not_spotted'
+        else:
+            data[x]['vfm_patch_classification'] = min(per_vulnerability_patch[x])
+
+    for x in sighted_vulnerabilities:
+        if x not in per_vulnerability_combined:
+            data[x]['vfm_combined_classification'] = 'not_spotted'
+        else:
+            data[x]['vfm_combined_classification'] = min(per_vulnerability_combined[x])
+
 
 
 def main():
     global commits_data
+    # Import data on additional commits
+    with open(r'src\recalls\data\commit_data_for_rq1.json', 'r') as f:
+        commits_data = json.load(f)
+
     # Import data from vulnerability databases
-    nvd = NvdLoader(r'data\new_nvd')
-    osv = OsvLoader(r'data\new_osv')
-    ghsa = OsvLoader(r'data\advisory-database\advisories\github-reviewed')
+    nvd = NvdLoader(r'D:\Projects\VulnerabilityData\new_nvd')
+    osv = OsvLoader(r'D:\Projects\VulnerabilityData\new_osv')
+    ghsa = OsvLoader(r'D:\Projects\VulnerabilityData\advisory-database\advisories\github-reviewed')
     omni = OmniLoader(nvd, osv, ghsa)
     
     # Import data from fix mapper result
@@ -384,10 +526,6 @@ def main():
         for report_id in data_temp:
             references_data[report_id] = data_temp[report_id]
 
-    # Import data on additional commits
-    with open(r'src\recalls\recall_analysis\commit_data_for_rq1.json', 'r') as f:
-        commits_data = json.load(f)
-
 
     data = {x:{} for x in omni.all_ids}
 
@@ -400,6 +538,8 @@ def main():
     # Load repositories
     load_repositories(data, references_data)
 
+    # Import severity
+    load_severity(data, omni)
 
     # Load first ref
     load_first_ref(data, references_data)
@@ -413,11 +553,17 @@ def main():
     # Load first ref with security phrases
     load_first_sec_phrase(data, references_data)
 
+    # # Most found phrases 
+    # global phrases_to_ids
+    # asd = sorted({k:len(v) for k,v in phrases_to_ids.items()}.items(), key=lambda x: x[1])
+
     # Load first issue with security label
     load_first_sec_label(data, references_data)
 
-    # Load first commit classified as security related (Feature-based)
-    # load_first_commit(data, omni)
+    # # Load first commit classified as security related (Feature-based)
+    load_fb_commit_classification(data)
+
+    load_vfm_commit_classification(data)
 
     # Load first commit classified as security related (own-models)
     # load_first_issue(data, omni)
@@ -425,79 +571,10 @@ def main():
     # Load first commit classified as security related (VulFixMiner)
     # load_first_commit(data, omni)
 
-    with open('revall_analysis.json', 'w') as f:
+    with open('recall_analysis_vfm.json', 'w') as f:
         json.dump(data, f, default=str)
 
 if __name__ == '__main__':
     main()
     print('ok')
 
-
-
-# def dates_from_github():
-#     all_issue_links = set()
-#     sec_issue_links = set()
-#     reports_with_sec_issues = set()
-#     data_files = get_files_in_from_directory(input_data_location, '.json')
-#     security_issues = {}
-
-#     for data_file in data_files:
-#         # print(f'Processing... {data_file}')
-#         with open(data_file, 'r') as f:
-#             data = json.load(f)
-        
-#         for report_id in data:
-#             for ref in data[report_id]:
-#                 ref_aliases = json.loads(ref['aliases'])
-#                 if ref['reference_type'] == 'issue':
-#                     reports_with_sec_issues.add(report_id)
-#                     ref_data = json.loads(ref['data'])
-#                     all_issue_links.add(ref_data['url'])
-#                     date = security_label_date(ref_data)
-#                     if date:
-#                         add_date([report_id], date, security_issues)
-#                         sec_issue_links.add(ref_data['url'])
-
-#     return security_issues, sec_issue_links, all_issue_links, reports_with_sec_issues
-    
-
-
-# def security_related(label_name):
-#     for keyword in security_label_keywords:
-#         if keyword in label_name:
-#             return True
-#     return False
-
-
-# def add_date(ref_aliases, date, by_cve):
-#     for alias_id in ref_aliases:
-#         if alias_id not in by_cve:
-#             by_cve[alias_id] = []
-#         by_cve[alias_id].append(date)
-
-
-# def security_label_date(issue):
-#     if 'labels' not in issue:
-#         return None
-
-#     label_names = [xx['name'].lower() for xx in issue['labels']]
-#     has_security_ralted_label = False
-#     for label_name in label_names:
-#         if security_related(label_name):
-#             has_security_ralted_label = True
-#             break
-
-    
-#     labelled_events = [evt for evt in issue['timeline_data'] if evt['event']=='labeled' and security_related(evt['label']['name'].lower())]
-
-#     actual_labelling_date = None
-#     if len(labelled_events) == 0 and not has_security_ralted_label:
-#         return None
-#     elif len(labelled_events) == 0 and has_security_ralted_label:
-#         actual_labelling_date = parser.parse(issue['created_at'])
-#     else:
-#         labelling_dates = [parser.parse(evt['created_at']) for evt in labelled_events]
-#         actual_labelling_date = min(labelling_dates)
-
-
-#     return actual_labelling_date
