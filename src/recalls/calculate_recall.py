@@ -19,13 +19,14 @@ input_data_location = r'D:\Projects\aaa\results\checkpoints_fixMapper'
 keywords_regexes_path = r'D:\Projects\aaadoc\src\2_phrase_search\bigquery\keywords_v2.csv'
 vfm_classified_commits = r'D:\Projects\aaadoc\src\recalls\data\sap_result_training_excluded.json'
 security_relevant_commits_file = r'src\recalls\data\security_relevant_commits.csv'
-security_relevant_commits_info_file = r'src\recalls\data\security_relevant_commits_info2.json'
+security_relevant_commits_info_file = r'src\recalls\data\security_relevant_commits_info.json'
 
 fb_predictions_all = r'D:\Projects\aaadoc\src\recalls\data\prediction_all.json'
 fb_predictions_npm = r'D:\Projects\aaadoc\src\recalls\data\prediction_npm.json'
 fb_predictions_pypi = r'D:\Projects\aaadoc\src\recalls\data\prediction_pypi.json'
 fb_predictions_mvn = r'D:\Projects\aaadoc\src\recalls\data\prediction_mvn.json'
 
+commits_info_data = {}
 commits_data = {}
 security_label_keywords  = ['secur', 'vulnerab', 'exploit']
 
@@ -51,6 +52,55 @@ def _get_ref_date(ref):
             dates.append(parser.parse(x['commit']['committer']['date']))
         first = min(dates)
         return first 
+
+# General
+def _get_ref_id(ref):
+    return f'{ref["repo_owner"]}/{ref["repo_name"]}/{ref["reference_type"]}/{ref["reference_value"]}'
+
+# General
+def _commit_size(ref):
+    global commits_info_data
+    if ref["reference_type"] == 'commit':
+        commit_id = f'{ref["repo_owner"]}/{ref["repo_name"]}/{ref["reference_value"]}'
+        if commit_id in commits_info_data:
+            return commits_info_data[commit_id]['commit_info']['stats']['total']
+        else:
+            return None
+    else:
+        return None
+
+def _commit_size_by_commit_id(commit_id):
+    global commits_info_data
+    if commit_id in commits_info_data:
+        return commits_info_data[commit_id]['commit_info']['stats']['total']
+    else:
+        return None
+
+def _get_matched_ref_object(ref, ref_date):
+    ref_id = _get_ref_id(ref)
+    ref_commit_size = _commit_size(ref)
+    repo_full_name = f'{ref["repo_owner"]}/{ref["repo_name"]}'
+    matched_ref_obj = {
+        'ref_id':ref_id,
+        'ref_repo_full_name':repo_full_name,
+        'ref_commit_size':ref_commit_size,
+        'ref_date': ref_date
+    }
+    return matched_ref_obj
+    
+def _get_matched_ref_object_by_commit_id(commit_id, first):
+    segments = commit_id.split('/')
+    ref_id = f'{segments[0]}/{segments[1]}/commit/{segments[2]}'
+    ref_commit_size = _commit_size_by_commit_id(commit_id)
+    repo_full_name = f'{segments[0]}/{segments[1]}'
+    matched_ref_obj = {
+                    'ref_id':ref_id,
+                    'ref_repo_full_name':repo_full_name,
+                    'ref_commit_size':ref_commit_size,
+                    'ref_date': first
+                }
+    
+    return matched_ref_obj
 
 # First commit helper
 def _get_commits_from_issue(repo_owner, repo_name, issue_data):
@@ -247,6 +297,25 @@ def load_repositories(data, references_data):
         data[x]['repositories'] = list(repos)
 
 
+def load_all_refs(data, references_data):
+    for x in data.keys():
+        if x not in references_data:
+            data[x]['all_refs'] = None
+            continue
+
+        dates = []
+        for ref in references_data[x]:  
+            ref_date = _get_ref_date(ref)
+            if ref_date != None:
+                matched_ref_obj = _get_matched_ref_object(ref, ref_date)
+                dates.append(matched_ref_obj)
+
+        if len(dates) == 0:
+            data[x]['all_refs'] = None
+        else:
+            data[x]['all_refs'] = dates
+
+
 def load_first_ref(data, references_data):
     for x in data.keys():
         if x not in references_data:
@@ -345,23 +414,20 @@ def load_first_sec_phrase(data, references_data):
             data[x]['first_sec_phrase'] = None
             continue
 
-        dates = {}
+        dates = []
         for ref in references_data[x]: 
             if not _contains_secuirty_related_phrases(ref, regexes, x):
                 continue
 
             ref_date = _get_ref_date(ref)
             if ref_date != None:
-                repo_full_name = f'{ref["repo_owner"]}/{ref["repo_name"]}'
-                if repo_full_name not in dates:
-                    dates[repo_full_name]= []
-                dates[repo_full_name].append(ref_date)
+                matched_ref_obj = _get_matched_ref_object(ref, ref_date)
+                dates.append(matched_ref_obj)
 
         if len(dates) == 0:
             data[x]['first_sec_phrase'] = None
         else:
-            min_dates = [(k,min(v)) for k,v in dates.items()]
-            data[x]['first_sec_phrase'] = min_dates
+            data[x]['first_sec_phrase'] = dates
 
 
 def load_first_sec_label(data, references_data):
@@ -370,26 +436,22 @@ def load_first_sec_label(data, references_data):
             data[x]['first_sec_label'] = None
             continue
 
-        dates = {}
+        dates = []
         for ref in references_data[x]: 
             if ref['reference_type'] == 'issue':
                 ref_date  = _get_labelling_date(ref['data_obj'])
                 if ref_date != None:
-                    repo_full_name = f'{ref["repo_owner"]}/{ref["repo_name"]}'
-                    if repo_full_name not in dates:
-                        dates[repo_full_name]= []
-                    dates[repo_full_name].append(ref_date)
+                    matched_ref_obj = _get_matched_ref_object(ref, ref_date)
+                    dates.append(matched_ref_obj)
 
         if len(dates) == 0:
             data[x]['first_sec_label'] = None
         else:
-            min_dates = [(k,min(v)) for k,v in dates.items()]
-            data[x]['first_sec_label'] = min_dates
+            data[x]['first_sec_label'] = dates
 
 
 def load_fb_commit_classification(data):
-    with open(security_relevant_commits_info_file, 'r') as f:
-        commits_info_data = json.load(f)
+    global commits_info_data
 
     predictions = {}
     prediction_files = [
@@ -418,27 +480,29 @@ def load_fb_commit_classification(data):
         commit = commits_info_data[commit_id]['commit_info']
         sighted_vulnerabilities.update(commits_info_data[commit_id]['report_ids'])
 
-        date1 = parser.parse(commit['commit']['committer']['date'])
-        date2 = parser.parse(commit['commit']['author']['date'])
-        first = date1 if date1 < date2 else date2
-
         if predictions[commit_id]:
-            for report_id in commits_info_data[commit_id]['report_ids']:
-                if report_id not in per_vulnerability:
-                    per_vulnerability[report_id]=[]
-                per_vulnerability[report_id].append(first)
+            date1 = parser.parse(commit['commit']['committer']['date'])
+            date2 = parser.parse(commit['commit']['author']['date'])
+            first = date1 if date1 < date2 else date2
+        else:
+            first = 'not_spotted'
+
+        
+        for report_id in commits_info_data[commit_id]['report_ids']:
+            if report_id not in per_vulnerability:
+                per_vulnerability[report_id]=[]
+
+            matched_ref_obj = _get_matched_ref_object_by_commit_id(commit_id, first)
+            per_vulnerability[report_id].append(matched_ref_obj)
 
 
     for x in sighted_vulnerabilities:
-        if x not in per_vulnerability:
-            data[x]['fb_commit_classification'] = 'not_spotted'
-        else:
-            data[x]['fb_commit_classification'] = min(per_vulnerability[x])
+        data[x]['fb_commit_classification'] = per_vulnerability[x]
+
 
 
 def load_vfm_commit_classification(data):
-    with open(security_relevant_commits_info_file, 'r') as f:
-        commits_info_data = json.load(f)
+    global commits_info_data
 
     with open(vfm_classified_commits, 'r') as f:
         vfm_classified = json.load(f)
@@ -454,6 +518,7 @@ def load_vfm_commit_classification(data):
         if x['id'] not in commits_info_data:
             continue
 
+        commit_id = x['id']
         commit = commits_info_data[x['id']]['commit_info']
         sighted_vulnerabilities.update(commits_info_data[x['id']]['report_ids'])
 
@@ -461,42 +526,46 @@ def load_vfm_commit_classification(data):
         date2 = parser.parse(commit['commit']['author']['date'])
         first = date1 if date1 < date2 else date2
         if x['msg_prob'][0] >= 0.5 :
-            for report_id in commits_info_data[x['id']]['report_ids']:
-                if report_id not in per_vulnerability_msg:
-                    per_vulnerability_msg[report_id]=[]
-                per_vulnerability_msg[report_id].append(first)
+            spotted_date = first
+        else:
+            spotted_date = 'not_spotted'
+        for report_id in commits_info_data[x['id']]['report_ids']:
+            if report_id not in per_vulnerability_msg:
+                per_vulnerability_msg[report_id]=[]
+                
+            matched_ref_obj = _get_matched_ref_object_by_commit_id(commit_id, spotted_date)
+            per_vulnerability_msg[report_id].append(matched_ref_obj)
 
         if x['patch_prob'][0] >= 0.5 :
-            for report_id in commits_info_data[x['id']]['report_ids']:
-                if report_id not in per_vulnerability_patch:
-                    per_vulnerability_patch[report_id]=[]
-                per_vulnerability_patch[report_id].append(first)
+            spotted_date = first
+        else:
+            spotted_date = 'not_spotted'
+        for report_id in commits_info_data[x['id']]['report_ids']:
+            if report_id not in per_vulnerability_patch:
+                per_vulnerability_patch[report_id]=[]
+            matched_ref_obj = _get_matched_ref_object_by_commit_id(commit_id, spotted_date)
+            per_vulnerability_patch[report_id].append(matched_ref_obj)
 
         if x['msg_prob'][0]*x['msg_prob'][0] + x['patch_prob'][0]*x['patch_prob'][0] >= 0.25 :
-            for report_id in commits_info_data[x['id']]['report_ids']:
-                if report_id not in per_vulnerability_combined:
-                    per_vulnerability_combined[report_id]=[]
-                per_vulnerability_combined[report_id].append(first)
+            spotted_date = first
+        else:
+            spotted_date = 'not_spotted'
+        for report_id in commits_info_data[x['id']]['report_ids']:
+            if report_id not in per_vulnerability_combined:
+                per_vulnerability_combined[report_id]=[]
+            matched_ref_obj = _get_matched_ref_object_by_commit_id(commit_id, spotted_date)
+            per_vulnerability_combined[report_id].append(matched_ref_obj)
 
 
     
     for x in sighted_vulnerabilities:
-        if x not in per_vulnerability_msg:
-            data[x]['vfm_message_classification'] = 'not_spotted'
-        else:
-            data[x]['vfm_message_classification'] = min(per_vulnerability_msg[x])
+        data[x]['vfm_message_classification'] = per_vulnerability_msg[x]
 
     for x in sighted_vulnerabilities:
-        if x not in per_vulnerability_patch:
-            data[x]['vfm_patch_classification'] = 'not_spotted'
-        else:
-            data[x]['vfm_patch_classification'] = min(per_vulnerability_patch[x])
+        data[x]['vfm_patch_classification'] = per_vulnerability_patch[x]
 
     for x in sighted_vulnerabilities:
-        if x not in per_vulnerability_combined:
-            data[x]['vfm_combined_classification'] = 'not_spotted'
-        else:
-            data[x]['vfm_combined_classification'] = min(per_vulnerability_combined[x])
+        data[x]['vfm_combined_classification'] = per_vulnerability_combined[x]
 
 
 
@@ -505,6 +574,12 @@ def main():
     # Import data on additional commits
     with open(r'src\recalls\data\commit_data_for_rq1.json', 'r') as f:
         commits_data = json.load(f)
+
+        
+    global commits_info_data
+    # Import data on security commits
+    with open(security_relevant_commits_info_file, 'r') as f:
+        commits_info_data = json.load(f)
 
     # Import data from vulnerability databases
     nvd = NvdLoader(r'D:\Projects\VulnerabilityData\new_nvd')
@@ -541,6 +616,9 @@ def main():
     # Import severity
     load_severity(data, omni)
 
+    # Load all refs in new format
+    load_all_refs(data, references_data)
+
     # Load first ref
     load_first_ref(data, references_data)
 
@@ -563,15 +641,13 @@ def main():
     # # Load first commit classified as security related (Feature-based)
     load_fb_commit_classification(data)
 
-    load_vfm_commit_classification(data)
-
     # Load first commit classified as security related (own-models)
-    # load_first_issue(data, omni)
+    # load_dl_commit_classification(data)
 
     # Load first commit classified as security related (VulFixMiner)
-    # load_first_commit(data, omni)
+    load_vfm_commit_classification(data)
 
-    with open('recall_analysis_vfm.json', 'w') as f:
+    with open('recall_analysis.json', 'w') as f:
         json.dump(data, f, default=str)
 
 if __name__ == '__main__':

@@ -113,6 +113,58 @@ class OmniLoader:
 
         return list(set([x.lower() for x in references]))
 
+    def highest_severity(self, report_id):
+        if report_id not in self.related_ids:
+            return None
+
+
+        ids = self.related_ids[report_id]
+        severities = []
+        for id in ids:
+            if id in self._nvdLoader.reports:
+                if 'impact' in self._nvdLoader.reports[id]:
+                    if 'baseMetricV2' in self._nvdLoader.reports[id]['impact']:
+                        pass
+                        severity = self._nvdLoader.reports[id]['impact']['baseMetricV2']['severity']
+                        if severity:
+                            severities.append(severity)
+                    if 'baseMetricV3' in self._nvdLoader.reports[id]['impact']:
+                        severity = self._nvdLoader.reports[id]['impact']['baseMetricV3']['cvssV3']['baseSeverity']
+                        if severity:
+                            severities.append(severity)
+            if id in self._osvLoader.reports:
+                if 'database_specific' in self._osvLoader.reports[id] and 'severity' in self._osvLoader.reports[id]['database_specific']:
+                    severity = self._osvLoader.reports[id]['database_specific']['severity']
+                    if severity:
+                        severities.append(severity)
+                if 'affected' in self._osvLoader.reports[id]:
+                    temp = [x['ecosystem_specific'] for x in self._osvLoader.reports[id] if 'ecosystem_specific' in x]
+                    temp = [x['severity'] for x in temp if 'severity' in x]
+                    if len(temp) > 0:
+                        severities += temp
+
+            if id in self._ghsaLoader.reports:
+                if 'database_specific' in self._ghsaLoader.reports[id] and 'severity' in self._ghsaLoader.reports[id]['database_specific']:
+                    severity = self._ghsaLoader.reports[id]['database_specific']['severity']
+                    if severity:
+                        severities.append(severity)
+                if 'affected' in self._ghsaLoader.reports[id]:
+                    temp = [x['ecosystem_specific'] for x in self._ghsaLoader.reports[id] if 'ecosystem_specific' in x]
+                    temp = [x['severity'] for x in temp if 'severity' in x]
+                    if len(temp) > 0:
+                        severities += temp
+
+        severities = set([s.upper() for s in severities])
+        if 'CRITICAL' in severities:
+            return 'CRITICAL'
+        if 'HIGH' in severities:
+            return 'HIGH'
+        if 'MEDIUM' in severities:
+            return 'MEDIUM'
+        if 'LOW' in severities:
+            return 'LOW'
+        return None
+
 
     def publish_date_of_report(self, report_id):
         if report_id not in self.related_ids:

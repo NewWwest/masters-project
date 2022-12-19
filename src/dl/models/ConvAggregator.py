@@ -17,7 +17,7 @@ class ConvAggregator(nn.Module):
         self.relu2 = nn.ReLU()
         self.pool2 = nn.MaxPool2d(kernel_size=4, stride=2)
 
-        self.dropout = nn.Dropout(p=0.05)
+        self.dropout = nn.Dropout(p=0.3)
         self.head = nn.Linear(100, 2)
 
     def forward(self, x):

@@ -34,6 +34,13 @@ class GithubProxy:
                 print(f'Retry failed: {response.status_code}')
                 return None
 
+    def get_repository_data(self, repo_owner, repo_name):
+        api_url = f'{github_api}/repos/{repo_owner}/{repo_name}'
+        response = self.do_get(api_url)
+        if response == None:
+            return None
+
+        return response.json()
 
     def get_commit_data(self, repo_owner, repo_name, reference_value):
         api_url = f'{github_api}/repos/{repo_owner}/{repo_name}/commits/{reference_value}'

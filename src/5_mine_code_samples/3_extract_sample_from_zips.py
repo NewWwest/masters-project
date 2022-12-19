@@ -35,7 +35,8 @@ def main(input_location):
     s_selected_sample_type = set(selected_sample_type)
 
 
-    selected_data = []
+    selected_data_positive = []
+    selected_data_background = []
     zipped_files = get_files_in_from_directory(input_location)
     # zipped_files = zipped_files[:5]
     
@@ -58,44 +59,50 @@ def main(input_location):
                 miners = set([x['sample_type'].split('.')[-1] for x in data_commit])
                 sample_type = 'encoding' if '-encodings-' in f.filename else 'sample'
 
+                if data_commit[0]['is_security_related']:
+                    security_related_label = True
+                else:
+                    security_related_label = False
+
                 if sample_type in s_selected_sample_type:
                     if len(miners.intersection(s_selected_miners)) > 0:
                         if len(set(ecosystems).intersection(s_selected_ecosystems)) > 0:
-                            selected_data.append((f.filename, data_commit))
+                            if security_related_label:
+                                selected_data_positive.append(f.filename)
+                            else:
+                                selected_data_background.append(f.filename)
 
-
-    positive = []
-    back = []
-    for file_name, x in selected_data:
-        if x == None or len(x) == 0:
-            continue
-
-        if x[0]['is_security_related']:
-            label = 'positive'
-        else:
-            label = 'background'
-
-        sample_type_fn = 'encodings' if '-encodings-' in file_name else 'samples'
-        
-        commit_id_key = 'commit_id' if 'commit_id' in x[0] else 'id'
-        commit_id = x[0][commit_id_key].replace('/','-')
-        fn = f'{label}-{sample_type_fn}-{commit_id}.json'
-
-        if x[0]['is_security_related']:
-            positive.append((fn, x))
-        else:
-            back.append((fn, x))
-
-    positive_datapoints = random.sample(positive, min(len(positive), positive_datapoints_count))
-    back_datapoints = random.sample(back, min(back_datapoints_count, len(back)))
-    for x in positive_datapoints:
-        with open(os.path.join(output_directory, x[0]), 'w') as f:
-            json.dump(x[1], f)
-
-    for x in back_datapoints:
-        with open(os.path.join(output_directory, x[0]), 'w') as f:
-            json.dump(x[1], f)
+    positive_datapoints = random.sample(selected_data_positive, min(len(selected_data_positive), positive_datapoints_count))
+    back_datapoints_count = len(positive_datapoints)*9
+    back_datapoints = random.sample(selected_data_background, min(back_datapoints_count, len(selected_data_background)))
     
+    positive_datapoints = set(positive_datapoints)
+    back_datapoints = set(back_datapoints)
+
+    for file in zipped_files:
+        with ZipFile(file, 'r') as zipped:
+            for f in zipped.filelist:
+                if f.filename not in positive_datapoints and f.filename not in back_datapoints:
+                    continue
+
+                data_commit = json.loads(zipped.read(f.filename))
+                if data_commit == None or len(data_commit) == 0:
+                    continue
+
+                if data_commit[0]['is_security_related']:
+                    label = 'positive'
+                else:
+                    label = 'background'
+
+                sample_type_fn = 'encodings' if '-encodings-' in f.filename else 'samples'
+                
+                commit_id_key = 'commit_id' if 'commit_id' in data_commit[0] else 'id'
+                commit_id = data_commit[0][commit_id_key].replace('/','-')
+
+                fn = f'{label}-{sample_type_fn}-{commit_id}.json'
+                with open(os.path.join(output_directory, fn), 'w') as f:
+                    json.dump(data_commit, f)
+
 
 
 if __name__ == '__main__':
