@@ -1,39 +1,17 @@
 # Training Deep Learning
 
+This directory contains the start scripts to execute the deep learning experiment.
 
-## Scripts
+### Fold Data
 
-The scripts were the first iteration of the deep learning experiment. Each stage (as depicked below) can be examined in more detail and experimented on. Partially outdated compared to CrossVal notebook.
+The fold data script should be used on the output of `3_extract_sample_from_zips` to split the data into n chunks, from which the second to last chunk will be used for validation while the last for test.
 
-### Fine-Tune
-The fine-tuning step involves training the transformed to produce the best possible mebedding of the provided samples for the specific task. To do that we train a model build from the GraphCodeBERT transformer with a linear layer attached to it. The model is train for cross entropy loss and after trainng the linear layer is discarded.
+### Train
 
-### Embed tokens
-In the embedding process the fine-tuned transformer is used on the mined commit samples to convert them to embeddings. 
+The train script contains the entry point for the trraining and evaluation pipeline. It contains two functions `do_fold_finetuning` and `do_folds_aggregators` which can be called to run a given stage of the experiment. They use the functions defined in `training_utils` file in the `dl` directory, where more information can be found.
+do_fold_finetuning()
+lstm_folds_results, conv_folds_results, mean_folds_results = do_folds_aggregators()
 
-### Train Aggregator
-In this stage the produced embeddings are fed into the aggregator models which combine them into one single result.
+### Calculate AUC and Calculate RC5
 
-## Notebooks
-
-### CrossVal
-
-The CrossVal notebook allows for cross validation training and evaluation of the models. As the process of processing the tokenized imputs into their embeddings is time consuming, 
-
-### Test transformer hyper-parameters
-
-This notebook contains the code to evaluate to embedding transformer different configurations of under- and over-sampling and differen tlearning rate which were identified as the main contributors to it's performance (apart from the used data). The test should take place on limitted datasets to evaluate one sampling method 32 train adn test cycles need to be calculated.
-
-
-## Results
-
-The `results` folder contains the outputs of the search for the optimal hyper-parameters setting using the `Test transformer hyper-parameters` notebook. The individual outputs are contained in the text files named after the used sampling method while the .ods and .xls file contain the contatinated results in tables.
-
-## Step-by-Step
-
-- Mine code samples as described in directory `5_mine_code_samples`
-- Extract the samples you want with `3_extract_sample_from_zips`
-- Split the data up into folds with `1_fold_data` 
-- Set the correct model name and directories in `CrossVal.ipynb`
-- Use fraction_of_data, sample_limit and eval_sample_limit to limit used data.
-- You can comment out specific aggregator models in `evaluate_aggregators`
+These two files use the classification resutls from the VulCurator models to calculated the more advanced metrics of area under the precision-recall curve and recall at 5% of reviewed lines.

@@ -3,7 +3,7 @@ import math
 
 cutoff_point = 0.05
 
-data_path = 'results_with_size.json'
+data_path = 'data/VC_classification_results.json'
 with open(data_path, 'r') as f:
     data = json.load(f)
 

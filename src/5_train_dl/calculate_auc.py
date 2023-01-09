@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 import json
 import math
 
-data_path = 'results_with_size.json'
+data_path = 'data/VC_classification_results.json'
 
 def comb(a,b):
     return math.sqrt(a*a+b*b)/math.sqrt(2)
